@@ -1,0 +1,33 @@
+    <div id="xia">
+	<div id="avatar"><a href="{goUserHome domain=$domain uid=$touid}" title="我的博客"><div class="head_bg"><img src="{avatar uid=$touid size=middle}" alt="{$username}" class="face"/></div></a></div>
+		
+		<div id="usertitle" >
+		    
+			{if $isfollow == 1}
+				<div class="btn_follow_1" id="follow_unlink_{$touid}"><a href="javascript:;" id="followed"  onclick="fllow('unlink',{$touid})">已关注</a></div>
+				<div class="btn_follow_0" id="follow_link_{$touid}" style="display:none"><a href="javascript:;" id="followed"  onclick="fllow('link',{$touid})">加为关注</a></div>
+			{elseif $isfollow == 0}
+				<div class="btn_follow_0" id="follow_link_{$touid}"><a href="javascript:;" onclick="fllow('link',{$touid})">加为关注</a></div>
+				<div class="btn_follow_1" id="follow_unlink_{$touid}"  style="display:none"><a href="javascript:;" id="followed"  onclick="fllow('unlink',{$touid})">已关注</a></div>
+			{/if}
+		</div>
+<div class="my_data">
+		<a href="javascript:;"><div class="data_follow_on">{$user.flow}</div><div class="data_follow">关注数</div></a>
+		<a href="javascript:;"><div class="data_fans_on">{$myLook}</div><div class="data_fans">粉丝数</div></a>
+		<a href="javascript:;"><div class="data_post_on">{$user.num}</div><div class="data_post">发布数</div></a>
+	<div class="clear"></div>
+</div>
+{if $user.uid != $smarty.session.uid}
+<div class="my_pm">
+    <a href="{spUrl c=pm a=detail uid=$user.uid}" target="_blank">
+	    <div class="pm_btn">
+		    <div class="icon"></div>
+			<div class="text"></div>
+			<div class="pmdata">{$pmnum}</div>
+		</div>
+	</a>
+</div>
+{/if}
+<div class="page" id="paging"></div>
+<div id="feed_loading"></div>
+		</div>

@@ -1,0 +1,221 @@
+{literal}
+
+<script type="text/html" id="cus_tmpl_model_3">
+	<div id="feedText_{bid}" class="content"> 
+		<div class="text_area_all"> 
+			{if attr.count ==1} 
+				<div id="imagelist_1_a" class="imagelist wSet"> 
+					<div class="img_top"> 
+						<li> 
+							<a href="javascript:void(0)"><img degree="0" src="{attr.img[0].url}" title="{attr.img[0].desc}" /></a> 
+						</li>
+					</div>
+				</div> 
+			{/if} 
+
+			{if attr.count >=2}
+			<div id="imagelist_9_a" class="imagelist wSet"> 
+				<div class="img_k"> 
+				<div class="img_two"> 
+					{each attr.img as img i} 
+						{if i >=0 && i < 4} 
+						<li>
+							<a href="javascript:void(0)"><img degree="0" src="{img.url}" title="{img.desc}" /></a>
+						</li> 
+						{/if} 
+					{/each} 
+				</div>
+			<div class="img_three"> 
+						{each attr.img as img i} 
+							{if i >=4 && i < 8}
+							<li>
+							<a href="javascript:void(0)"><img degree="0" src="{img.url}" title="{img.desc}" /></a>
+							</li> 
+							{/if} 
+						{/each} 
+					</div> 
+				<div class="img_two"> 
+					{each attr.img as img i} 
+						{if i >=8 && i < 12} 
+						<li>
+							<a href="javascript:void(0)"><img degree="0" src="{img.url}" title="{img.desc}" /></a>
+						</li> 
+						{/if} 
+					{/each} 
+				</div>
+			<div class="img_three"> 
+						{each attr.img as img i} 
+							{if i >=12 && i < 16}
+							<li>
+							<a href="javascript:void(0)"><img degree="0" src="{img.url}" title="{img.desc}" /></a>
+							</li> 
+							{/if} 
+						{/each} 
+					</div> 
+					<div class="img_two"> 
+					{each attr.img as img i} 
+						{if i >=16 && i < 20} 
+						<li>
+							<a href="javascript:void(0)"><img degree="0" src="{img.url}" title="{img.desc}" /></a>
+						</li> 
+						{/if} 
+					{/each} 
+				</div>
+
+				</div> 
+				</div> 
+			{/if}
+
+		{if body} 	
+			<div class="text_area">	
+				<p>{body}</p>
+			</div>
+		{/if}
+		</div> 
+	</div>
+
+</script>
+
+<script type="text/html" id="cus_tmpl_model_footer">
+	{if more == 1}
+		<div class="more"><a href="{b_url}">未完,继续阅读→</a></div>
+	{/if}
+<div class="footer">
+
+
+
+	{if tag.length >0}
+	<div class="tag">
+		{each tag as t i}
+			<a href="index.php?c=blog&a=tag&tag={t}">#{t}</a>
+		{/each}
+	</div>
+	{/if}
+	
+	<div class="fun">
+	{if uid == myuid()}
+		<span class="delete"><a href="javascript:void(0)" onclick="delblogs({bid})" title="删除"></a></span>
+	{/if}
+	
+	{if uid == myuid() && repto == null}
+		<span class="edit"><a href="index.php?c=post&a=edit&id={bid}&model={type}" title="编辑">编辑</a></span>
+	{/if}
+	
+	{if uid != myuid()}
+		<span class="reblog"><a href="javascript:void(0)" onclick="repblog({bid})" title="转载">转载</a></span>
+	{/if}
+
+
+	<span class="reply">
+		<a href="javascript:void(0)" onclick="indexPostTab('comment',{bid})" onclick="indexPostTab('feeds',{bid})" id="comment_btn_{bid}" title="回复">回复
+			{if replaycount > 0}（{replaycount}）{/if}
+		</a>
+	</span>
+	
+	{if feedcount > 9999}
+	<span class="hotnum">
+		<a href="javascript:void(0)" onclick="indexPostTab('feeds',{bid})" title="热度" id="hid_btn_{bid}">热度
+			{if feedcount > 0}（{feedcount}）{/if}
+		</a>
+	</span>
+	{/if}
+	
+
+	{if uid != myuid()}
+		{if likeid == null}
+		<span class="nolike" id=like_{bid}">
+		{else}
+		<span class="like" id=like_{bid}">
+		{/if}
+			<a href="javascript:void(0)" likeid="{bid}" class="dolike" title="喜欢">喜欢</a>
+		</span>
+	{/if}
+
+	</div><!--FUNEND-->
+	
+
+</div><!--FOOTEREND-->
+<div class="clear"></div>
+
+<form class="autoTxtCount" action="" method="get" onsubmit="return false;">
+<div class="reply_i">
+<div id="comment_{bid}" style="display:none" class="reply_a">
+	<div class="reply_list">
+		<div class="reply_btn">
+			<button type="submit" class="btn"  onclick="sendReplay({bid});">发布</button>
+		</div>
+		
+		<div class="reply_input">
+			<div class="limit_text" ><span class="tips">140</span></div>
+			<textarea id="replyInput_{bid}"></textarea>
+			<input type="hidden" id="replyTo_{bid}" />
+		</div>
+		<div class="clear"></div>
+		
+		<div id="commentLoading_{bid}" class="s_loading"></div>
+		<div class="reply_comment">
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div id="feeds_{bid}" class="reply_b">
+	<span>有{feedcount}条动态信息</span>
+	{if feedcount > 0}
+	<div class="reply_c">
+		<div id="hit_loading_{bid}" class="sf_loading"></div>
+	</div>
+	{/if}
+	<div id="feeds_paging_{bid}" class="pagings"></div>
+</div>
+	<div id="comment_paging_{bid}" class="paging"></div>
+</div>
+</div>
+</form>
+
+
+
+</script>
+
+<script type="text/html" id="cus_tmpl_info_footer">
+<div class="footer">
+	
+	<div class="fun">
+		{if uid == myuid()}
+		<span class="delete"><a href="javascript:void(0)" onclick="delblogs({bid})" title="删除"></a></span>
+	{/if}
+	
+	{if uid == myuid() && repto == null} 
+	<span class="edit"><a href="index.php?c=post&a=edit&id={bid}&model={type}" title="编辑">编辑</a></span> 
+	{/if}
+	
+	{if uid != myuid()}
+		<span class="reblog"><a href="javascript:void(0)" onclick="repblog({bid})" title="转载">转载</a></span>
+	{/if}
+
+
+	{if uid != myuid()}
+		{if likeid == null}
+		<span class="nolike" id=like_{bid}">
+		{else}
+		<span class="like" id=like_{bid}">
+		{/if}
+		<a href="javascript:void(0)" likeid="{bid}" class="dolike" title="喜欢">喜欢</a>
+		</span>
+	{/if}
+
+	</div><!--FUNEND-->
+	
+
+</div><!--FOOTEREND-->
+<div class="clear"></div>
+
+
+<div id="feeds_{bid}" style="display:none;">
+	<div class="reply_list">
+		<div id="hit_loading_{bid}" class="sf_loading"></div>
+	</div>
+	<div id="feeds_paging_{bid}" class="paging"></div>
+</div>
+</script>
+
+
+{/literal}

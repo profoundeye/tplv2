@@ -1,0 +1,31 @@
+
+
+
+	{if $user.local != ''}
+		<div class="my_location">
+			{ybtime time=$user.logtime} 在 {$user.local} 登录
+		</div>
+	{/if}
+</div>
+<div id="aside">
+{if $user.flow !=0}
+<div class="my_follow">
+    <div class="f_title">{$username}的关注</div>
+	<div class="f_list">
+	
+	{foreach $follow as $k=>$da}
+		{if $k<8}
+	    <li>
+		    <a href="{goUserHome domain=$da.tome.domain uid=$da.touid}" title="{$da.tome.username}" target="_blank">
+			<img src="{avatar uid=$da.touid size=middle}" alt="{$da.tome.username}"/>
+			</a>
+		</li>
+		{/if}
+    {/foreach}
+		<div class="clear"></div>
+	</div>
+</div>   
+{/if}
+</div>
+
+
