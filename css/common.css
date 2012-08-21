@@ -20,7 +20,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 
 /*框架结构布局*/
 #wrap { width:100%; margin:0; }
-#index { width:900px; margin:0 auto; }
+#index { width:730px; margin:0 auto; }
 #user_index { width:800px; margin:0 auto; }
 .fl { float:left; }
 .fr { float:right; }
@@ -153,7 +153,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 
 
 /*博客主内容*/
-#article { width:660px; float:left; margin:0; }
+#article { width:730px;  }
 
 /*博客主内容 - 广告位*/
 #ad_index_up { width:540px; margin:40px 0 0 110px; background-color:#fff; padding:0; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px; -moz-box-shadow:0px 1px 3px #bbb; -webkit-box-shadow:0px 1px 3px #bbb; box-shadow:0px 1px 3px #bbb; overflow:hidden; }
@@ -240,12 +240,13 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 #wizard .notice { position:relative; float:right; width:540px; background-color:#FFFF99; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px; -moz-box-shadow:0px 1px 3px #bbb; -webkit-box-shadow:0px 1px 3px #bbb; box-shadow:0px 1px 3px #bbb; border-bottom:2px #ddd solid\9; margin:15px 10px 5px 0; line-height:25px; color:#666; }
 
 /*博客内容*/
-#feedArea { width:660px; margin:0; float:left; }
-#feedArea .box { float:left; width:510px; margin:15px 0 0 110px; padding:15px; min-height:150px; position:relative; background-color:#fff; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px; -moz-box-shadow:0px 1px 3px #bbb; -webkit-box-shadow:0px 1px 3px #bbb; box-shadow:0px 1px 3px #bbb; border-bottom:2px #ddd solid\9; }
-#feedArea .avatar { position:absolute; left:-100px; top:0; }
+#feedArea { width:705px; margin:0; float:left; }
+#feedArea .box { float:left; width:630px; margin:15px 0 0 66px; padding:15px; min-height:150px; position:relative; background-color:#fff; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px; -moz-box-shadow:0px 1px 3px #bbb; -webkit-box-shadow:0px 1px 3px #bbb; box-shadow:0px 1px 3px #bbb; border-bottom:2px #ddd solid\9; }
+#feedArea .avatar { position:absolute; left:-65px; top:27px; }
 #feedArea .avatar .face { -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; overflow:hidden; }
-#feedArea .avatar a .head_bg{ width:65px; height:65px; padding:3px; background:url(../image/comm/avatar_bg.png) repeat-x 0 0; border:1px #227CAC solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 3px #999; -webkit-box-shadow:0px 1px 3px #999; box-shadow:0px 1px 3px #999; }
-#feedArea .avatar a:hover .head_bg { background:url(../image/comm/avatar_bg.png) repeat-x 0 -75px; border:1px #C64444 solid; }
+#feedArea .avatar a .head_bg{ width:41px; height:41px; padding:2px; background:url(../image/comm/avatar_bg.png) repeat-x 0 0; border:1px #c10000 solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 3px #999; -webkit-box-shadow:0px 1px 3px #999; box-shadow:0px 1px 3px #999; }
+.head_bg img{width:41px;height:41px;}
+#feedArea .avatar a:hover .head_bg { background:url(../image/comm/avatar_bg.png) repeat-x 0 -75px; border:1px #36a0db solid; }
 #feedArea .avatar a:active .head_bg { margin-top:2px; _margin-top:2px; #margin-top:2px; -moz-box-shadow:0px 1px 1px #999; -webkit-box-shadow:0px 1px 1px #999; box-shadow:0px 1px 1px #999; }
 #feedArea .avatarblog { position:absolute; left:50px; top:50px; }
 #feedArea .avatarblog img { width:30px; height:30px; padding:2px; background-color:#fff; border:1px #999 solid; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px; -moz-box-shadow:0px 1px 2px #ccc; -webkit-box-shadow:0px 1px 2px #ccc; box-shadow:0px 1px 2px #ccc; }
@@ -274,7 +275,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 #feedArea .content p a { text-decoration:underline; margin:0 5px; }
 
 #feedArea .content a.readMore { font-size:12px; line-height:25px; color:#999; display:block; }
-
+#feed_box .corner{ position:absolute;top:43px;left:-7px; width:7px; height:14px; background:url(../image/comm/icons.png) no-repeat 0 -40px;}
 /*发布文字*/
 #feedArea .content .text_area img { max-width:240px; float:left; margin-bottom:5px; margin-right:10px; }
 #feedArea .content .text_area { width:100%; margin:0; padding:0; }
@@ -284,7 +285,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 /*发布图片*/
 #feedArea .content canvas {max-width:500px; margin:5px 5px 1px 5px; border:none; #margin:5px;}
 #feedArea .content .img_top img { max-width:500px; margin:5px 5px 1px 5px; border:none; #margin:5px; }
-#feedArea .content .img_top li { list-style:none; width:510px; display:block; position:relative; padding:0; margin:0; }
+#feedArea .content .img_top li { list-style:none; width:600px; display:block; position:relative; padding:0; margin:0; }
 #feedArea .content .img_two img { max-width:245px; margin:auto; border:none; }
 #feedArea .content .img_two li { list-style:none; width:245px; display:block; float:left; margin:5px; overflow:hidden; height:160px;   }
 #feedArea .content .img_three img { max-width:160px; margin:0; border:none; }
@@ -538,7 +539,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 
 #aside .avatar { margin:10px 0 0 15px; float:left; }
 #aside .avatar .face { -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; overflow:hidden; width:35px; height:35px; }
-#aside .avatar a .head_bg{ width:35px; height:35px; padding:2px; background:url(../image/comm/avatar_bg.png) repeat-x 0 0; border:1px #227CAC solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 3px #999; -webkit-box-shadow:0px 1px 3px #999; box-shadow:0px 1px 3px #999; }
+#aside .avatar a .head_bg{ width:35px; height:35px; padding:2px; background:url(../image/comm/avatar_bg.png) repeat-x 0 0; border:1px #c10000 solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 3px #999; -webkit-box-shadow:0px 1px 3px #999; box-shadow:0px 1px 3px #999; }
 #aside .avatar a:hover .head_bg { background:url(../image/comm/avatar_bg.png) repeat-x 0 -75px; border:1px #C64444 solid; }
 
 #aside .info { float:left; margin-top:8px; margin-left:10px; }
