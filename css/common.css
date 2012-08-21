@@ -73,6 +73,8 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 
 #tool { float:right; top:-50px; position:relative;left:-45px; z-index:1; }
 #tool a, #tool a:hover, #tool a:active { outline:none; }
+#header #tool #write{width:73px;height:38px;color:write;display:block;margin-top:-3px;position:absolute;left:-110px}
+#write button{ border-style:none;background:url(../image/z/w.png);width:73px;height:38px}
 #tool .name { float:right; }
 #tool .name a{ height:18px; line-height:18px; padding:0 10px; border:1px #999 solid; font-size:12px; display:block; background:url(../image/comm/tool_bg.png) repeat-x 0 0; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px; text-shadow:0px 1px 0px #fff; outline:none;  max-width:130px; overflow:hidden; }
 #tool .name a:hover { background:url(../image/comm/tool_bg.png) repeat-x 0 -18px; color:#999; }
@@ -240,7 +242,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 #wizard .notice { position:relative; float:right; width:540px; background-color:#FFFF99; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px; -moz-box-shadow:0px 1px 3px #bbb; -webkit-box-shadow:0px 1px 3px #bbb; box-shadow:0px 1px 3px #bbb; border-bottom:2px #ddd solid\9; margin:15px 10px 5px 0; line-height:25px; color:#666; }
 
 /*博客内容*/
-#feedArea { width:705px; margin:0; float:left; }
+#feedArea { width:705px; margin:0; float:left;margin-top:-40px; }
 #feedArea .box { float:left; width:630px; margin:15px 0 0 66px; padding:15px; min-height:150px; position:relative; background-color:#fff; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px; -moz-box-shadow:0px 1px 3px #bbb; -webkit-box-shadow:0px 1px 3px #bbb; box-shadow:0px 1px 3px #bbb; border-bottom:2px #ddd solid\9; }
 #feedArea .avatar { position:absolute; left:-65px; top:27px; }
 #feedArea .avatar .face { -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; overflow:hidden; }
@@ -406,7 +408,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 #feedArea .reply_fun .fun_like { width:25px; height:25px; display:block; background:url(../image/comm/icons.png) no-repeat -50px -440px; float:right; }
 
 /*发布功能区*/
-#feedArea .footer { width:510px; line-height:25px; height:25px; bottom:10px; left:15px; }
+#feedArea .footer { width:610px; line-height:25px; height:25px; bottom:10px; left:15px; }
 #feedArea .footer .tag { width:290px; float:left; overflow:hidden; height:25px; }
 #feedArea .footer .tag a { margin-right:5px; }
 
@@ -1037,3 +1039,5 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 
 /*返回顶部*/
 .backToTop { display:none; width:38px; height:38px; border:1px #227CAC solid; background:url(../image/comm/avatar_bg.png) repeat-x 0 0; color:#fff; text-shadow:0px -1px 0px #227CAC; font-size: 14px; text-align: center; position: fixed; _position: absolute; right: 10px; bottom: 10px; _bottom: "auto"; cursor: pointer; padding:10px; filter:alpha(opacity=100); -moz-opacity:1; opacity:1; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;  }
+
+#wrap .postImg{width:920px;}
