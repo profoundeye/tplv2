@@ -271,7 +271,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 #feedArea .title h1 a:hover { color:#666; }
 
 #feedArea .content { width:100%; margin:10px 0 10px; min-height:100px; float:left; position:relative; font-size:14px; color:#666; padding:0; }
-#feedArea .content p { margin:0; line-height:25px; float:left; width:510px; }
+#feedArea .content p { margin:0; line-height:25px; float:left; width:600px; }
 #feedArea .content p a { text-decoration:underline; margin:0 5px; }
 
 #feedArea .content a.readMore { font-size:12px; line-height:25px; color:#999; display:block; }
