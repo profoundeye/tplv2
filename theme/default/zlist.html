@@ -3,17 +3,9 @@
 <div id="wrap">
 {include file="header_code.html"}
     <div id="main">
-	{include file="theme/default/userheader.html"}
+	{include file="theme/default/zuserheader.html"}
 	
-		<div id="mytag">
-		{if !empty($data.0.tag)}
-			{foreach $data.0.tag as $d}
-		    <li><a href="{spUrl c=blog a=tag tag=$d}"><span>{$d}</span></a></li>
-			{/foreach}
-		{/if}
-		
-			<div class="clear"></div>
-		</div>
+	
 		
 		<div id="feedArea">
 			<script type="text/javascript">
