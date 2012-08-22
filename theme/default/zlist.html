@@ -5,7 +5,15 @@
     <div id="main">
 	{include file="theme/default/zuserheader.html"}
 	
-	
+		<div id="mytag">
+		{if !empty($data.0.tag)}
+			{foreach $data.0.tag as $d}
+		    <li><a href="{spUrl c=blog a=tag tag=$d}"><span>{$d}</span></a></li>
+			{/foreach}
+		{/if}
+		
+			<div class="clear"></div>
+		</div>
 		
 		<div id="feedArea">
 			<script type="text/javascript">
@@ -32,31 +40,34 @@
 					})
 				</script>
 			{/if}
+						
 			
-			<div class="favatitle">谁喜欢<span>{$fava.count}</span></div>
-			{if $fava.count !=0}
-			<div class="fava">
-			
-				{foreach from=$fava.rs item=d}
-				<a href="{goUserHome domain=$d.domain uid=$d.uid}" title="{$d.username} - {ybtime time=$d.time}"><img src="{avatar uid=$d.uid size=small}" alt="{$d.username}"/></a>
-				{/foreach}  
-			    <div class="clear"></div>
-			</div>
-			{/if}
-			
-			<div id="comment"></div>
+		</div>
+	
+	</div>
+	
+	<div id="aside" class="detail_right_side">
+        <div class="box">
+            <div class="favatitle">谁喜欢<span>{$fava.count}</span></div>
+                {if $fava.count !=0}
+                <div class="fava">
+                
+                    {foreach from=$fava.rs item=d}
+                    <a href="{goUserHome domain=$d.domain uid=$d.uid}" title="{$d.username} - {ybtime time=$d.time}"><img src="{avatar uid=$d.uid size=small}" alt="{$d.username}"/></a>
+                    {/foreach}  
+                    <div class="clear"></div>
+                </div>
+                {/if}
+        </div>
+    
+          
+		<div id="comment"></div>
 			<script>
 				$(document).ready(function(){  
 					loadCommend('comment',{$bid});
 				});
 			</script>
 
-		</div>
-	
-	</div>
-	
-	<div id="aside">
-    {include file="theme/default/aside.html"}
 	</div>
 
 </div>
