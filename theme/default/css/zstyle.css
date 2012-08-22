@@ -31,7 +31,7 @@ a:hover {color:#333;text-decoration: none;}
 #usertitle .btn_follow_0 a:active { -moz-box-shadow:0px 1px 3px #61A701 inset; -webkit-box-shadow:0px 1px 3px #61A701 inset; box-shadow:0px 1px 3px #61A701 inset; }
 
 /*关注状态 - 已关注*/
-#usertitle .btn_follow_1 a { float:left; line-height:28px; height:28px; padding:0 10px; background:url(../image/blog_btn_bg.png) repeat-x 0 -50px; border:1px #ccc solid; color:#999; text-shadow:0px 1px 0px #fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; 0px 0 20px 17px}
+#usertitle .btn_follow_1 a { float:left; line-height:28px; height:28px; padding:0 10px; background:url(../image/blog_btn_bg.png) repeat-x 0 -50px; border:1px #ccc solid; color:#999; text-shadow:0px 1px 0px #fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;margin: 0px 0 20px 17px}
 #usertitle .btn_follow_1 a:hover { background:url(../image/avatar_bg.png) repeat-x 0 -75px; border:1px #C64444 solid; color:#fff; text-shadow:0px 1px 0px #C64444; }
 
 /*博客个性签名*/
