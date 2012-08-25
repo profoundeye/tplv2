@@ -1,0 +1,48 @@
+{include file="require_header.html" addcss=yes editor=yes}
+
+<script language="JavaScript" src="{$syskin}/js/jquery.jsonSuggest-2.js"></script>
+<script language="JavaScript" src="{$syskin}/js/testData.js"></script>
+<div id="productArea" class="product">
+ <h3>我的分享中涉及到的产品</h3>
+                    
+					<input type="text" size="50" id="suggestBox" />
+
+{literal}
+<script>
+function callback(item) {
+	$('#product_list').append($("<li>"+item.text+"</li><span class='buy'>购买链接</span><span class='del'>删除</span>"));
+}
+
+//显示新增表单
+var $newadd = $('<li class="ui-menu-item odd"><a id="newShow">没有相匹配的产品。是首秀？点此确定是首秀。</a></li>');
+$("#productArea").bind('click',function(ev){
+	if(ev.target.id=="newShow"){
+		$("#new_product").css("display","block");
+		};
+							//
+							})
+
+jQuery(function() {
+	$('input#suggestBox').jsonSuggest({data: testData.countryCodes, onSelect: callback,minCharacters: 1});
+	
+});
+</script>
+{/literal}
+                    <ul id="product_list">
+                   	    
+                    </ul>
+    <div id="new_product">  
+    			<form action="{spUrl c=product a=add}" method="post">
+                    <fieldset>
+                    <legend>添加豪气的首秀！:</legend>
+                       出品公司：<input name="campany" id="campany"  /><br  />
+                       生产年份：<input name="year" id="year"  /> <br  />
+                       产品型号：<input name="style" id="style"  /> <br  />
+                       一句话说明特点：<textarea></textarea>
+                        <input type="submit" name="sumbitProduct" id="submitProduct" value="提交新产品" />
+                    </fieldset>
+      			</form>
+    </div>
+</div>
+
+{include file="require_footer.html"}
