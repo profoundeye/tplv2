@@ -1,7 +1,7 @@
 {include file="require_header.html" addcss=yes editor=yes}
 
 <script language="JavaScript" src="{$syskin}/js/jquery.jsonSuggest-2.js"></script>
-<script language="JavaScript" src="{$syskin}/js/testData.js"></script>
+<script language="JavaScript" src="{spUrl('product','search')}"></script>
 <div id="productArea" class="product">
  <h3>我的分享中涉及到的产品</h3>
                     
@@ -35,10 +35,11 @@ jQuery(function() {
     			<form action="{spUrl c=product a=add}" method="post">
                     <fieldset>
                     <legend>添加豪气的首秀！:</legend>
-                       出品公司：<input name="campany" id="campany"  /><br  />
+                       出品公司：<input name="company" id="company"  /><br  />
                        生产年份：<input name="year" id="year"  /> <br  />
                        产品型号：<input name="style" id="style"  /> <br  />
-                       一句话说明特点：<textarea></textarea>
+                       一句话说明特点：<textarea name="info"></textarea>
+                       <input name="blog_id" type="hidden" value="{$t.bid}" />
                         <input type="submit" name="sumbitProduct" id="submitProduct" value="提交新产品" />
                     </fieldset>
       			</form>
