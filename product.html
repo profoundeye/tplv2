@@ -3,14 +3,14 @@
 <script language="JavaScript" src="{$syskin}/js/jquery.jsonSuggest-2.js"></script>
 <script language="JavaScript" src="{spUrl('product','search')}"></script>
 <div id="productArea" class="product">
- <h3>我的分享中涉及到的产品</h3>
+ <h3>添加分享中涉及到的产品</h3>
                     
 					<input type="text" size="50" id="suggestBox" />
 
 {literal}
 <script>
 function callback(item) {
-	$('#product_list').append($("<li>"+item.text+"</li><span class='buy'>购买链接</span><span class='del'>删除</span>"));
+	$('#product_list').append($("<li>"+item.text+"　<a href=\"#\" class=\"delPro\">删除</a></li>"));
 }
 
 //显示新增表单
@@ -19,8 +19,11 @@ $("#productArea").bind('click',function(ev){
 	if(ev.target.id=="newShow"){
 		$("#new_product").css("display","block");
 		};
-							//
-							})
+	
+	if(ev.target.className == "delPro")
+		var obj = ev.target.parentElement;
+		$(obj).remove();
+	})
 
 jQuery(function() {
 	$('input#suggestBox').jsonSuggest({data: testData.countryCodes, onSelect: callback,minCharacters: 1});
@@ -28,8 +31,14 @@ jQuery(function() {
 });
 </script>
 {/literal}
+<fieldset>
+                    <legend>分享中已提到的产品！:</legend>
                     <ul id="product_list">
-                   	    
+                    	{$p.1.company}
+                   	    {foreach item=_p from=$p.productList}
+                   	    <li>{$_p.company}   {$_p.YEAR} 年  {$_p.style}<input type="hidden" value="{$_p.product_id}" />　　<a href="#" class="delPro">删除</a></li>
+                   	    {/foreach}               	    
+                   	</fieldset>
                     </ul>
     <div id="new_product">  
     			<form action="{spUrl c=product a=add}" method="post">
