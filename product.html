@@ -12,11 +12,12 @@
 <fieldset>
 					<input name="blog_id" type="hidden" value="{$p.bid}" />
                     <legend>分享中已提到的产品！:</legend>
-                    <ul id="product_list">
-                    	{$p.1.company}
+                    <ul id="product_list">                    	
+                    	{if $p.productList!=null}
                    	    {foreach item=_p from=$p.productList}
                    	    <li>{$_p.company}   {$_p.YEAR} 年  {$_p.style}<input type="hidden" value="{$_p.product_id}" name="product[]" />　　<a href="#" class="delPro">删除</a></li>
-                   	    {/foreach}               	    
+                   	    {/foreach}   
+                   	    {/if}            	    
                    	
                     </ul>
                     <input type="submit" name="sumbitProduct" id="submitProduct" value="保存" />
@@ -74,6 +75,7 @@ $(document).ready(function () {
             data:dataStr,
             success: function(el){
             	//console.debug(el);
+            		$('#product_list').empty();//只允许关联一件商品
 					$('#product_list').append($("<li>"+company+year+"年"+style+"<input type=\"hidden\" value=\""+el+"\" name=\"product[]\" />　<a href=\"#\" class=\"delPro\">删除</a></li>"));
 						} ,           
         });   
