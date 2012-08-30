@@ -16,26 +16,26 @@ a:hover {color:#333;text-decoration: none;}
 /*头像*/
 #avatar { position:absolute; top:40px; left:20px; }
 #avatar .face { -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; overflow:hidden;width:41px;height:41px; }
-#avatar a .head_bg{ width:41px; height:41px; padding:2px; background:url(../image/avatar_bg.png) repeat-x 0 0; border:1px #227CAC solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 3px #999; -webkit-box-shadow:0px 1px 3px #999; box-shadow:0px 1px 3px #999; }
+#avatar a .head_bg{ width:41px; height:41px; padding:2px; background:url(../image/avatar_bg.png) repeat-x 0 0; border:1px #227CAC solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 0px 0px #999; -webkit-box-shadow:0px 0px 0px #999; box-shadow:0px 0px 0px #999; }
 #avatar a:hover .head_bg { background:url(../image/avatar_bg.png) repeat-x 0 -75px; border:1px #C64444 solid; }
 
 /*博客名称*/
 #usertitle { margin:0 10px; padding:0 0 0 90px;  overflow:hidden;	position:absolute;left:-103px;top:84px; }
 #usertitle .blogname { color:#666; }
 #usertitle .blogname a {display:block; font-size:12px; font-weight:700; line-height:32px; text-shadow:0px 1px 0px #fff; margin-left:25px; }
-#usertitle .blogname a:hover { color:#333; text-shadow:0px 1px 3px #999; }
+#usertitle .blogname a:hover { color:#333; text-shadow:0px 0px 0px #999; }
 
 /*关注状态 - 未关注*/
 #usertitle .btn_follow_0 a { float:left; line-height:28px; height:28px; padding:0 10px; background:url(../image/blog_btn_bg.png) repeat-x 0 0; border:1px #61A701 solid; color:#fff; text-shadow:0px 1px 0px #61A701; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; margin:20px 0 20px 10px;}
 #usertitle .btn_follow_0 a:hover { background-image:none; background-color:#7DDB00; }
-#usertitle .btn_follow_0 a:active { -moz-box-shadow:0px 1px 3px #61A701 inset; -webkit-box-shadow:0px 1px 3px #61A701 inset; box-shadow:0px 1px 3px #61A701 inset; }
+#usertitle .btn_follow_0 a:active { -moz-box-shadow:0px 0px 0px #61A701 inset; -webkit-box-shadow:0px 0px 0px #61A701 inset; box-shadow:0px 0px 0px #61A701 inset; }
 
 /*关注状态 - 已关注*/
 #usertitle .btn_follow_1 a { float:left; line-height:28px; height:28px; padding:0 10px; background:url(../image/blog_btn_bg.png) repeat-x 0 -50px; border:1px #ccc solid; color:#999; text-shadow:0px 1px 0px #fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;margin: 0px 0 20px 17px}
 #usertitle .btn_follow_1 a:hover { background:url(../image/avatar_bg.png) repeat-x 0 -75px; border:1px #C64444 solid; color:#fff; text-shadow:0px 1px 0px #C64444; }
 
 /*博客个性签名*/
-.userinfo { width:598px; margin:0 10px; border:1px #ccc solid; padding:10px 15px; background:url(../image/header_bg.png) #e3e3e3 repeat-x 0 0; line-height:22px; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff; text-shadow:0px 1px 0px #fff;}
+.userinfo {display:none; width:598px; margin:0 10px; border:1px #ccc solid; padding:10px 15px; background:url(../image/header_bg.png) #e3e3e3 repeat-x 0 0; line-height:22px; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff; text-shadow:0px 1px 0px #fff;}
 .userinfo .quote { background:url(../image/blockquote.png) no-repeat left top; width:598px; margin:0; }
 .userinfo blockquote { background:url(../image/blockquote-over.png) no-repeat bottom right; text-indent:2em; display:block; width:100%; }
 
@@ -48,7 +48,7 @@ a:hover {color:#333;text-decoration: none;}
 
 /*博客内容列表*/
 #feed_box { width:650px; margin-top:10px; padding:10px; float:right;}
-#feed_box .box { float:left; padding:10px; min-height:150px; position:relative; background-color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;-moz-box-shadow:0px 1px 3px #bbb; -webkit-box-shadow:0px 1px 3px #bbb; box-shadow:0px 1px 3px #bbb; border-bottom:2px #ddd solid\9; }
+#feed_box .box { float:left; padding:10px; min-height:150px; position:relative; background-color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;-moz-box-shadow:0px 0px 0px #bbb; -webkit-box-shadow:0px 0px 0px #bbb; box-shadow:0px 0px 0px #bbb; border-bottom:2px #ddd solid\9; }
 #feed_box .date {display:none;width:90px; height:90px; background-color:#ccc; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;  -moz-box-shadow:0px 2px 3px #ddd; -webkit-box-shadow:0px 2px 3px #ddd; box-shadow:0px 2px 3px #ddd; position:absolute; right:15px; top:-10px;  }
 #feed_box .date .month { width:88px; height:23px; line-height:23px; border:1px #C64444 solid; background:url(../image/avatar_bg.png) repeat-x 0 -75px; -moz-border-radius:8px 8px 0 0; -webkit-border-radius:8px 8px 0 0; border-radius:8px 8px 0 0; text-align:center; color:#fff; text-shadow:0px -1px 0px #C64444; }
 #feed_box .date .day { width:88px; height:64px; margin:0 1px 1px; background-color:#fff; -moz-border-radius:0 0 7px 7px; -webkit-border-radius:0 0 7px 7px; border-radius:0 0 7px 7px; line-height:64px; text-align:center; font-size:36px; color:#666; font-weight:700; }
@@ -174,7 +174,7 @@ a:hover {color:#333;text-decoration: none;}
 #feedArea .content .movie .mov_play { width:104px; margin:10px 0 0; padding:0; }
 #feedArea .content .movie .mov_play a { width:102px; height:28px; line-height:28px; font-size:12px; text-align:center; color:#666; text-shadow:0px 1px 0px #fff; border:1px #aaa solid; background:url(../image/nav_bg.png) repeat-x 0 0; display:block; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px; cursor:pointer; }
 #feedArea .content .movie .mov_play a:hover { background:url(../image/avatar_bg.png) repeat-x 0 0; border:1px #227CAC solid; color:#fff; text-shadow:0px 1px 0px #227CAC; }
-#feedArea .content .movie .mov_play a:active { color:#9DE3F4; -moz-box-shadow:0px 1px 3px #227CAC inset; -webkit-box-shadow:0px 1px 3px #227CAC inset; box-shadow:0px 1px 3px #227CAC inset; }
+#feedArea .content .movie .mov_play a:active { color:#9DE3F4; -moz-box-shadow:0px 0px 0px #227CAC inset; -webkit-box-shadow:0px 0px 0px #227CAC inset; box-shadow:0px 0px 0px #227CAC inset; }
 
 #feedArea .content .movie .mov_info { position:relative; width:470px; float:left; margin-left:15px; }
 #feedArea .content .movie .mov_info .mov_title { font-size:18px; line-height:35px; }
@@ -186,7 +186,7 @@ a:hover {color:#333;text-decoration: none;}
   .reply_list {background-color:#fff; margin:15px auto 0; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; padding:15px 15px 10px;  -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff; }
   .reply_btn { float:right; width:66px; margin:0; height:40px; }
   .reply_btn button { color:#666; border:1px #bbb solid; width:64px; height:40px; background:url(../image/nav_bg.png) repeat-x 0 0; margin:0; font-family:'Microsoft Yahei','Arail'; font-size:14px; cursor:pointer; float:right; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff; text-shadow:0px 1px 0px #fff; outline:none; text-align:center; }
-  .reply_btn button:active { background-color:#e3e3e3; background-image:none; -moz-box-shadow:0px 1px 0px #fff,0px 1px 3px #bbb inset; -webkit-box-shadow:0px 1px 0px #fff,0px 1px 3px #bbb inset; box-shadow:0px 1px 0px #fff,0px 1px 3px #bbb inset; }
+  .reply_btn button:active { background-color:#e3e3e3; background-image:none; -moz-box-shadow:0px 1px 0px #fff,0px 0px 0px #bbb inset; -webkit-box-shadow:0px 1px 0px #fff,0px 0px 0px #bbb inset; box-shadow:0px 1px 0px #fff,0px 0px 0px #bbb inset; }
 
  .reply_btn .disabled { color:#999; border:1px #bbb solid; width:64px; height:40px; background-image:none; background-color:#e3e3e3; margin:0; font-family:'Microsoft Yahei','Arail'; font-size:14px; cursor:pointer; float:right; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff; text-shadow:0px 1px 0px #fff; outline:none; text-align:center; }
 
@@ -223,14 +223,14 @@ a:hover {color:#333;text-decoration: none;}
  .favatitle span { font-size:12px; color:#fff; padding:2px 5px; border:1px #C64444 solid; background:url(../image/avatar_bg.png) repeat-x 0 -75px; text-shadow:0px -1px 0px #C64444; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; margin:0 0 0 5px; }
  .fava { width:470px; margin:0; padding:0; }
 
- .fava a img{ width:30px; height:30px; padding:2px; background:url(../image/avatar_bg.png) repeat-x 0 0; border:1px #227CAC solid; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; -moz-box-shadow:0px 1px 3px #999; -webkit-box-shadow:0px 1px 3px #999; box-shadow:0px 1px 3px #999; float:left; margin:0 10px 10px 0; }
+ .fava a img{ width:30px; height:30px; padding:2px; background:url(../image/avatar_bg.png) repeat-x 0 0; border:1px #227CAC solid; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; -moz-box-shadow:0px 0px 0px #999; -webkit-box-shadow:0px 0px 0px #999; box-shadow:0px 0px 0px #999; float:left; margin:0 10px 10px 0; }
  .fava a:hover img { background:url(../image/avatar_bg.png) repeat-x 0 -75px; border:1px #C64444 solid; }
 
 /*loading*/
 .s_loading { widows:100px; height:10px; display:block; background:url(../image/comm/feeds_loading.gif) no-repeat 0 0; margin:10px 190px 0; }
 
 /*右侧部分*/
-#aside{ width:230px; float:right; margin:-15px 0 0; padding:0; }
+#aside{ width:230px; float:right; margin:-25px 0 0; padding:0; }
 
 /*博客数据*/
 #aside .my_data { width:228px; height:68px; border:1px #ccc solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff; background:url(../image/blog_btn_bg.png) repeat-x 0 -50px #eee; }
@@ -266,7 +266,7 @@ a:hover {color:#333;text-decoration: none;}
 #aside .my_follow .f_title a { color:#666; margin:0 5px 0 0; font-weight:700; }
 #aside .my_follow .f_list { width:228px; margin:0; border-top:1px #ccc solid; }
 #aside .my_follow .f_list li { list-style:none; display:block; float:left; margin:10px 10px 5px; }
-#aside .my_follow .f_list li a img { margin:0; padding:2px; border:1px #227CAC solid; background:url(../image/avatar_bg.png) repeat-x 0 0; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; -moz-box-shadow:0px 1px 3px #999; -webkit-box-shadow:0px 1px 3px #999; box-shadow:0px 1px 3px #999; float:left; width:30px; height:30px; }
+#aside .my_follow .f_list li a img { margin:0; padding:2px; border:1px #227CAC solid; background:url(../image/avatar_bg.png) repeat-x 0 0; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; -moz-box-shadow:0px 0px 0px #999; -webkit-box-shadow:0px 0px 0px #999; box-shadow:0px 0px 0px #999; float:left; width:30px; height:30px; }
 #aside .my_follow .f_list li a:hover img { border:1px #C64444 solid; background:url(../image/avatar_bg.png) repeat-x 0 -75px; }
 
 /*css page common style*/
@@ -278,9 +278,9 @@ a:hover {color:#333;text-decoration: none;}
 .page input, .paging input { width:22px; height:23px; border:1px #ccc solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff; background: url(../image/btn_bg.png) repeat-x 0 -240px; margin:0 5px; text-align:center; }
 
 /*博客广告*/
-#ad_theme_aside { width:230px; height:200px; margin:10px 0 0; background-color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 3px #bbb; -webkit-box-shadow:0px 1px 3px #bbb; box-shadow:0px 1px 3px #bbb; overflow:hidden; }
+#ad_theme_aside { width:230px; height:200px; margin:10px 0 0; background-color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 0px 0px #bbb; -webkit-box-shadow:0px 0px 0px #bbb; box-shadow:0px 0px 0px #bbb; overflow:hidden; }
 
-#ad_theme_list { width:630px; min-height:100px; margin:0 10px 10px; background-color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 3px #bbb; -webkit-box-shadow:0px 1px 3px #bbb; box-shadow:0px 1px 3px #bbb; overflow:hidden;display:none; }
+#ad_theme_list { width:630px; min-height:100px; margin:0 10px 10px; background-color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 0px 0px #bbb; -webkit-box-shadow:0px 0px 0px #bbb; box-shadow:0px 0px 0px #bbb; overflow:hidden;display:none; }
 
 #ad_theme_aside img, #ad_theme_list img { margin:0 0 -4px; #margin:0; }
 
@@ -298,7 +298,7 @@ width:7px; height:14px; background:url(../../../image/comm/icons.png) no-repeat 
 	padding-right:10px;
 	}
 	
-.box { padding:10px;background-color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 3px #bbb; -webkit-box-shadow:0px 1px 3px #bbb; box-shadow:0px 1px 3px #bbb; border-bottom:2px #ddd solid\9; }
+.box { padding:10px;background-color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 0px 0px #bbb; -webkit-box-shadow:0px 0px 0px #bbb; box-shadow:0px 0px 0px #bbb; border-bottom:2px #ddd solid\9; }
 #feedArea .avatar { position:absolute; left:-65px; top:27px; }
 
 #comment{
@@ -307,3 +307,22 @@ width:7px; height:14px; background:url(../../../image/comm/icons.png) no-repeat 
 	background:#F9F9F9;
 	margin-top:20px;
 	}
+#thisProduct{
+		
+}	
+#brand{
+	font-size:12px;
+	color:#CCCCCC;
+	display:block;
+}
+#year{padding-left:10px;}
+#style{
+	font-size:14px;
+	color:#000000;
+	display: block;
+	
+}
+#info{color:#000000}
+#aside .box{
+	padding:20px;
+}

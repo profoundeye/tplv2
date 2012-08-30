@@ -23,13 +23,13 @@
  </fieldset>
  </form>
     <div id="new_product">  
-    			<form id="addNewProduct"  method="post">
+    			<form id="addNewProduct"  method="post" action="{spUrl c=product a=newProduct}">
                     <fieldset>
                     <legend>添加豪气的首秀！:</legend>
                        出品公司：<input name="company" id="company"  /><br  />
                        生产年份：<input name="year" id="year"  /> <br  />
                        产品型号：<input name="style" id="style"  /> <br  />
-                       一句话说明特点：<textarea name="info"></textarea>
+                       一句话说明特点：<textarea name="info" id="info" ></textarea>
                        <input name="blog_id" type="hidden" value="{$p.bid}" />
                        <input type="submit" name="newProduct" id="newProduct" value="提交新产品" />
                     </fieldset>
@@ -39,6 +39,7 @@
 {literal}
 <script>
 function callback(item) {
+	$('#product_list').empty();//只允许关联一件商品
 	$('#product_list').append($("<li>"+item.text+"<input type=\"hidden\" value=\""+item.id+"\" name=\"product[]\" />　<a href=\"#\" class=\"delPro\">删除</a></li>"));
 }
 
@@ -61,13 +62,14 @@ jQuery(function() {
 
 $(document).ready(function () {
     $("#newProduct").click(function (ev) {
-   	var company = $('input#company').val();
-	var year = $('input#year').val();
-	var style = $('input#style').val();
-	var	info = $('textarea#info').val();
+   	var company = $('input#company').val()?$('input#company').val():false;
+	var year = $('input#year').val()?$('input#year').val():false;
+	var style = $('input#style').val()?$('input#style').val():false;
+	var	info = $('textarea#info').val()?$('textarea#info').val():false;
 	var dataStr = 'company='+company+'&year='+year+'&style='+style+'&info='+info
+	if(!(company||year||style||info)){alert("信息不能为空");return false;}
         $.ajax({
-            url: "/testyunbian/index.php?c=product&a=newProduct",//这里解析url有问题{spUrl c=product a=newProduct}
+            url: "{/literal}{spUrl c=product a=newProduct}{literal}",//这里解析url有问题
             type:'POST',
             data:dataStr,
             success: function(el){
@@ -81,6 +83,7 @@ $(document).ready(function () {
     
     
 })
+
 </script>
 {/literal}
 {include file="require_footer.html"}

@@ -48,6 +48,12 @@
 	
 	<div id="aside" class="detail_right_side">
         <div class="box">
+        	<div id="thisProduct">
+        		<p id="brand">{$p.0.company}<span id="year">{$p.0.year}年款</span></p>
+        		<h1 id="style">{$p.0.style}</h1>
+        		<p id="info">{$p.0.info}</p>        		
+        	</div>
+        	
             <div class="favatitle">谁喜欢<span>{$fava.count}</span></div>
                 {if $fava.count !=0}
                 <div class="fava">
