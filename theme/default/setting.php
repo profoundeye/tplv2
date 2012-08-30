@@ -55,7 +55,7 @@ $setting = array(
 		'findid'=>'#sign',
 		'type'=>'radio',
 		'options'=>array('block'=>'显示','none'=>'不显示'),
-		'default' =>'block',
+		'default' =>'none',
 	),
 	array(
 		'title'=>'昵称颜色',
