@@ -52,7 +52,7 @@ $setting = array(
 	array(
 		'title'=>'签名显示',
 		'id'=>'display',
-		'findid'=>'#sign',
+		'findid'=>'#sign1',
 		'type'=>'radio',
 		'options'=>array('block'=>'显示','none'=>'不显示'),
 		'default' =>'none',
