@@ -1,5 +1,4 @@
 {include file="theme/default/zheader.html" titles=$data.title}
-{include file="require_models_js.html"}
 <div id="wrap">
 {include file="header_code.html"}
     <div id="main">
@@ -17,10 +16,14 @@
 		
 		<div id="feedArea">
 			<script type="text/javascript">
+			{literal}
+			function a(){
+			}
+			{/literal}
 				$(document).ready(function(){  
 					yb_load_feeds('blog','getOneBlog',{
 					bid:{$bid}
-					}
+					},a
 				);	
 				})
 			</script>
@@ -48,11 +51,13 @@
 	
 	<div id="aside" class="detail_right_side">
         <div class="box">
+        	{if $p.0.company!=null}
         	<div id="thisProduct">
         		<p id="brand">{$p.0.company}<span id="year">{$p.0.year}年款</span></p>
         		<h1 id="style">{$p.0.style}</h1>
         		<p id="info">{$p.0.info}</p>        		
         	</div>
+        	{/if}
         	
             <div class="favatitle">谁喜欢<span>{$fava.count}</span></div>
                 {if $fava.count !=0}

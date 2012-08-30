@@ -38,6 +38,7 @@
 
 
 <script type="text/html" id="tmpl_model_3">
+
 <div id="feedText_{bid}" class="content">
 	<div class="text_area_all">
 		{if attr.count ==1}
@@ -232,7 +233,7 @@
 				
 				<div class="img_three">
 				{each attr.img as img i}
-					{if i >= 7 }
+					{if i >= 7 && i < 10}
 					<li><a href="javascript:void(0)"><img degree="0" src="{img.url}" title="{img.desc}" /></a></li>
 					{/if}
 				{/each}
