@@ -1,0 +1,13 @@
+<form id="addNewProduct"  method="post" action="{spUrl c=product_admin a=update}">
+                    <fieldset>
+                    <legend>添加豪气的首秀！:</legend>
+                       出品公司：<input name="company" id="company" value="{$p.company.company}" /><br  />
+                       生产年份：<input name="year" id="year" value="{$p.year}" /> <br  />
+                       产品型号：<input name="style" id="style" value="{$p.style}" /> <br  />
+                        购买链接：<input name="buy_url" id="buy_url" value="{$p.buy_url}" /> <br  />
+                           通过审核：<input name="pass" id="pass" value="{$p.pass}" /> <br  />
+                       一句话说明特点：<textarea name="info" id="info" >{$p.info}</textarea>
+                       <input name="id" type="hidden" value="{$p.id}" />
+                       <input type="submit" name="newProduct" id="newProduct" value="提交新产品" />
+                    </fieldset>
+</form>
