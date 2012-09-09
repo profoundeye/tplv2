@@ -1,5 +1,4 @@
 (function ($R) {
-
 	$R.compileTime = '1304957970';
 
 	$R.path = 'http://localhost/testyunbian/tplv2/js/';
