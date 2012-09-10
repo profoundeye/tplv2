@@ -304,7 +304,7 @@ $(
 	$('#menu_problem').attr('href', $R.linksPath+'problem/');
 	
 	$('#rtl_box_on').click(function(){ 
-		form = $('<form method="post" action="http://localhost/testyunbian/index.php?c=get&a=input" target="kuayu"> <textarea name="info" id="info" >'+$('#text').html()+' </textarea><input type="hidden" name="host" id="host" value="'+$R.win.location.host+'" <input type="submit" name="button" id="button" value="提交" /></form>');
+		form = $('<form method="post" action="index.php?c=get&a=input" target="kuayu"> <textarea name="info" id="info" >'+$('#text').html()+' </textarea><input type="hidden" name="host" id="host" value="'+$R.win.location.host+'" <input type="submit" name="button" id="button" value="提交" /></form>');
 		iframe  = $('<iframe id="kuayu" src="index.php?c=get&a=kuayu"></iframe>');
 		form.submit();		
  });
