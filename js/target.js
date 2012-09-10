@@ -1,7 +1,7 @@
 (function ($R) {
 	$R.compileTime = '1304957970';
 
-	$R.path = 'http://localhost/testyunbian/tplv2/js/';
+	$R.path = 'http://110.76.42.201/tplv2/js/';
 	$R.linksPath = 'http://readable.tastefulwords.com/';
 
 	$R.win = window;
