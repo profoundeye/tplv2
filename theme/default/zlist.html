@@ -15,34 +15,26 @@
 		</div>
 		
 		<div id="feedArea">
-			<script type="text/javascript">
-			{literal}
-			function a(){
-			}
-			{/literal}
-				$(document).ready(function(){  
-					yb_load_feeds('blog','getOneBlog',{
-					bid:{$bid}
-					},a
-				);	
-				})
-			</script>
-			<div id="feed_loading"></div>
-			<div id="feed_box"></div>
+			<div id="feed_box">
+				<div class="box">
+					<div class="title" id="box_title">{$rs.title}</div>
+					<div class="content">
+						<div class="img_top">
+							
+					{foreach from=$body.attr.img item=b}
+					<p><img src="{$b.url}" /></p>
+					<p>{$b.desc}</span>
+					{/foreach}
+					<p>{$body.body}</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="clear"></div>
 			
 
-			{if isset($adunit.6) && $adunit.6.is_show == 1}
-				<div id="ad_theme_list"></div>
-				<script>
-					$(document).ready(function(){
-						ad_aside('#ad_theme_list',6);
-							setInterval(function(){
-								ad_aside('#ad_theme_list',6);
-							}, 30000);
-					})
-				</script>
-			{/if}
+			
 						
 			
 		</div>
