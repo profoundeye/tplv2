@@ -16,8 +16,8 @@ a:hover {color:#333;text-decoration: none;}
 /*头像*/
 #avatar { position:absolute; top:40px; left:20px; }
 #avatar .face { -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; overflow:hidden;width:41px;height:41px; }
-#avatar a .head_bg{ width:41px; height:41px; padding:2px; background:url(../image/avatar_bg.png) repeat-x 0 0; border:1px #227CAC solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 0px 0px #999; -webkit-box-shadow:0px 0px 0px #999; box-shadow:0px 0px 0px #999; }
-#avatar a:hover .head_bg { background:url(../image/avatar_bg.png) repeat-x 0 -75px; border:1px #C64444 solid; }
+#avatar a .head_bg{ width:41px; height:41px;  border:1px #227CAC solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 0px 0px #999; -webkit-box-shadow:0px 0px 0px #999; box-shadow:0px 0px 0px #999; }
+#avatar a:hover .head_bg {   }
 
 /*博客名称*/
 #usertitle { margin:0 10px; padding:0 0 0 90px;  overflow:hidden;	position:absolute;left:-103px;top:84px; }
