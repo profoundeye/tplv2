@@ -176,7 +176,7 @@
 		#box { margin: 0; width: auto; }
 
 		#background, #fitts, #floating, #debug_output,
-		#embedded_logo, #rtl_box, #menu, #embedded_powered_by, #my_news
+		#embedded_logo , #menu, #embedded_powered_by, #my_news
 			{ display: none; }
 	}
 	
