@@ -41,21 +41,21 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 
 /**header*/
 #header{
-	height:71px;
-	background:url(../image/z/header.jpg) repeat-x 0 0;
+	height:41px;
+	background:url(../image/z/nav.png) repeat-x 0 0;
 	display:block;
 	}
 
 #logo{
-	height:71px;
+	height:41px;
 	width:124px;
-	background:url(../image/z/logo.jpg) no-repeat;
+	background:url(../image/z/logo.png) no-repeat 0 6px;
 	margin-left:50px;
 	}
 #nav ul{
 	float:left;
-	margin-left:130px;
-	margin-top:-50px;
+	margin-left:170px;
+	margin-top:-36px;
 }
 #nav li{
 	float:left;
@@ -70,7 +70,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 	}
 
 
-#tool { float:right; top:-50px; position:relative;left:-45px; z-index:1; }
+#tool { float:right; top:-35px; position:relative;left:-45px; z-index:1; }
 #tool a, #tool a:hover, #tool a:active { outline:none; }
 #header #tool #write{width:73px;height:38px;color:write;display:block;margin-top:-3px;/*position:absolute;left:-110px*/}
 #write button{ border-style:none;background:url(../image/z/w.png);width:73px;height:38px}
@@ -157,7 +157,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 #article { width:730px;  }
 
 /*博客主内容 - 广告位*/
-#ad_index_up { width:540px; margin:40px 0 0 110px; background-color:#fff; padding:0; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 0px 0px #bbb; -webkit-box-shadow:0px 0px 0px #bbb; box-shadow:0px 0px 0px #bbb; overflow:hidden; }
+#ad_index_up { width:540px; margin:10px 0 0 110px; background-color:#fff; padding:0; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 0px 0px #bbb; -webkit-box-shadow:0px 0px 0px #bbb; box-shadow:0px 0px 0px #bbb; overflow:hidden; }
 #ad_index_up img { margin:0 0 -4px; #margin:0; }
 
 #postblog {width:660px; margin:0; position:relative; }
@@ -241,7 +241,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 #wizard .notice { position:relative; float:right; width:540px; background-color:#FFFF99; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 0px 0px #bbb; -webkit-box-shadow:0px 0px 0px #bbb; box-shadow:0px 0px 0px #bbb; border-bottom:2px #ddd solid\9; margin:15px 10px 5px 0; line-height:25px; color:#666; }
 
 /*博客内容*/
-#feedArea { width:705px; margin:0; float:left;margin-top:-40px; }
+#feedArea { width:705px; margin:0; float:left; }
 #feedArea .box { float:left; width:630px; margin:15px 0 0 66px; padding:15px; min-height:150px; position:relative; background-color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 0px 0px #bbb; -webkit-box-shadow:0px 0px 0px #bbb; box-shadow:0px 0px 0px #bbb; border-bottom:2px #ddd solid\9; }
 #feedArea .avatar { position:absolute; left:-65px; top:27px; }
 #feedArea .avatar .face { -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; overflow:hidden; }

@@ -37,7 +37,25 @@ $(document).ready(function(){
 	        <h2>秀我正！玩</h2>
 			<div id="post_area">
 			
-			    <div id="uploadArea">
+			    
+			
+			    <div class="p_area">
+			        <h3>标题<span>（可不填）</span></h3>
+				    <input type="text" name="title" id="title" class="input" tabindex="1" value="{$blog.title}">
+				</div>
+				
+				
+				
+				
+				<div class="p_area">
+				    <h3 class="title">引文，一针见血的文字<span>（可不填）</span></h3>
+					<textarea name="textarea" id="textarea" style="width:600px">{$body.body}</textarea>
+                    <input type="hidden" name="tag" id="tag" value="" />
+                    <input type="hidden" name="id" value="{$blog.bid}" />
+				
+				</div>
+
+				<div id="uploadArea">
 				{if is_array($attach)}
 				    {foreach from=$attach item=d}
 				    {if $d.mime=='jpg' || $d.mime=='png' || $d.mime=='gif' ||  $d.mime=='bmp'}
@@ -76,25 +94,12 @@ $(document).ready(function(){
 					</div>
 					<div class="clear"></div>
 				</div>
-			
-			    <div class="p_area">
-			        <h3>标题<span>（可不填）</span></h3>
-				    <input type="text" name="title" id="title" class="input" tabindex="1" value="{$blog.title}">
-				</div>
 				
-				<div class="p_area">
-				    <h3 class="title">内容<span>（可不填）</span></h3>
-					<textarea name="textarea" id="textarea" style="width:600px">{$body.body}</textarea>
-                    <input type="hidden" name="tag" id="tag" value="" />
-                    <input type="hidden" name="id" value="{$blog.bid}" />
-				
-				</div>
-
 				
 				<div class="p_area">
 				    <div id="pb-action-holder">
 				    <a id="submit"><span>发布</span></a>
-					<a id="preview">预览</a>
+					<!--<a id="preview">预览</a>-->
 					<a id="cancel">取消</a>
 					<span style="display:none;" id="pb-submiting-tip">正在保存</span>
 					

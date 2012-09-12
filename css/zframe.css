@@ -37,21 +37,21 @@ a:hover {color:666;text-decoration: none;}
 
 /**header*/
 #header{
-	height:71px;
-	background:url(../image/z/header.jpg) repeat-x 0 0;
+	height:41px;
+	background:url(../image/z/nav.png) repeat-x 0 0;
 	display:block;
 	}
 
 #logo{
-	height:71px;
+	height:41px;
 	width:124px;
-	background:url(../image/z/logo.jpg) no-repeat;
+	background:url(../image/z/logo.png) no-repeat 0 6px;
 	margin-left:50px;
 	}
 #nav ul{
 	float:left;
 	margin-left:170px;
-	margin-top:-50px;
+	margin-top:-36px;
 }
 #nav li{
 	float:left;
@@ -65,7 +65,7 @@ a:hover {color:666;text-decoration: none;}
 	text-decoration:none
 	}
 
-#tool { float:right; top:-50px; position:relative;left:-45px; z-index:1; }
+#tool { float:right; top:-35px; position:relative;left:-45px; z-index:1; }
 #tool a, #tool a:hover, #tool a:active { outline:none; }
 #header #tool #write{width:73px;height:38px;color:write;display:block;margin-top:-3px;/*position:absolute;left:-110px*/}
 #write button{ border-style:none;background:url(../image/z/w.png);width:73px;height:38px}
