@@ -45,15 +45,15 @@ function tmpl_follow(d,type){
 		a += '<div class="follow_con">';
 		if(type == 'follow'){
 			if( d.linker == 1){
-				a += '<div class="follow_btn" id="follow_unlink_'+d.touid.uid+'"><a href="javascript:;" onclick="fllow(\'unlink\','+d.touid.uid+')">取消关注</a></div>';
-				a += '<div class="follow_abtn" id="follow_link_'+d.touid.uid+'" style="display:none"><a href="javascript:;" onclick="fllow(\'link\','+d.touid.uid+')">加为关注</a></div>';
+				a += '<div class="follow_btn" id="follow_unlink_'+d.touid.uid+'"><a href="javascript:;" onclick="fllow(\'unlink\','+d.touid.uid+')">不靠谱</a></div>';
+				a += '<div class="follow_abtn" id="follow_link_'+d.touid.uid+'" style="display:none"><a href="javascript:;" onclick="fllow(\'link\','+d.touid.uid+')">这人靠谱</a></div>';
 			}else{
-				a += '<div class="follow_btn" id="follow_unlink_'+d.touid.uid+'" style="display:none"><a href="javascript:;" onclick="fllow(\'unlink\','+d.touid.uid+')">取消关注</a></div>';
-				a += '<div class="follow_abtn" id="follow_link_'+d.touid.uid+'"><a href="javascript:;" onclick="fllow(\'link\','+d.touid.uid+')">加为关注</a></div>';
+				a += '<div class="follow_btn" id="follow_unlink_'+d.touid.uid+'" style="display:none"><a href="javascript:;" onclick="fllow(\'unlink\','+d.touid.uid+')">不靠谱</a></div>';
+				a += '<div class="follow_abtn" id="follow_link_'+d.touid.uid+'"><a href="javascript:;" onclick="fllow(\'link\','+d.touid.uid+')">这人靠谱</a></div>';
 			}
 		}else{
-			a += '<div class="follow_btn" id="follow_unlink_'+d.touid.uid+'"><a href="javascript:;" onclick="fllow(\'unlink\','+d.touid.uid+')">取消关注</a></div>';
-			a += '<div class="follow_abtn" id="follow_link_'+d.touid.uid+'" style="display:none"><a href="javascript:;" onclick="fllow(\'link\','+d.touid.uid+')">加为关注</a></div>';
+			a += '<div class="follow_btn" id="follow_unlink_'+d.touid.uid+'"><a href="javascript:;" onclick="fllow(\'unlink\','+d.touid.uid+')">不靠谱</a></div>';
+			a += '<div class="follow_abtn" id="follow_link_'+d.touid.uid+'" style="display:none"><a href="javascript:;" onclick="fllow(\'link\','+d.touid.uid+')">这人靠谱</a></div>';
 		}
 		
 		a += ' <div class="avatar">'	       

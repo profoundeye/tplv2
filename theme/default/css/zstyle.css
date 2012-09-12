@@ -14,13 +14,13 @@ a:hover {color:#333;text-decoration: none;}
 #feed_loading { width:100px; height:26px; margin:20px 0 0; background:url(../image/feeds_loading.gif) no-repeat 0 0; margin-left:265px; }
 
 /*头像*/
-#avatar { position:absolute; top:40px; left:20px; }
+#avatar { position:absolute; top:40px; left:10px; }
 #avatar .face { -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; overflow:hidden;width:41px;height:41px; }
 #avatar a .head_bg{ width:41px; height:41px;  border:1px #227CAC solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 0px 0px #999; -webkit-box-shadow:0px 0px 0px #999; box-shadow:0px 0px 0px #999; }
 #avatar a:hover .head_bg {   }
 
 /*博客名称*/
-#usertitle { margin:0 10px; padding:0 0 0 90px;  overflow:hidden;	position:absolute;left:-103px;top:84px; }
+#usertitle { margin:0 10px; padding:0 0 0 90px;  overflow:hidden;	position:absolute;left:-113px;top:84px; }
 #usertitle .blogname { color:#666; }
 #usertitle .blogname a {display:block; font-size:12px; font-weight:700; line-height:32px; text-shadow:0px 1px 0px #fff; margin-left:25px; }
 #usertitle .blogname a:hover { color:#333; text-shadow:0px 0px 0px #999; }
@@ -47,7 +47,7 @@ a:hover {color:#333;text-decoration: none;}
 #mytag li a span { background:url(../image/blog_icon.png) no-repeat 0 0; padding:0 10px 0 25px; line-height:23px; height:23px; display:block; }
 
 /*博客内容列表*/
-#feed_box { width:630px; padding:15px; float:right;margin-right:15px;}
+#feed_box { width:630px; padding:15px; float:right;margin-right:25px;}
 #feed_box .box { float:left; padding:15px; min-height:150px; position:relative; background-color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;-moz-box-shadow:0px 0px 0px #bbb; -webkit-box-shadow:0px 0px 0px #bbb; box-shadow:0px 0px 0px #bbb; border-bottom:2px #ddd solid\9; }
 #feed_box .date {display:none;width:90px; height:90px; background-color:#ccc; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;  -moz-box-shadow:0px 2px 3px #ddd; -webkit-box-shadow:0px 2px 3px #ddd; box-shadow:0px 2px 3px #ddd; position:absolute; right:15px; top:-10px;  }
 #feed_box .date .month { width:88px; height:23px; line-height:23px; border:1px #C64444 solid; background:url(../image/avatar_bg.png) repeat-x 0 -75px; -moz-border-radius:8px 8px 0 0; -webkit-border-radius:8px 8px 0 0; border-radius:8px 8px 0 0; text-align:center; color:#fff; text-shadow:0px -1px 0px #C64444; }
