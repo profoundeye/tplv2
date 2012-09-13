@@ -42,13 +42,17 @@
 	</div>
 	
 	<div id="aside" class="detail_right_side">
-        <div class="box">
+        
         	{if $p.0.company!=null}
-        	<div id="thisProduct">        		
-        		<h1 id="style">{$p.0.style}</h1><p id="brand">{$p.0.company}<span id="year">{$p.0.year}年款</span></p>
-        		<p id="info">{$p.0.info}</p>   
-        		 {if $p.0.url!=null}<div id="buy"><a href="{$p.0.url}">买之</a></div>{/if}<div id="tagIt"><span><a href="#">在玩 </a> | <a href="#">想玩</a></span></div>     		
+        	  {foreach item=_p from=$p}
+        	
+        	<div class="thisProduct box">        		
+        		<h1 class="style">{$_p.style}</h1><p class="brand">{$_p.company}<span class="year">{$_p.year}年款</span></p>
+        		<p class="info">{$_p.info}</p>   
+        		 {if $_p.url!=null}<div class="buy"><a href="{$_p.url}">买之</a></div>{/if}<div class="tagIt"><span><a href="#">在玩 </a> | <a href="#">想玩</a></span></div>     		
         	</div>
+        	
+        		{/foreach}
         	{/if}
         	
             <!--<div class="favatitle">谁喜欢<span>{$fava.count}</span></div>
@@ -61,7 +65,7 @@
                     <div class="clear"></div>
                 </div>
                 {/if}-->
-        	</div>
+        	
     
           
 		<div id="comment"></div>
