@@ -36,6 +36,19 @@ $(document).ready(function(){
 	    <div id="box">
 	        <h2>秀我正！玩</h2>
 			<div id="post_area">
+				
+				  <div class="p_area">
+			        <h3>标题<span></span></h3>
+				    <input type="text" name="title" id="title" class="input" tabindex="1" value="{$values.title}">
+					</div>
+				
+				<div class="p_area">
+				    <h3 class="title">引文，一针见血的文字<span></span></h3>
+					<textarea name="textarea" id="textarea" style="width:600px">{$values.headline}</textarea>
+                    <input type="hidden" name="tag" id="tag" value="" />
+                    <input type="hidden" name="id" value="{$blog.bid}" />
+				
+				</div>
 			
 			    <div id="uploadArea">
 				{if is_array($result)}
@@ -77,18 +90,7 @@ $(document).ready(function(){
 					<div class="clear"></div>
 				</div>
 			
-			    <div class="p_area">
-			        <h3>标题<span>（可不填）</span></h3>
-				    <input type="text" name="title" id="title" class="input" tabindex="1" value="{$values.title}">
-				</div>
-				
-				<div class="p_area">
-				    <h3 class="title">内容<span>（可不填）</span></h3>
-					<textarea name="textarea" id="textarea" style="width:600px">{$values.headline}</textarea>
-                    <input type="hidden" name="tag" id="tag" value="" />
-                    <input type="hidden" name="id" value="{$blog.bid}" />
-				
-				</div>
+			 
 
 				
 				<div class="p_area">
