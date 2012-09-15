@@ -49,6 +49,7 @@ var $newadd = $('<li class="ui-menu-item odd"><a id="newShow">没有相匹配的
 $("#productArea").bind('click',function(ev){
 	if(ev.target.id=="newShow"){
 		$("#new_product").css("display","block");
+		$("#submitProduct").css("display","none");
 		};
 	
 	if(ev.target.className == "delPro")
@@ -75,8 +76,10 @@ $(document).ready(function () {
             data:dataStr,
             success: function(el){
             	//console.debug(el);
-            		$('#product_list').empty();//只允许关联一件商品
+            		//$('#product_list').empty();//只允许关联一件商品
 					$('#product_list').append($("<li>"+company+year+"年"+style+"<input type=\"hidden\" value=\""+el+"\" name=\"product[]\" />　<a href=\"#\" class=\"delPro\">删除</a></li>"));
+					$("#submitProduct").css("display","block");
+					$("#new_product").css("display","none");
 						} ,           
         });   
         ev.preventDefault();
