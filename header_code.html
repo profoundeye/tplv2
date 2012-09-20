@@ -4,8 +4,12 @@
 			<div id="nav">
             <ul>
 			    <li {if $CurrentModule=='index'}class="current"{/if}><a href="{spUrl c=main a=index}">首页</a></li>
-				<li {if $CurrentModule=='recommend'}class="current"{/if}><a href="{spUrl c=main a=recommend}">推荐</a></li>
-				<li {if $CurrentModule=='discover'}class="current"{/if}><a href="{spUrl c=main a=discovery}">发现</a></li>
+			   {if !islogin()}
+			   <li><a href="http://www.zplaying.com/login">登录</a></li>
+			<li><a href="http://www.zplaying.com/register">注册</a></li>
+			{/if}
+				<!--<li {if $CurrentModule=='recommend'}class="current"{/if}><a href="{spUrl c=main a=recommend}">推荐</a></li>
+				<li {if $CurrentModule=='discover'}class="current"{/if}><a href="{spUrl c=main a=discovery}">发现</a></li>-->
             </ul>
 			</div>
 			{if islogin()}
@@ -44,6 +48,8 @@
 				</div>
 				<div class="name"><a href="{goUserHome domain=$smarty.session.domain uid=$smarty.session.uid}" target="_blank" title="我的博客">{$smarty.session.username}</a></div>
 			</div>
+			
+			
 			{/if}
 		</div>
 	</div>
