@@ -270,7 +270,7 @@ a:hover {color:#333;text-decoration: none;}
 #aside .my_follow .f_list li a:hover img { border:1px #C64444 solid; background:url(../image/avatar_bg.png) repeat-x 0 -75px; }
 
 /*css page common style*/
-.page, .paging { width:630px; float:left; margin-left:10px; display:block; padding:0; }
+.page, .paging { float:left; margin-left:10px; display:block; padding:0; }
 .page a, .page span, .paging a, .paging span {color:#999; border:1px #ccc solid;  padding:0 8px; line-height:23px; height:23px; margin:10px 2px 0 0; background:url(../image/nav_bg.png) repeat-x 0 0; display:block; float:left; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff; }
 .page a:hover, .paging a:hover { color:#666; background-color:#e3e3e3; background-image:none; border:1px #aaa solid; text-shadow:0px 1px 0px #fff; -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff; }
 .page .current, .paging .current { color:#fff; background-color:#40A8E2; background-image:none; border:1px #227CAC solid; -moz-box-shadow:0px 1px 0px #9DE3F4 inset; -webkit-box-shadow:0px 1px 0px #9DE3F4 inset; box-shadow:0px 1px 0px #9DE3F4 inset; }

@@ -143,21 +143,21 @@ body{ background: #f4f5f9; font-family:'Microsoft Yahei','Arail'; font-size:12px
 
 /**header*/
 #header{
-	height:71px;
-	background:url(../image/z/header.jpg) repeat-x 0 0;
+	height:41px;
+	background:url(../image/z/nav.png) repeat-x 0 0;
 	display:block;
 	}
 
 #logo{
-	height:71px;
+	height:41px;
 	width:124px;
-	background:url(../image/z/logo.jpg) no-repeat;
+	background:url(../image/z/logo.png) no-repeat 0 6px;
 	margin-left:50px;
 	}
 #nav ul{
 	float:left;
 	margin-left:170px;
-	margin-top:-50px;
+	margin-top:-36px;
 }
 #nav li{
 	float:left;
@@ -170,4 +170,3 @@ body{ background: #f4f5f9; font-family:'Microsoft Yahei','Arail'; font-size:12px
 	text-indent:10px;
 	text-decoration:none
 	}
-
