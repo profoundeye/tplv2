@@ -98,7 +98,7 @@
 						width:'600px',
 						content: data,
 						ok: function () {
-						  	$.get("{spUrl c=tagIt a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){ document.location.reload();
+						  	$.get("{spUrl c=tagIt a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){ //document.location.reload();
 						  		});
 						  	
 						},
