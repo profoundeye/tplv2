@@ -89,7 +89,7 @@
 					var productId=this.rel;
 					var wanted = this.text;
 					//请求标签表单内容；
-					$.post("{spUrl c=tagit a=playing}","productId="+productId+"&interest="+wanted,function(data){
+					$.post("{spUrl c=tagit a=thisplaying}","productId="+productId+"&interest="+wanted,function(data){
 						artDialog({
 						title:'在玩',
 						id: 'tagIt',
