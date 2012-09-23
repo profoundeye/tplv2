@@ -89,7 +89,7 @@
 					var productId=this.rel;
 					var wanted = this.text;
 					//请求标签表单内容；
-					$.get("{spUrl c=tagIt a=playing}","productId="+productId+"&interest="+wanted,function(data){
+					$.post("{spUrl c=tagIt a=playing}","productId="+productId+"&interest="+wanted,function(data){
 						artDialog({
 						title:'在玩',
 						id: 'tagIt',
@@ -98,7 +98,7 @@
 						width:'600px',
 						content: data,
 						ok: function () {
-						  	$.get("{spUrl c=tagIt a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){ //document.location.reload();
+						  	$.post("{spUrl c=tagIt a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){ document.location.reload();
 						  		});
 						  	
 						},
