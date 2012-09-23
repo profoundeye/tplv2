@@ -325,13 +325,12 @@ width:7px; height:14px; background:url(../../../image/comm/icons.png) no-repeat 
 	font-weight: bold;
 }
 .tagIt,.buy{
-	float:right;
+	float:left;
 	background:#f4f5f9;
 	padding:5px 10px;
 	font-family: simsong;
 	font-size:12px;
 	margin-top:10px;
-	display:none;
 }
 .buy{
 	border-left:3px #fff solid;
@@ -342,3 +341,13 @@ width:7px; height:14px; background:url(../../../image/comm/icons.png) no-repeat 
 }
 #wrap #sign{display:none}
 #feed_box .box #yingwen{padding:10px;background:#F4F5F9;width:610px;margin-bottom:10px;overflow:hidden}
+.thisTag{margin-top:10px;padding:5px 10px;float:left}
+.thisTag span{padding:0 5px;}
+.playing{font-weight:bold;font-size:14px;color:red}
+.d-content{
+	width:90%
+}
+#tagIt{font-size:14px;}
+#tagIt li{margin:10px 0;}
+.tagInput input{width:300px}
+#mytags span,#productTags span{font-size:12px;background:#EBF5EA;margin:0px 10px;}

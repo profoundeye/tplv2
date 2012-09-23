@@ -49,7 +49,16 @@
         	<div class="thisProduct box">        		
         		<h1 class="style">{$_p.style}</h1><p class="brand">{$_p.company}<span class="year">{$_p.year}年款</span></p>
         		<p class="info">{$_p.info}</p>   
-        		 {if $_p.url!=null}<div class="buy"><a href="{$_p.url}">买之</a></div>{/if}<div class="tagIt"><span><a href="#">在玩 </a> | <a href="#">想玩</a></span></div>     		
+        		 {if $_p.url!=null}<div class="buy"><a href="{$_p.url}">买之</a></div>{/if}<div class="tagIt" productId={$_p.id}>
+        		 	{if $_p.tags.playing=="在玩"}
+        		 		<span ><a href="#" id="playing" rel="{$_p.product_id}"  class="playing" >在玩 </a></span>
+        		 	{else if $_p.tags.playing=="想玩"}
+						<span ><a href="#" id="play" rel="{$_p.product_id}" class="playing">想玩 </a></span>
+					{else}
+					<span ><a href="#" id="playing" rel="{$_p.product_id}" >想玩 </a> | <a href="#" id="play" rel="{$_p.product_id}" >在玩</a></span>
+					{/if}
+        	</div>     			
+        		 <div class="thisTag">{$_p.tags.tags}</div>
         	</div>
         	
         		{/foreach}
@@ -69,9 +78,43 @@
     
           
 		<div id="comment"></div>
+		
 			<script>
 				$(document).ready(function(){  
 					loadCommend('comment',{$bid});
+				});
+				
+				
+				$('#playing,#play').click(function(el){
+					var productId=this.rel;
+					var wanted = this.text;
+					//请求标签表单内容；
+					$.get("{spUrl c=tagIt a=playing}","productId="+productId+"&interest="+wanted,function(data){
+						artDialog({
+						title:'在玩',
+						id: 'tagIt',
+						fixed: true,
+						lock: true,
+						width:'600px',
+						content: data,
+						ok: function () {
+						  	$.get("{spUrl c=tagIt a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){ document.location.reload();
+						  		});
+						  	
+						},
+						cancel: function(){},
+						
+					});
+					$("#tagIt").click(function(el){
+						if(el.target.nodeName=="SPAN"){
+							$("#tags").val($("#tags").val()+" "+el.target.innerText);
+							return false;
+						}
+					});	
+				});		
+				
+		
+				return false;
 				});
 			</script>
 
