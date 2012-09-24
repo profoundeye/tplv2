@@ -58,7 +58,7 @@ $(document).ready(function(){
 				<div id="uploadArea">
 				{if is_array($attach)}
 				    {foreach from=$attach item=d}
-				    {if $d.mime=='jpg' || $d.mime=='png' || $d.mime=='gif' ||  $d.mime=='bmp'}
+				    {if $d.mime=='jpg' || $d.mime=='png' || $d.mime=='gif' ||  $d.mime=='bmp'||$d.mime=='JPG' || $d.mime=='PNG' || $d.mime=='GIF' ||  $d.mime=='BMP'||  $d.mime=='JPEG'||  $d.mime=='jpeg'}
 				    <div id="attach_{$d.id}" class="attach_img">
 					    <img src="{$url}/{thubimg path=$d.path}"/>
 					    <textarea name="localimg[{$d.id}][{thubimg path=$d.path}]" onblur="">{$d.blogdesc}</textarea>
