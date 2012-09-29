@@ -1,23 +1,60 @@
 {include file="require_header.html" gallery=yes}
 {literal}
-<a href="javascript:(function(){_readableOptions={'text_font':'quote(Palatino Linotype), Palatino, quote(Book Antigua), Georgia, serif','text_font_monospace':'quote(Courier New), Courier, monospace','text_font_header':'quote(Times New Roman), Times, serif','text_size':'18px','text_line_height':'1.5','box_width':'30em','color_text':'#282828','color_background':'#F5F5F5','color_links':'#0000FF','text_align':'normal','base':'blueprint','custom_css':''};if(document.getElementsByTagName('body').length>0);else{return;}if(window.$readable){if(window.$readable.bookmarkletTimer){return;}}else{window.$readable={};}window.$readable.bookmarkletTimer=true;window.$readable.options=_readableOptions;if(window.$readable.bookmarkletClicked){window.$readable.bookmarkletClicked();return;}_readableScript=document.createElement('script');_readableScript.setAttribute('src','http://110.76.42.201/tplv2/js/target.js?rand='+encodeURIComponent(Math.random()));document.getElementsByTagName('body')[0].appendChild(_readableScript);})()">抓取，请拖动此链接到浏览器书签栏</a>
-{/literal}
-
-
-<script language="JavaScript">
-	//绑定事件,获取url
-	$("#submit").bind('click', function(ev) {
-		url = $("#urlPost").val();
-		tempIframe = $('<iframe src=' + url + '></iframe>');
-		$("#urlPost").append(tempIframe);
-		console.debug(tempIframe);
-	})
-	//创建iframe加载url
-
-	//获取源码
-
-	//post
+<style type="text/css">
+	#wrap .tools{
+		margin:0 auto;
+		float:none;
+		width:750px;
+	}
+	#wrap .tools .box{width:700px;margin-top:-10px}
 	
+	.tools li{
+		list-style-type: none;
+		font-size:15px;
+		line-height:200%;
+	}
+	.arrow{
+		background:url(tplv2/image/z/arrow.png);
+		width:190px;
+		height:190px;
+		text-indent:-9999px;
+		position:absolute;
+		display:block;
+		left:-130px;
+		top:-14px;
+	}
+</style>
+{/literal}
+<div id="feedArea" class="tools">
+	<div class="box">
+	<ul>
+		<li><h2>有好玩的东西？<br />使用“正！玩”工具迅速把它抓到zplaying来分享</h2></li>
+		<li>步骤一：{literal}
+	<a href="javascript:(function(){_readableOptions={'text_font':'quote(Palatino Linotype), Palatino, quote(Book Antigua), Georgia, serif','text_font_monospace':'quote(Courier New), Courier, monospace','text_font_header':'quote(Times New Roman), Times, serif','text_size':'18px','text_line_height':'1.5','box_width':'30em','color_text':'#282828','color_background':'#F5F5F5','color_links':'#0000FF','text_align':'normal','base':'blueprint','custom_css':''};if(document.getElementsByTagName('body').length>0);else{return;}if(window.$readable){if(window.$readable.bookmarkletTimer){return;}}else{window.$readable={};}window.$readable.bookmarkletTimer=true;window.$readable.options=_readableOptions;if(window.$readable.bookmarkletClicked){window.$readable.bookmarkletClicked();return;}_readableScript=document.createElement('script');_readableScript.setAttribute('src','http://110.76.42.201/tplv2/js/target.js?rand='+encodeURIComponent(Math.random()));document.getElementsByTagName('body')[0].appendChild(_readableScript);})()">正！玩</a> <------拖动最左链接到浏览器书签栏<span class="arrow"></span>
+	{/literal}
+		</li>
+		<li>
+			<b>步骤二：<br /></b>
+			当在网上看到迷人的东西时，点击书签栏的“正！玩”
+			<img src="tplv2/image/z/demon.jpg" />
+		</li>
+		<li>
+			<b>步骤三：</b><br />
+			这个小工具会自动分析文章中的内容，"点击"提交到zplaying。这篇文章就被神奇的分享过来了。
+			<img src="tplv2/image/z/demo2.jpg" />
+			您可以在接下来的编辑界面中，对内容进行修改。ps：请最好注明原始链接。
+		</li>
+		<li><b>常见问题</b><br />
+			1 如果正文文字内容太少，会被识别不出来。<br />
+			2 识别论坛帖子时，一般只会认可第一帖的内容。<br />
+			3 为什么图片没能正确显示？一般情况下，是因为对方网站使用了图片的延时加载，请确保您的双眼看到了全部图片之后，再点击“正！玩”<br />
+			其他问题：请mailto:z@zplaying.com
+		</li>
+		
+	</ul>
+	</div>
+</div>
+
 	
 
 </script>

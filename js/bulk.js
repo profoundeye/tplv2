@@ -262,7 +262,7 @@ $(
 						'<img src="'+$R.embeddedOptions['logo']+'" alt=""/>' :
 						'<a href="#">'+$R.win.location.host+'</a>')
 		+			'</div>'
-		+			'<div id=""><a href="##" id="rtl_box_on">提交</a></div>'
+		+			'<div id=""><a href="##" id="rtl_box_on">提交到zplaying.com</a></div>'
 		+			'<div id="text"></div>'
 		+			'<div id="menu">'
 		+				'<a id="menu_close" href="#" title="You can also double-click the background, or single-click the left edge of the screen.">Close</a>'
@@ -306,7 +306,7 @@ $(
 	$('#menu_problem').attr('href', $R.linksPath+'problem/');
 	
 	$('#rtl_box_on').click(function(){ 
-		form = $('<form method="post" accept-charset="utf-8" action="http://www.zplaying.com/index.php?c=get&a=input" target="kuayu"> <textarea name="info" id="info" >'+$('#text').html()+' </textarea><input type="hidden" name="host" id="host" value="'+$R.win.location.host+'" <input type="submit" name="button" id="button" value="提交" /></form>');
+		form = $('<form method="post" accept-charset="utf-8" action="http://www.zplaying.com/index.php?c=get&a=input" target="kuayu"> <textarea name="info" id="info" >'+$('#text').html()+' </textarea><input type="hidden" name="host" id="host" value="'+$R.win.location.host+'" <input type="submit" name="button" id="button" value="提交到zplaying" /></form>');
 		iframe  = $('<iframe id="kuayu" src="http://www.zplaying.com/index.php?c=get&a=kuayu"></iframe>');
 		form.submit();		
  });
