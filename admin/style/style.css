@@ -152,7 +152,7 @@ a:hover{text-decoration:none; outline:none;}
 /** table - model **/
 .table_model { width:100%; margin:0; padding:0; }
 .table_model th { color:#666; font-weight:700; }
-.table_model th, .table_model td { line-height:40px; height:40px; }
+.table_model th, .table_model td { line-height:150%; height:40px; }
 .table_model .table_title { border-bottom:1px #ddd solid; }
 .table_model .table_hover { background-color:#f9f9f9;  border-bottom:1px #ddd solid; }
 .table_model .table_hover:hover { background-color:#f2f2f2; }

@@ -5,7 +5,7 @@
 	$R.linksPath = 'http://readable.tastefulwords.com/';
 
 	$R.win = window;
-
+//$R.debug=true;
 	$R.embedded = ('embeddedOptions' in $R);
 
 	$R.custom = false;

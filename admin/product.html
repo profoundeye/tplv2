@@ -33,11 +33,11 @@
 				      <th width="30">ID</th>
 					  <th width="40">公司id</th>
 					  <th width="80">公司名</th>
-					  <th width="120">年份</th>
-					  <th width="40">型号</th>
+					  <th width="50">年份</th>
+					  <th width="80">型号</th>
 					  <th >简介</th>
 					  <th width="60">购买地址</th>
-					  <th width="80">是否审核通过</th>
+					  <th width="40">审核</th>
 					   <th width="60">操作</th>
 				   </tr>
 				   {foreach from=$product item=d}
@@ -51,7 +51,7 @@
 					  <td>{$d.info}</td>
 					  <td>{$d.buy_url}</td>
 					  <td>{$d.pass}</td>
-					  <td>{ybtime time=$d.time}</td>
+				
 					  <td class="fun_con mfun">
 					      <a class="f_edit mtop" href="{spUrl c=product_admin a=edit id=$d.id}" target="_blank">编辑</a> 
 						  <a class="f_delete mtop" href="{spUrl c=product_admin a=del id=$d.id}">删除</a></td>

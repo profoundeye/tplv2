@@ -26,7 +26,7 @@ $(
 				'ProcessHTML': 			0,
 				'GetContent':			0,
 				'PreviousSiblings':		0,
-				'TitleSource':			''
+				'TitleSource':			' '
 			};
 			$R.debugOutputs = [];
 			$R.debugTimers = [];
@@ -119,6 +119,7 @@ $(
 		//	makes it faster
 		//	when not debugging
 		
+		
 		$R.writeLog 		= function () { return false; };
 		$R.log 				= function () { return false; };
 		
@@ -183,6 +184,7 @@ $(
 
 	/* css */
 	_cssElement.setAttribute('id', 'readableCSS2');
+	
 	_cssElement.setAttribute('type', 'text/css');
 	if (_cssElement.styleSheet) {_cssElement.styleSheet.cssText = _cssText; }
 		else { _cssElement.appendChild(_document.createTextNode(_cssText)); }
@@ -287,7 +289,7 @@ $(
 	//	text var; it has now been created
 	$R.$iframeText = $('#text');
 	
-	
+
 /* setup ux */
 /* ======== */
 
@@ -616,7 +618,6 @@ $(
 				return;
 			}
 		}
-		
 		//	selection or whole
 		switch (true)
 		{
@@ -633,10 +634,14 @@ $(
 			//	measure and display
 			if ($R.debug) { $R.debugTimerStart('get/processTargetHTML'); }
 
-				$R.debugOutputsFixed['TitleSource'] = 'Body';
+				//$R.debugOutputsFixed['TitleSource'] = 'Body';
+
 				var _html = $R.processHTML__getHTMLToProcess([$R.$document.find('body').get(0)]);
+	
 					_html = $R.processHTML(_html);
+					
 					_html = $R.getContent__findHere__findTitleInHTML(_html, 'second-try');
+
 					_html = ((_html.substr(0, 14) == '<found_title/>') ? _html.substr(14) : _html);
 				$R.displayHTML(_html);
 
@@ -879,6 +884,7 @@ $(
 				_custom_target = (_custom_target.length && (_custom_target.length > 0) ? _custom_target.get(0) : false),
 				
 				_target = (_custom_target ? _custom_target : $R.getContent__findHere__getTargetElement()),
+				
 				_$target = $(_target),
 				
 				_prevs = [],
@@ -914,6 +920,7 @@ $(
 					return false;
 				}
 			;
+			
 			if ($R.debug) { $R.debugOutputsFixed['GetTarget'] = $R.debugTimerEnd(); }
 
 			//	if not target, return
@@ -1145,6 +1152,7 @@ $(
 			_candidates_array_length = 0
 		;
 		
+
 		//	DIVs that are actually Ps
 		//	=========================
 	
@@ -1161,7 +1169,7 @@ $(
 				$(_e).addClass('readable_class_is_paragraph');
 			});
 		
-		
+
 		//	all hidden elements
 		//	===================
 		
@@ -1309,7 +1317,7 @@ $(
 				_candidates_array[_i]['_points'] *= (_candidates_length / (_i + 1));
 			});
 			
-			
+
 		//	do we actually have some elements?
 		//	==================================
 		
@@ -1318,11 +1326,13 @@ $(
 				case (_candidates_length == 0):
 					if ($R.debug) { $R.log('No candidates found.'); }
 					if ($R.debug) { $R.debugOutput('No candidates found.'); }
+				
 					return false;
 					
 				case (_candidates_length == 1):
 					if ($R.debug) { $R.log('Only one candidate found:', _candidates_array[0]._element); }
 					if ($R.debug) { $R.debugOutput('Only one candidate found.'); }
+
 					return _candidates_array[0]._element;
 			}
 			
@@ -1524,7 +1534,7 @@ $(
 			'_candidates_nr': 	_candidates_nr
 		};
 	};
-	
+
 	$R.getContent__computeTextForElement = function(_element, _skip_candidates_in_text_computation)
 	{
 		var
@@ -1857,7 +1867,7 @@ $(
 		_h = _h.replace(/\s+\/>/gi, '/>');
 		_h = _h.replace(/\s*=\s*/gi, '=');
 		_h = _h.replace(/(&nbsp;)+/gi, ' ');
-		
+
 		//	hold repository
 		var
 			_hold_repository = {},								// as object
@@ -2326,12 +2336,13 @@ $(
 			//	time Get Content
 			if ($R.debug) { $R.debugTimerStart('getContent'); }
 			$R.getContent();
+
 			if ($R.debug) { $R.debugOutputsFixed['GetContent'] = $R.debugTimerEnd(); }
 			
 			//	show
 			$R.show();
 		}
-		
+	
 		$R.bookmarkletTimer = false;
 	};
 
