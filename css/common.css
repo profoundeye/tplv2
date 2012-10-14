@@ -1044,3 +1044,4 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 .product{margin:0 auto;width:500px;}
 .product .jsonSuggest{ position:absolute;background:#fff}
 #new_product{display:none;}
+#analytics img{display:none}
