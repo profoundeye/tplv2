@@ -49,7 +49,9 @@
         	<div class="thisProduct box">        		
         		<h1 class="style">{$_p.style}</h1><p class="brand">{$_p.company}<span class="year">{$_p.year}年款</span></p>
         		<p class="info">{$_p.info}</p>   
-        		 {if $_p.url!=null}<div class="buy"><a href="{$_p.url}">买之</a></div>{/if}<div class="tagIt" productId={$_p.id}>
+        		 {if $_p.url!=null}<div class="buy"><a href="{$_p.url}">买之</a></div>{/if}
+        		 {if $_p.tags.playing == "在玩" or $_p.tags.playing == "想玩"}<img id="IamFans" src="{avatar uid=$rs.uid size=small}">{/if}
+        		 <div class="tagIt" productId={$_p.id}>
         		 	{if $_p.tags.playing=="在玩"}
         		 		<span ><a href="#" id="playing" rel="{$_p.product_id}"  class="playing" >在玩 </a></span>
         		 	{else if $_p.tags.playing=="想玩"}
@@ -57,8 +59,20 @@
 					{else}
 					<span ><a href="#" id="playing" rel="{$_p.product_id}" >想玩 </a> | <a href="#" id="play" rel="{$_p.product_id}" >在玩</a></span>
 					{/if}
-        	</div>     			
+        		</div>     			
         		 <div class="thisTag">{$_p.tags.tags}</div>
+        		 <dl>
+        		 	<dt>玩</dt>
+        		{foreach item=user from=$_p.fans.playing}
+        			<dd><img src="{avatar uid=$user.0.1 size=small}"></dd>
+        		{/foreach}
+        		</dl>
+        		<dl>
+        		 	<dt>想</dt>
+        		{foreach item=user from=$_p.fans.want}
+        			<dd><img src="{avatar uid=$user.0.1 size=small}"></dd>
+        		{/foreach}
+        		</dl>
         	</div>
         	
         		{/foreach}
@@ -90,16 +104,22 @@
 					var wanted = this.text;
 					//请求标签表单内容；
 					$.post("{spUrl c=tagit a=thisplaying}","productId="+productId+"&interest="+wanted,function(data){
+						data = jQuery.parseJSON(data);
 						artDialog({
 						title:'在玩',
 						id: 'tagIt',
 						fixed: true,
 						lock: true,
 						width:'600px',
-						content: data,
+						content: data.msg?data.msg:data.body,
 						ok: function () {
-						  	$.post("{spUrl c=tagit a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){ document.location.reload();
+							if(data.body){
+								$.post("{spUrl c=tagit a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){ document.location.reload();
 						  		});
+							}else{
+								document.location.href= "{spUrl c=main a=login}";
+							}
+						  	
 						  	
 						},
 						cancel: function(){},
