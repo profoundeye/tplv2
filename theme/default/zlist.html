@@ -50,7 +50,7 @@
         		<h1 class="style">{$_p.style}</h1><p class="brand">{$_p.company}<span class="year">{$_p.year}年款</span></p>
         		<p class="info">{$_p.info}</p>   
         		 {if $_p.url!=null}<div class="buy"><a href="{$_p.url}">买之</a></div>{/if}
-        		 {if $_p.tags.playing == "在玩" or $_p.tags.playing == "想玩"}<img id="IamFans" src="{avatar uid=$rs.uid size=small}">{/if}
+        		 {if $_p.tags.playing == "在玩" or $_p.tags.playing == "想玩"}<img id="IamFans" src="{avatar uid=$meId size=small}">{/if}
         		 <div class="tagIt" productId={$_p.id}>
         		 	{if $_p.tags.playing=="在玩"}
         		 		<span ><a href="#" id="playing" rel="{$_p.product_id}"  class="playing" >在玩 </a></span>
