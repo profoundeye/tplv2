@@ -119,7 +119,39 @@
 			</script>
 
 	</div>
+	<div class="box" id="tagAList">
+		<ul>
+			{foreach from=$tagArticle key=k item=t}
+			<li><h3>其他相关zPlaying：{foreach from=$tag item=g}#<a href="{spUrl c=blog a=tag tag=$g}">{$g}</a>#  {/foreach}</h3>
+				{foreach from=$t key=k item=i}
+				<dl class="tagArticle">
+					<dt><a href="{spUrl c=zshow a=show bid=$i.bid}">{$i.title}</a></dt>
+					<dd>
+						<a href="{spUrl c=zshow a=show bid=$i.bid}"><img src="{$i.body.attr.img.0.url}" alt="{$i.body.attr.img.0.desc}" /></a>
+						
+					</dd>
+				</dl>
+				{/foreach}
+			</li>
+			{/foreach}
+		</ul>	
+	</div>
 
 </div>
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript" >
+var jiathis_config={
+	summary:"",
+	marginTop:450,
+	ralateuid:{
+		"tsina":"zplaying"
+	},
+	showClose:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?btn=r3.gif&move=0" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
 
 {include file="theme/default/footer.html"}
