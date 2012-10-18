@@ -61,18 +61,23 @@
 					{/if}
         		</div>     			
         		 <div class="thisTag">{$_p.tags.tags}</div>
+        		 {if $_p.fans.playing.0.user_id}
         		 <dl>
         		 	<dt>玩</dt>
         		{foreach item=user from=$_p.fans.playing}
-        			<dd><img src="{avatar uid=$user.0.1 size=small}"></dd>
+        			<dd><img src="{avatar uid=$user.user_id size=small}"></dd>
         		{/foreach}
         		</dl>
+        		{/if}
+        		{if $_p.fans.want.0.user_id}
         		<dl>
+        			
         		 	<dt>想</dt>
         		{foreach item=user from=$_p.fans.want}
-        			<dd><img src="{avatar uid=$user.0.1 size=small}"></dd>
+        			<dd><img src="{avatar uid=$user.user_id size=small}"></dd>
         		{/foreach}
         		</dl>
+        		{/if}
         	</div>
         	
         		{/foreach}
