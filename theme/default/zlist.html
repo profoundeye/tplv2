@@ -107,6 +107,7 @@
 				$('#playing,#play').click(function(el){
 					var productId=this.rel;
 					var wanted = this.text;
+					
 					//请求标签表单内容；
 					$.post("{spUrl c=tagit a=thisplaying}","productId="+productId+"&interest="+wanted,function(data){
 						data = jQuery.parseJSON(data);
@@ -118,8 +119,21 @@
 						width:'600px',
 						content: data.msg?data.msg:data.body,
 						ok: function () {
+							var shareTo = $("input[name='share']:checked").val();
+							var isShare = $("input[id='shareThis']:checked").val();
+							
 							if(data.body){
-								$.post("{spUrl c=tagit a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){ document.location.reload();
+								$.post("{spUrl c=tagit a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){ 
+									//alert(document.location);
+								if(isShare!=undefined){									
+									var url = "http://www.jiathis.com/send/?webid="+shareTo+"&title=我在zplaying发现了：{$rs['title']}"+document.location+"，正！好玩！&ralateuid=zplaying";
+									document.location.href= url;
+									return false;
+								}else{
+									document.location.reload();
+									return false;
+								}
+									
 						  		});
 							}else{
 								document.location.href= "{spUrl c=main a=login}";
@@ -138,7 +152,7 @@
 					});	
 				});		
 				
-		
+
 				return false;
 				});
 			</script>
