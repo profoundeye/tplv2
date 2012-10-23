@@ -262,7 +262,7 @@ $(
 						'<img src="'+$R.embeddedOptions['logo']+'" alt=""/>' :
 						'<a href="#">'+$R.win.location.host+'</a>')
 		+			'</div>'
-		+			'<div id=""><a href="##" id="rtl_box_on">提交到zplaying.com</a></div>'
+		+			'<div id=""><a href="##" id="rtl_box_on"><img src="http://www.zplaying.com/tplv2/image/z/upload.png" /></a></div>'
 		+			'<div id="text"></div>'
 		+			'<div id="menu">'
 		+				'<a id="menu_close" href="#" title="You can also double-click the background, or single-click the left edge of the screen.">Close</a>'
