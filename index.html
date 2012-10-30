@@ -2,27 +2,9 @@
 {literal}
 
 {/literal}
-<div id="index">
+<div id="index"  class="type2">
     <div id="article">
-	  
-		
-		
-		
-			{if isset($adunit.2) && $adunit.2.is_show == 1}
-			<div id="ad_index_up"></div>
-			<script>
-				$(document).ready(function(){
-					ad_aside('#ad_index_up',2);
-					setInterval(function(){
-						ad_aside('#ad_index_up',2);
-					}, 30000);
-				})
-			</script>
-			{/if}
-	
-	
-	
-		
+	  	
 		
         {if islogin() && $yb.wizard_switch == 1} {include file="require_wizard.html"} {/if}
 		<div id="feedArea">
@@ -61,9 +43,9 @@
         
         
 	</div>
-<!--	<div id="aside">
-        {include file="require_sider.html"}
-    </div>-->
+	<div id="aside">
+          {include file="ad.html"}
+    </div>
 </div>
 
 {include file="require_footer.html" top=yes}
