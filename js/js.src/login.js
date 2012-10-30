@@ -46,6 +46,7 @@ $(document).ready(function(){
     });
     
 	$('#loginSubmit').click(function(){
+		alert(11);
 			$.ybAPI('login','vary',$('#loginForm').serialize(),function(data){
 				if(data.status != 1){
 					reloadcode('vericode');

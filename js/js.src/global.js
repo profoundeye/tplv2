@@ -678,7 +678,7 @@ var tpldefine = {
 	m_3:'tmpl_model_3',
 	m_4:'tmpl_model_4',
 	m_5:'tmpl_model_5',
-	m_6:'tmpl_model_6',
+	m_6:'tmpl_model_6'
 };
 
 //定义默认模板头尾内容详情页载入的名称
@@ -687,7 +687,7 @@ var tplhdefine = {
 	footer:'tmpl_model_footer',
 	reply:'tmpl_reply',
 	infooter:'tmpl_info_footer',
-	info_reply:'tmpl_model_info_reply',
+	info_reply:'tmpl_model_info_reply'
 };
 
 $(document).ready(function(){
