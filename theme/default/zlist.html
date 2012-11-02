@@ -65,7 +65,7 @@
         		 <dl>
         		 	<dt>玩</dt>
         		{foreach item=user from=$_p.fans.playing}
-        			<dd><img src="{avatar uid=$user.user_id size=small}"></dd>
+        			<dd><a href="{goUserHome  uid=$user.user_id}" ><img src="{avatar uid=$user.user_id size=small}" title="{$user.productUser.username}"></a></dd>
         		{/foreach}
         		</dl>
         		{/if}
@@ -74,7 +74,7 @@
         			
         		 	<dt>想</dt>
         		{foreach item=user from=$_p.fans.want}
-        			<dd><img src="{avatar uid=$user.user_id size=small}"></dd>
+        			<dd><a href="{goUserHome  uid=$user.user_id}" ><img src="{avatar uid=$user.user_id size=small}" title="{$user.productUser.username}"></a></dd>
         		{/foreach}
         		</dl>
         		{/if}
