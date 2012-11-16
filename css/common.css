@@ -26,24 +26,14 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 .fr { float:right; }
 
 /*顶部链接*/
-/*#header { width:100%; margin:0 0 15px; height:93px; background:url(../image/comm/header_bg.png) repeat-x; }
-#header .header_con { width:900px; margin:0 auto; height:93px; }
-#header #logo a{ width:250px; height:60px; background:url(../image/logo.png) no-repeat 0 0; text-indent: -9999px; display:block; float:left; margin-top:15px; }
-
-
-#nav { margin-left:20px; float:left; }
-#nav li { list-style:none; float:left; margin-left:20px; margin-top:23px; }
-#nav li a { padding:8px 12px; background:url(../image/comm/nav_bg.png) repeat-x 0 0; display:block; font-size:16px; font-weight:700; color:#666; border:1px #999 solid; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px; -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff; text-shadow:0px 1px 0px #fff; outline:none; }
-#nav li a:hover { background:url(../image/comm/nav_bg.png) repeat-x 0 -38px; color:#999; text-shadow:none; border:1px #999 solid; #background:url(../image/comm/nav_bg.png) repeat-x 0 -37px; }
-#nav .current a { background:url(../image/comm/nav_bg.png) repeat-x 0 -76px; color:#fff; text-shadow:0px -1px 0px #9B362E; border:1px #9B362E solid; #background:url(../image/comm/nav_bg.png) repeat-x 0 -75px; }
-#nav .current a:hover { background:url(../image/comm/nav_bg.png) repeat-x 0 -76px; color:#fff; text-shadow:0px -1px 0px #9B362E; border:1px #9B362E solid; #background:url(../image/comm/nav_bg.png) repeat-x 0 -75px; }
-*/
 
 /**header*/
 #header{
 	height:41px;
 	background:url(../image/z/nav.png) repeat-x 0 0;
 	display:block;
+	overflow: hidden;
+	clear:both;
 	}
 
 #logo{
@@ -73,7 +63,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 #tool { float:right; top:-35px; position:relative;left:-45px; z-index:1; }
 #tool a, #tool a:hover, #tool a:active { outline:none; }
 #header #tool #write{width:73px;height:38px;color:write;display:block;margin-top:-3px;/*position:absolute;left:-110px*/}
-#write button{ border-style:none;background:url(../image/z/w.png);width:73px;height:38px}
+#write a{ border-style:none;background:url(../image/z/w.png);width:73px;height:38px;display:block}
 #tool .name { float:right; }
 #tool .name a{ height:18px; line-height:18px; padding:0 10px; border:1px #999 solid; font-size:12px; display:block; background:url(../image/comm/tool_bg.png) repeat-x 0 0; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px; text-shadow:0px 1px 0px #fff; outline:none;  max-width:130px; overflow:hidden; }
 #tool .name a:hover { background:url(../image/comm/tool_bg.png) repeat-x 0 -18px; color:#999; }
@@ -452,7 +442,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 .m_loading { width:100px; height:26px; display:block; background:url(../image/comm/feeds_loading.gif) no-repeat 0 0; margin:10px auto; }
 
 /*边栏*/
-#aside { width:230px; float:right; margin:0; }
+#aside { width:230px; float:right; margin:0; zoom:1}
 #aside .menu_fl { width:100%; margin:0; position:relative; height:40px;}
 #aside .menu_fl a { width:228px; height:38px; border:1px #ccc solid; display:block; background:url(../image/comm/nav_bg.png) repeat-x 0 0; line-height:38px; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff; font-size:14px; color:#666; text-shadow:0px 1px 0px #fff; }
 #aside .menu_fl a:hover { background-color:#e3e3e3; background-image:none; }
@@ -1058,7 +1048,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 	width: 470px;
 margin-right: 10px;
 padding-right: 10px;
-margin-top:-10px}
+margin-top:0}
 .box { float:left; padding:15px; min-height:150px; position:relative; background-color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;-moz-box-shadow:0px 0px 0px #bbb; -webkit-box-shadow:0px 0px 0px #bbb; box-shadow:0px 0px 0px #bbb; border-bottom:2px #ddd solid\9; margin-bottom:10px}
 .pom{font-size:24px;margin:5px 0;padding:0}
 .tag_index{margin:0 auto}
