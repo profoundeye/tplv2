@@ -81,7 +81,7 @@
         	  {foreach item=_p from=$sameCompanyProduct}
         	  {if $productId!=$_p.id}   	
         	<div class="thisProduct box">        		
-        		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$_p.id}">{$_p.style}</a></h1><p class="brand">{$_p.company.company}<span class="year">{$_p.year}年款</span></p>
+        		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$_p.product_id}">{$_p.style}</a></h1><p class="brand">{$_p.company.company}<span class="year">{$_p.year}年款</span></p>
         		<p class="info">{$_p.info}</p>   
         		 {if $_p.url!=null}<div class="buy"><a href="{$_p.url}">买之</a></div>{/if}
         		 {if $_p.tags.playing == "在玩" or $_p.tags.playing == "想玩"}<img id="IamFans" src="{avatar uid=$meId size=small}">{/if}
