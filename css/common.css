@@ -566,7 +566,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 #titlep { padding:0 10px; height:30px; line-height:30px; position:absolute;  background-color:#FFFF99; color:#666; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; margin-top:-10px; -moz-box-shadow:0px 0px 0px #bbb; -webkit-box-shadow:0px 0px 0px #bbb; box-shadow:0px 0px 0px #bbb; display:none; border:1px #ccc solid\9;}
 
 /*用户喜欢、发布、回复*/
-#userpost { width:660px; float:left; margin:-10px 0 0 65px; }
+#userpost { width:660px; float:left; margin:10px 0 0 65px; }
 #userpost .post_bg { background-color:#ccc; float:left; border:1px #ccc solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; overflow:hidden; -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff;  }
 #userpost .post_bg a { font-size:22px; display:block; float:left; font-weight:700; line-height:48px; outline:none; color:#fff; }
 #userpost .post_bg a span { padding:0 20px; }
