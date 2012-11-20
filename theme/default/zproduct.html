@@ -78,10 +78,12 @@
 	<div id="aside" class="detail_right_side">
         <h2 class="company">{$company}@zplaying的其他产品：</h2>
         	{if $sameCompanyProduct.0.company!=null}
-        	  {foreach item=_p from=$sameCompanyProduct}
+        	  {foreach item=_temp from=$sameCompanyProduct}
+        	  {assign var="_p" value=$_temp.productInfo.0}
+        	  {assign var="_p.product_id" value=$_temp.productInfo.0.id}
         	  {if $productId!=$_p.id}   	
         	<div class="thisProduct box">        		
-        		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$_p.id}">{$_p.style}</a></h1><p class="brand">{$_p.company.company}<span class="year">{$_p.year}年款</span></p>
+        		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$_p.product_id}">{$_p.style}</a></h1><p class="brand">{$_p.company.company}<span class="year">{$_p.year}年款</span>{$_p.tags.playing}</p>
         		<p class="info">{$_p.info}</p>   
         		 {if $_p.url!=null}<div class="buy"><a href="{$_p.url}">买之</a></div>{/if}
         		 {if $_p.tags.playing == "在玩" or $_p.tags.playing == "想玩"}<img id="IamFans" src="{avatar uid=$meId size=small}">{/if}
@@ -129,7 +131,67 @@
                 </div>
                 {/if}-->
         	
-    
+    <script>
+		
+				
+				
+				$('#playing,#play').click(function(el){
+					var productId=this.rel;
+					var wanted = this.text;
+					var productTitle=this.title;
+					//请求标签表单内容；
+					$.post("{spUrl c=tagit a=thisplaying}","productId="+productId+"&interest="+wanted+"&productTitle="+productTitle,function(data){
+						data = jQuery.parseJSON(data);
+						artDialog({
+						title:'玩',
+						id: 'tagIt',
+						fixed: true,
+						lock: true,
+						width:'600px',
+						content: data.msg?data.msg:data.body,
+						ok: function () {
+							var shareTo = $("input[name='share']:checked").val();
+							var isShare = $("input[id='shareThis']:checked").val();
+							var productTitle = $("input[id='shareThis']:checked").attr('title');
+							
+							if(data.body){							
+								$.post("{spUrl c=tagit a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){
+									
+								if(isShare!=undefined){									
+									var url = "http://www.jiathis.com/send/?webid="+shareTo+"&title=我在@zplaying正玩 发现了：{$rs['title']}"+document.location+"  "+productTitle+"正！好玩！&ralateuid=zplaying正玩 ";
+									document.location.href= url;
+									return false;
+								}else{
+									document.location.reload();
+									return false;
+								}
+									
+						  		});
+						  		
+						  		
+							}else{
+								document.location.reload();
+								//document.location.href= "{spUrl c=main a=login}";
+							}
+						  	
+						  	
+						},
+						cancel: function(){},
+						
+					});
+					$("#tagIt").click(function(el){
+						if(el.target.nodeName=="SPAN"){
+							$("#tags").val($("#tags").val()+" "+el.target.innerText);
+							return false;
+						}
+					});	
+				});		
+				
+
+				return false;
+				});
+			</script>
+
           
 		
 	</div>
