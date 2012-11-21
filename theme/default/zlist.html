@@ -127,7 +127,7 @@
 								$.post("{spUrl c=tagit a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){
 									
 								if(isShare!=undefined){									
-									var url = "http://www.jiathis.com/send/?webid="+shareTo+"&pic=&title=我在@zplaying正玩 发现了：{$rs['title']}"+document.location+"  "+productTitle+"正！好玩！&ralateuid=zplaying正玩";
+									var url = "http://www.jiathis.com/send/?webid="+shareTo+"&pic=&title=我在@zplaying正玩 发现了：{$rs['title']}"+document.location+"  "+productTitle+"正！好玩！&ralateuid=zplaying正玩&url="+document.location;
 									document.location.href= url;
 									return false;
 								}else{
