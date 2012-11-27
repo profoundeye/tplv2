@@ -38,9 +38,10 @@
         		{/if}
         	</div>
         	
-        	
+        	<h2 class="discuz">有关{$thisProductInfo.0.style}@{$thisProductInfo.0.company.company}的开箱文：</h2>
         	<div id="feed_box">
-        	{foreach item=b from=$blogInfo}
+        	
+        	{foreach item=b from=$blogInfo.blog}
         	<div class="box"> 
         		<div class="avatar"> 
         			<a href="{goUserHome domain=$b.blog.0.user.domain uid=$b.blog.0.user.$uid}" target="_blank"> 
@@ -57,22 +58,49 @@
         		<div class="content"> 
         			<a href="{spUrl c=zshow a=show bid=$b.blog_id}">
         			<div class="imageList">
-        				{foreach item=i from=$b.blog.body.attr.img}
+        				{foreach item=i key=k from=$b.blog.body.attr.img}
+        				{if $k ==0}
         					<img src="{$i.url}" alt="{$i.desc|escape:"html"}" />
+        				{/if}
         				{/foreach}
         			</div>
-        			<div class="text_area">	<p>{$b.blog.body.body}</p></div>
+        			<div class="text_area">	<p>{$b.blog.body.body|truncate:"100"}</p></div>
         			</a>
         		</div>
-        	
-        	
-	
 		
 			<div class="clear"></div>
 			</div>
 			{/foreach}
 		</div>
+		<div id="sms" class="box">
+			<h2 class="discuz">我们在讨论有关{$thisProductInfo.0.style}@{$thisProductInfo.0.company.company}：</h2>
+			<form class="autoTxtCount" action="" method="get" onsubmit="return false;">
+			<input type="hidden" name="title" id="title" class="input" tabindex="1" value="{$thisProductInfo.0.style}@{$thisProductInfo.0.company.company}评论">
+			<input type="hidden" name="pid" id="pid" class="input" tabindex="2" value="{$thisProductInfo.0.id}">
+			<input type="text" name="content" id="content" class="input" tabindex="3" value="">
+			<button type="submit" class="btn" id="submitSMS">发布</button>
+			</form>
+			
 	
+			<ul id="smsList">
+	        	{foreach item=b from=$blogInfo.sms}
+	        	<li>
+	        		<a href="{goUserHome domain=$b.blog.0.user.domain uid=$b.blog.0.user.$uid}" target="_blank"> 
+        				<div class="head_bg"> <img src="{avatar uid=$b.blog.0.uid size=middle}" alt="" class="face" title="{$b.blog.0.user.username}"> </div>
+        		 	</a>  
+        		  	<a href="{goUserHome domain=$b.blog.0.user.domain uid=$b.blog.0.user.$uid}" target="_blank">{$b.blog.0.user.username}
+        		  	</a>
+        		  	<p>{$b.blog.body.body}</p>
+        		  	<!--<span>评价:{$b.blog.0.replaycount}</span><span>回复</span>-->
+	        	</li>        	
+				{/foreach}
+			</ul>
+		</div>
+		
+			
+
+
+
 	</div>
 	
 	<div id="aside" class="detail_right_side">
@@ -120,6 +148,9 @@
         		{/foreach}
         	{/if}
         	
+        	
+        	
+        	
             <!--<div class="favatitle">谁喜欢<span>{$fava.count}</span></div>
                 {if $fava.count !=0}
                 <div class="fava">
@@ -130,10 +161,30 @@
                     <div class="clear"></div>
                 </div>
                 {/if}-->
-        	
+        	{literal}
     <script>
 		
-				
+				$('#submitSMS').click(function(el){
+					 	var content = $('input#content').val()?$('input#content').val():false;
+						var title = $('input#title').val()?$('input#title').val():false;
+						var pid = $('input#pid').val()?$('input#pid').val():false;
+						var dataStr = 'ajax=1&textarea='+content+'&title='+title+'&pid='+pid;
+						if(!(content||title||pid)){alert("信息不能为空");return false;}
+					        $.ajax({
+					            url: "{/literal}{spUrl c=post a=saved model=1}{literal}",//这里解析url有问题
+					            type:'POST',
+					            data:dataStr,
+					            success: function(el){
+					            	document.location.reload();
+					            	//console.debug(el);
+					            		//$('#product_list').empty();//只允许关联一件商品
+										
+											} ,           
+					        });   
+					        el.preventDefault();
+					        return false
+    				}					
+				);
 				
 				$('#playing,#play').click(function(el){
 					var productId=this.rel;
@@ -192,7 +243,7 @@
 				});
 			</script>
 
-          
+          {/literal}
 		
 	</div>
 	<div class="box" id="tagAList">

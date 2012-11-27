@@ -1,0 +1,65 @@
+{include file="require_header.html" addcss=yes editor=yes}
+<script language="JavaScript" src="{$syskin}/js/jquery.jsonSuggest-2.js"></script>
+<script language="JavaScript" src="{spUrl('product','search')}"></script>
+<div id="productArea" class="product box">
+ <h3>看看zplaying上是否有这样东西的资料了？（可输入品牌、型号、名称等）</h3>
+ <input type="text" size="50" id="suggestBox" />
+
+
+    <div id="new_product">  
+    	<h3>输入产品基本信息</h3>
+    	<form id="addNewProduct"  method="post" action="{spUrl c=product a=newProduct2}">
+		<hr />
+                       出品公司：<span class="ps">这件东西是什么公司生产的</span><br /><input name="company" id="company"  /><br />
+                       生产年份：<span class="ps">是在公元多少年首次亮相</span><br /><input name="year" id="year"  /> <br />
+                       产品型号：<span class="ps">ta的型号是什么？</span><br /><input name="style" id="style"  /> <br />
+                       一句话介绍特点：<br /><textarea name="info" id="info" ></textarea><br />
+		<input type="submit" name="newProduct" id="newProduct" value="提交新产品" />
+
+      			</form>
+    </div>
+</div>
+{literal}
+<script>
+function callback(item) {
+	//$('#product_list').empty();//只允许关联一件商品
+	//$('#product_list').append($("<li>"+item.text+"<input type=\"hidden\" value=\""+item.id+"\" name=\"product[]\" />　<a href=\"#\" class=\"delPro\">删除</a></li>"));
+	var url = "{/literal}{spUrl c=zshow a=product}{literal}"+"&pid="+item.id;
+	window.location.href=url;
+}
+
+//显示新增表单
+var $newadd = $('<li class="ui-menu-item odd"><a id="newShow">没有相匹配的产品？点此增加。</a></li>');
+$("#productArea").bind('click',function(ev){
+	if(ev.target.id=="newShow"){
+		$("#new_product").css("display","block");
+		$("#submitProduct").css("display","none");
+		};
+	
+	if(ev.target.className == "delPro")
+		var obj = ev.target.parentElement;
+		$(obj).remove();
+	})
+
+jQuery(function() {
+	$('input#suggestBox').jsonSuggest({data: testData.countryCodes, onSelect: callback,minCharacters: 1});
+	
+});
+
+$(document).ready(function () {
+    $("#newProduct").click(function (ev) {
+   	var company = $('input#company').val()?$('input#company').val():false;
+	var year = $('input#year').val()?$('input#year').val():false;
+	var style = $('input#style').val()?$('input#style').val():false;
+	var	info = $('textarea#info').val()?$('textarea#info').val():false;
+	var dataStr = 'company='+company+'&year='+year+'&style='+style+'&info='+info
+	if(!(company||year||style||info)){alert("信息不能为空");return false;}
+       
+    });
+    
+    
+})
+
+</script>
+{/literal}
+{include file="require_footer.html"}

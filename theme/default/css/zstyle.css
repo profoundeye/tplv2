@@ -378,3 +378,31 @@ width:7px; height:14px; background:url(../../../image/comm/icons.png) no-repeat 
 	margin-right:10px
 }
 .company{font-size:1.5em;font-weight:bold;color:black;margin:-20px 10px 10px 10px;}
+#sms{
+	clear:both;
+	overflow:hidden;
+	width:720px;
+	margin-bottom:10px;
+}
+#smsList li{
+	clear:both;
+}
+#smsList .head_bg{
+	float:left;
+	padding:10px;
+}
+#smsList p{
+	font-size:14px;
+}
+#content{
+	width:660px;
+	height:50px;
+}
+.discuz{
+	font-size:15px;
+	font-weight:bolder;
+}
+#submitSMS{
+	width:50px;
+	height:53px;
+}

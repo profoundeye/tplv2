@@ -45,7 +45,7 @@ function callback(item) {
 }
 
 //显示新增表单
-var $newadd = $('<li class="ui-menu-item odd"><a id="newShow">没有相匹配的产品。是首秀？点此确定是首秀。</a></li>');
+var $newadd = $('<li class="ui-menu-item odd"><a id="newShow">没有相匹配的产品？点此增加。</a></li>');
 $("#productArea").bind('click',function(ev){
 	if(ev.target.id=="newShow"){
 		$("#new_product").css("display","block");
