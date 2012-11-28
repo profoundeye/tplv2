@@ -65,7 +65,7 @@
         				{/if}
         				{/foreach}
         			</div>
-        			<div class="text_area">	<p>{$b.blog.body.body|escape:"html"|truncate:"300"}</p></div>
+        			<div class="text_area">	<p>{$b.blog.body.body|strip_tags|truncate:"300"}</p></div>
         			</a>
         		</div>
 		
@@ -119,11 +119,11 @@
         		 {if $_p.tags.playing == "在玩" or $_p.tags.playing == "想玩"}<img class="IamFans" src="{avatar uid=$meId size=small}">{/if}
         		 <div class="tagIt" productId={$_p.id}>
         		 	{if $_p.tags.playing=="在玩"}
-        		 		<span ><a href="#" rel="{$_p.product_id}" title="{$_p.style}" class="playing" >在玩 </a></span>
+        		 		<span ><a href="#" rel="{$_p.product_id}" title="在玩{$_p.style}" class="playing" >在玩 </a></span>
         		 	{else if $_p.tags.playing=="想玩"}
-						<span ><a href="#" rel="{$_p.product_id}" title="{$_p.style}" class="playing">想玩 </a></span>
+						<span ><a href="#" rel="{$_p.product_id}" title="想玩{$_p.style}" class="playing">想玩 </a></span>
 					{else}
-					<span ><a href="#" rel="{$_p.product_id}" title="{$_p.style}" >想玩 </a> | <a href="#" rel="{$_p.product_id}" title="{$_p.style}" >在玩</a></span>
+					<span ><a href="#" rel="{$_p.product_id}" title="{$_p.style}"  class="playing" >想玩 </a> | <a href="#" rel="{$_p.product_id}" title="{$_p.style}"  class="playing" >在玩</a></span>
 					{/if}
         		</div>     			
         		 <div class="thisTag">{$_p.tags.tags}</div>
