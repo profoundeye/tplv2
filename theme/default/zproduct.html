@@ -39,6 +39,7 @@
         	</div>
         	
         	<h2 class="discuz">有关{$thisProductInfo.0.style}@{$thisProductInfo.0.company.company}的开箱文：</h2>
+        	<span class="kaixiang"><a href="{spUrl c=post a=add model=3}" target="_blank">我也要开箱</a></span>
         	<div id="feed_box">
         	
         	{foreach item=b from=$blogInfo.blog}
@@ -53,10 +54,10 @@
         			<a href="{goUserHome domain=$b.blog.0.user.domain uid=$b.blog.0.user.$uid}" target="_blank">{$b.blog.0.user.username}</a>
         		</div>
         		<div class="title"> 
-        			<h1><a href="{spUrl c=zshow a=show bid=$b.blog_id}" target="_blank">{$b.blog.0.title}</a></h1>
+        			<h1><a href="{spUrl c=zshow a=show bid=$b.blog.0.bid}" target="_blank">{$b.blog.0.title}</a></h1>
         		</div>  
         		<div class="content"> 
-        			<a href="{spUrl c=zshow a=show bid=$b.blog_id}">
+        			<a href="{spUrl c=zshow a=show bid=$b.blog.0.bid}">
         			<div class="imageList">
         				{foreach item=i key=k from=$b.blog.body.attr.img}
         				{if $k ==0}
@@ -108,7 +109,8 @@
         	{if $sameCompanyProduct.0.company!=null}
         	  {foreach item=_temp from=$sameCompanyProduct}
         	  {assign var="_p" value=$_temp.productInfo.0}
-        	  {assign var="_p.product_id" value=$_temp.productInfo.0.id}
+        	  {assign var="_p.product_id" value=$_p.id}
+        	 
         	  {if $productId!=$_p.id}   	
         	<div class="thisProduct box">        		
         		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$_p.product_id}">{$_p.style}</a></h1><p class="brand">{$_p.company.company}<span class="year">{$_p.year}年款</span>{$_p.tags.playing}</p>
