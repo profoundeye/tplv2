@@ -1,45 +1,45 @@
-{include file="theme/default/zheader.html" titles=$thisProductInfo.0.style|cat: " "|cat: $thisProductInfo.0.company.company}
+{include file="theme/default/zheader.html" titles=$p.0.style|cat: " "|cat: $p.0.company}
 <script type="text/javascript" src="{$syskin}/js/jquery.isotope.min.js"></script>
 <div id="wrap">
 {include file="header_code.html"}
     <div id="main">
     	
     	<div class="thisProduct box">        		
-        		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$thisProductInfo.0.id}">{$thisProductInfo.0.style}</a></h1><p class="brand">{$thisProductInfo.0.company.company}<span class="year">{$thisProductInfo.0.year}年款</span></p>
-        		<p class="info">{$thisProductInfo.0.info}</p>   
-        		 {if $thisProductInfo.0.url!=null}<div class="buy"><a href="{$thisProductInfo.0.url}">买之</a></div>{/if}
-        		 {if $thisProductInfo.0.tags.playing == "在玩" or $thisProductInfo.0.tags.playing == "想玩"}<img id="IamFans" src="{avatar uid=$meId size=small}">{/if}
-        		 <div class="tagIt" productId={$thisProductInfo.0.id}>
-        		 	{if $thisProductInfo.0.tags.playing=="在玩"}
-        		 		<span ><a href="#" id="playing" rel="{$thisProductInfo.0.product_id}" title="{$thisProductInfo.0.style}" class="playing" >在玩 </a></span>
-        		 	{else if $thisProductInfo.0.tags.playing=="想玩"}
-						<span ><a href="#" id="play" rel="{$thisProductInfo.0.product_id}" title="{$thisProductInfo.0.style}" class="playing">想玩 </a></span>
+        		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$thisProductInfo.0.id}">{$p.0.style}</a></h1><p class="brand">{$p.0.company}<span class="year">{$p.0.year}年款</span></p>
+        		<p class="info">{$p.0.info}</p>   
+        		 {if $p.0.url!=null}<div class="buy"><a href="{$p.0.url}">买之</a></div>{/if}
+        		 {if $p.0.tags.playing == "在玩" or $p.0.tags.playing == "想玩"}<img class="IamFans" src="{avatar uid=$meId size=small}">{/if}
+        		 <div class="tagIt" productId={$p.0.id}>
+        		 	{if $p.0.tags.playing=="在玩"}
+        		 		<span ><a href="#" rel="{$p.0.product_id}" title="{$p.0.style}" class="playing" >在玩 </a></span>
+        		 	{else if $p.0.tags.playing=="想玩"}
+						<span ><a href="#" rel="{$p.0.product_id}" title="{$p.0.style}" class="playing">想玩 </a></span>
 					{else}
-					<span ><a href="#" id="playing" rel="{$thisProductInfo.0.product_id}" title="{$thisProductInfo.0.style}" >想玩 </a> | <a href="#" id="play" rel="{$thisProductInfo.0.product_id}" title="{$thisProductInfo.0.style}" >在玩</a></span>
+					<span ><a href="#" rel="{$p.0.product_id}" title="{$p.0.style}" class="playing">想玩 </a> | <a href="#" id="play" rel="{$p.0.product_id}" title="{$p.0.style}" class="playing">在玩</a></span>
 					{/if}
         		</div>     			
-        		 <div class="thisTag">{$thisProductInfo.0.tags.tags}</div>
-        		 {if $thisProductInfo.0.fans.playing.0.user_id}
+        		 <div class="thisTag">{$p.0.tags.tags}</div>
+        		 {if $p.0.fans.playing.0.user_id}
         		 <dl>
         		 	<dt>玩</dt>
-        		{foreach item=user from=$thisProductInfo.0.fans.playing}
+        		{foreach item=user from=$p.0.fans.playing}
         			<dd><a href="{goUserHome  uid=$user.user_id}" ><img src="{avatar uid=$user.user_id size=small}" title="{$user.username} 积分：{$user.source}z"></a></dd>
         		{/foreach}
         		</dl>
         		{/if}
-        		{if $thisProductInfo.0.fans.want.0.user_id}
+        		{if $p.0.fans.want.0.user_id}
         		<dl>
         			
         		 	<dt>想</dt>
-        		{foreach item=user from=$thisProductInfo.0.fans.want}
+        		{foreach item=user from=$p.0.fans.want}
         			<dd><a href="{goUserHome  uid=$user.user_id}" ><img src="{avatar uid=$user.user_id size=small}" title="{$user.username} 积分：{$user.source}z"></a></dd>
         		{/foreach}
         		</dl>
         		{/if}
         	</div>
         	
-        	<h2 class="discuz">有关{$thisProductInfo.0.style}@{$thisProductInfo.0.company.company}的开箱文：</h2>
-        	<span class="kaixiang"><a href="{spUrl c=post a=add model=3 pid=$thisProductInfo.0.id}" target="_blank">我也要开箱</a></span>
+        	<h2 class="discuz">有关{$p.0.style}@{$p.0.company}的开箱文：</h2>
+        	<span class="kaixiang"><a href="{spUrl c=post a=add model=3 pid=$p.0.id}" target="_blank">我也要开箱</a></span>
         	<div id="feed_box">
         	
         	{foreach item=b from=$blogInfo.blog}
@@ -47,7 +47,7 @@
         		<div class="avatar"> 
         			<a href="{goUserHome domain=$b.blog.0.user.domain uid=$b.blog.0.user.$uid}" target="_blank"> 
         				<div class="head_bg"> <img src="{avatar uid=$b.blog.0.uid size=middle}" alt="" class="face" title="{$b.blog.0.user.username}"> </div>
-        		  </a>  
+        		  	</a>  
         		</div> 
         		<div class="corner"></div>
         		<div class="blogname"> 
@@ -65,19 +65,19 @@
         				{/if}
         				{/foreach}
         			</div>
-        			<div class="text_area">	<p>{$b.blog.body.body|truncate:"100"}</p></div>
+        			<div class="text_area">	<p>{$b.blog.body.body|escape:"html"|truncate:"300"}</p></div>
         			</a>
         		</div>
 		
-			<div class="clear"></div>
+				<div class="clear"></div>
 			</div>
 			{/foreach}
-		</div>
+			</div>
 		<div id="sms" class="box">
-			<h2 class="discuz">我们在讨论有关{$thisProductInfo.0.style}@{$thisProductInfo.0.company.company}：</h2>
+			<h2 class="discuz">我们在讨论有关{$p.0.style}@{$p.0.company}：</h2>
 			<form class="autoTxtCount" action="" method="get" onsubmit="return false;">
-			<input type="hidden" name="title" id="title" class="input" tabindex="1" value="{$thisProductInfo.0.style}@{$thisProductInfo.0.company.company}评论">
-			<input type="hidden" name="pid" id="pid" class="input" tabindex="2" value="{$thisProductInfo.0.id}">
+			<input type="hidden" name="title" id="title" class="input" tabindex="1" value="{$p.0.style}@{$p.0.company}评论">
+			<input type="hidden" name="pid" id="pid" class="input" tabindex="2" value="{$p.0.id}">
 			<input type="text" name="content" id="content" class="input" tabindex="3" value="">
 			<button type="submit" class="btn" id="submitSMS">发布</button>
 			</form>
@@ -113,17 +113,17 @@
         	 
         	  {if $productId!=$_p.id}   	
         	<div class="thisProduct box">        		
-        		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$_p.product_id}">{$_p.style}</a></h1><p class="brand">{$_p.company.company}<span class="year">{$_p.year}年款</span>{$_p.tags.playing}</p>
+        		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$_p.product_id}">{$_p.style}</a></h1><p class="brand">{$_p.company}<span class="year">{$_p.year}年款</span>{$_p.tags.playing}</p>
         		<p class="info">{$_p.info}</p>   
         		 {if $_p.url!=null}<div class="buy"><a href="{$_p.url}">买之</a></div>{/if}
-        		 {if $_p.tags.playing == "在玩" or $_p.tags.playing == "想玩"}<img id="IamFans" src="{avatar uid=$meId size=small}">{/if}
+        		 {if $_p.tags.playing == "在玩" or $_p.tags.playing == "想玩"}<img class="IamFans" src="{avatar uid=$meId size=small}">{/if}
         		 <div class="tagIt" productId={$_p.id}>
         		 	{if $_p.tags.playing=="在玩"}
-        		 		<span ><a href="#" id="playing" rel="{$_p.product_id}" title="{$_p.style}" class="playing" >在玩 </a></span>
+        		 		<span ><a href="#" rel="{$_p.product_id}" title="{$_p.style}" class="playing" >在玩 </a></span>
         		 	{else if $_p.tags.playing=="想玩"}
-						<span ><a href="#" id="play" rel="{$_p.product_id}" title="{$_p.style}" class="playing">想玩 </a></span>
+						<span ><a href="#" rel="{$_p.product_id}" title="{$_p.style}" class="playing">想玩 </a></span>
 					{else}
-					<span ><a href="#" id="playing" rel="{$_p.product_id}" title="{$_p.style}" >想玩 </a> | <a href="#" id="play" rel="{$_p.product_id}" title="{$_p.style}" >在玩</a></span>
+					<span ><a href="#" rel="{$_p.product_id}" title="{$_p.style}" >想玩 </a> | <a href="#" rel="{$_p.product_id}" title="{$_p.style}" >在玩</a></span>
 					{/if}
         		</div>     			
         		 <div class="thisTag">{$_p.tags.tags}</div>
@@ -188,12 +188,12 @@
     				}					
 				);
 				
-				$('#playing,#play').click(function(el){
+				$('.playing').click(function(el){
 					var productId=this.rel;
 					var wanted = this.text;
 					var productTitle=this.title;
 					//请求标签表单内容；
-					$.post("{spUrl c=tagit a=thisplaying}","productId="+productId+"&interest="+wanted+"&productTitle="+productTitle,function(data){
+					$.post("{/literal}{spUrl c=tagit a=thisplaying}{literal}","productId="+productId+"&interest="+wanted+"&productTitle="+productTitle,function(data){
 						data = jQuery.parseJSON(data);
 						artDialog({
 						title:'玩',
@@ -208,7 +208,7 @@
 							var productTitle = $("input[id='shareThis']:checked").attr('title');
 							
 							if(data.body){							
-								$.post("{spUrl c=tagit a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){
+								$.post("{/literal}{spUrl c=tagit a=saveTag}{literal}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){
 									
 								if(isShare!=undefined){									
 									var url = "http://www.jiathis.com/send/?webid="+shareTo+"&title=我在@zplaying正玩 发现了：{$rs['title']}"+document.location+"  "+productTitle+"正！好玩！&ralateuid=zplaying正玩 ";

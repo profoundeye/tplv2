@@ -364,7 +364,7 @@ width:7px; height:14px; background:url(../../../image/comm/icons.png) no-repeat 
 .tagArticle img{max-width:200px;}
 .tagInput input{width:300px}
 #mytags span,#productTags span{font-size:12px;background:#EBF5EA;margin:0px 10px;}
-#IamFans{float:left;margin:8px;}
+.IamFans{float:left;margin:8px;}
 .thisProduct dt{color:#b20000;width:30px;height:30px;line-height:30px;float:left;font-size:14px;}
 .thisProduct dl{clear:both;padding:5px;}
 .thisProduct dd{margin:0 5px;float:left}
