@@ -39,7 +39,7 @@
         	</div>
         	
         	<h2 class="discuz">有关{$thisProductInfo.0.style}@{$thisProductInfo.0.company.company}的开箱文：</h2>
-        	<span class="kaixiang"><a href="{spUrl c=post a=add model=3}" target="_blank">我也要开箱</a></span>
+        	<span class="kaixiang"><a href="{spUrl c=post a=add model=3 pid=$thisProductInfo.0.id}" target="_blank">我也要开箱</a></span>
         	<div id="feed_box">
         	
         	{foreach item=b from=$blogInfo.blog}
