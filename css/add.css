@@ -72,7 +72,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 /*发布图片*/
 .upimgBar{ height:40px; width:100%; }
 #divAddFiles{ width:100px; float:left; }
-#upimgText{ float:left; line-height:30px; height:30px; margin:5px auto 5px 20px; padding:0 10px 0 10px; background-color:#e3e3e3; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; text-shadow:0px 1px 0px #fff; position:relative; }
+#upimgText{ float:left; line-height:30px; height:30px; margin:5px auto 5px 10px; padding:0 10px 0 10px; background-color:#e3e3e3; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; text-shadow:0px 1px 0px #fff; position:relative; }
 #upimgText .upimg_corner { width:5px; height:10px; position:absolute; background:url(../image/comm/icons.png) no-repeat right -340px; left:-5px; top:10px; }
 #upimgText font { color:#DF594E; }
 
