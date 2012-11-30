@@ -1,6 +1,6 @@
 {include file="theme/default/zheader.html" titles=$p.0.style|cat: " "|cat: $p.0.company}
 <script type="text/javascript" src="{$syskin}/js/jquery.isotope.min.js"></script>
-<div id="wrap">
+<div id="wrap">	
 {include file="header_code.html"}
     <div id="main">
     	
@@ -163,6 +163,14 @@
                     <div class="clear"></div>
                 </div>
                 {/if}-->
+                
+   {if $alert}
+   	<script>
+   		if (confirm('{$p.0.company}的{$p.0.style}还是第一次在zplaying出现。不如再来篇开箱文吧？')){
+   			window.location='{spUrl c=post a=add model=3 pid=$p.0.id}';
+   		}
+   	</script>
+   {/if}
         	{literal}
     <script>
 		
