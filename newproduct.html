@@ -24,7 +24,7 @@
 function callback(item) {
 	//$('#product_list').empty();//只允许关联一件商品
 	//$('#product_list').append($("<li>"+item.text+"<input type=\"hidden\" value=\""+item.id+"\" name=\"product[]\" />　<a href=\"#\" class=\"delPro\">删除</a></li>"));
-	var url = "{/literal}{spUrl c=zshow a=product}{literal}"+"&pid="+item.id;
+	var url = "{/literal}{spUrl c=zshow a=product}{literal}"+"/pid/"+item.id;
 	window.location.href=url;
 }
 
