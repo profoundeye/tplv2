@@ -1078,3 +1078,22 @@ margin-top:0}
 	height:100px;
 	margin-left:70px;
 }
+#productSearch input{
+	width: 350px;
+	position: absolute;
+	top: 20px;
+	left: 210px;
+}
+#productSearch .jsonSuggest li{
+	text-align:left;
+}
+#publish{
+	width:123px;
+	height:32px;
+	position: absolute;
+	right: 28px;
+	top: 17px;
+	display:block;
+}
+
+

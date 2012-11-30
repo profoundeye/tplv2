@@ -1,11 +1,33 @@
 {include file="require_header.html" gallery=yes}
-{literal}
 
-{/literal}
+<script language="JavaScript" src="{$syskin}/js/jquery.jsonSuggest-2.js"></script>
+<script language="JavaScript" src="{spUrl('product','search')}"></script>
+
 <div id="index"  class="type2">
     <div id="article">
-	  	<div id="Ishow"><a href="{spUrl c=product a=newShow model=3}" alt="发布"><img src="tplv2/image/z/playing.png" /></a></div>
-		
+	  	<div id="Ishow"><img src="tplv2/image/z/playing.png" />
+	  		<div id="productSearch" class="product">
+	  		 	<input type="text" size="50" id="suggestBox" />
+	  		</div>
+	  		<a id="publish" href="{spUrl c=post a=add model=3}" alt="发布"></a>
+	  	</div>
+	  	{literal}
+		<script>	
+			var $newadd = $('<li class="ui-menu-item odd"><a id="newShow">没有相匹配的产品？点此增加。</a></li>');	
+			jQuery(function() {
+				function callback(item) {
+					console.debug(1);
+					var url = "{/literal}{spUrl c=zshow a=product}{literal}"+"/pid/"+item.id;
+					window.location.href=url;
+				}
+				$('input#suggestBox').jsonSuggest({data: testData.countryCodes, onSelect: callback,minCharacters: 1});
+	
+
+			});
+		{/literal}
+
+			
+		</script>
         {if islogin() && $yb.wizard_switch == 1} {include file="require_wizard.html"} {/if}
 		<div id="feedArea">
 			<div id="feed_loading"></div>
