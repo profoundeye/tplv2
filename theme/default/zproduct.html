@@ -6,6 +6,7 @@
     	
     	<div class="thisProduct box">        		
         		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$thisProductInfo.0.id}">{$p.0.style}</a></h1><p class="brand">{$p.0.company}<span class="year">{$p.0.year}年款</span></p>
+        		<a class="toBuy" href="c.php?key={$p.0.style}  {$p.0.company}"><img src="tplv2/image/z/buy.png" alt="去买{$p.0.style}  {$p.0.company}<" /></a>
         		<p class="info">{$p.0.info}</p>   
         		 {if $p.0.url!=null}<div class="buy"><a href="{$p.0.url}">买之</a></div>{/if}
         		 {if $p.0.tags.playing == "在玩" or $p.0.tags.playing == "想玩"}<img class="IamFans" src="{avatar uid=$meId size=small}">{/if}

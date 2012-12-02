@@ -48,7 +48,8 @@
         	
         	<div class="thisProduct box">        		
         		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$_p.product_id}">{$_p.style}</a></h1><p class="brand">{$_p.company}<span class="year">{$_p.year}年款</span></p>
-        		<p class="info">{$_p.info}</p>   
+        		<a class="toBuy" href="c.php?key={$_p.style}+{$_p.company}"><img src="tplv2/image/z/buy.png" alt="去买{$_p.style}  {$_p.company}" /></a>
+        		<p class="info">{$_p.info}</p>
         		 {if $_p.url!=null}<div class="buy"><a href="{$_p.url}">买之</a></div>{/if}
         		 {if $_p.tags.playing == "在玩" or $_p.tags.playing == "想玩"}<img class="IamFans" src="{avatar uid=$meId size=small}">{/if}
         		 <div class="tagIt" productId={$_p.id}>
