@@ -6,7 +6,7 @@
  <input type="text" size="50" id="suggestBox" />
 
 
-    <div id="new_product">  
+    <div id="new_product" {if $newShow}style="display:block"{/if}>  
     	<h3>输入产品基本信息</h3>
     	<form id="addNewProduct"  method="post" action="{spUrl c=product a=newProduct2}">
 		<hr />

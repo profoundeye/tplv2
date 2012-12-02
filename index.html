@@ -14,9 +14,15 @@
 	  	{literal}
 		<script>	
 			var $newadd = $('<li class="ui-menu-item odd"><a id="newShow">没有相匹配的产品？点此增加。</a></li>');	
+			$("#productSearch").bind('click',function(ev){
+			if(ev.target.id=="newShow"){
+					var url = "{/literal}{spUrl c=product a=newShow newShow=1}{literal}";
+					window.location.href=url;
+				};
+			})
 			jQuery(function() {
 				function callback(item) {
-					console.debug(1);
+				
 					var url = "{/literal}{spUrl c=zshow a=product}{literal}"+"/pid/"+item.id;
 					window.location.href=url;
 				}
