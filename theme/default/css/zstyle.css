@@ -414,12 +414,13 @@ width:7px; height:14px; background:url(../../../image/comm/icons.png) no-repeat 
 .kaixiang a{color:red}
 .toBuy{float:right}
 .buy_info{
-	width: 130px;
+	width: 200px;
 	height: 100px;
 	padding-left:100px;
 	display: block;
 	background:url("../../../image/z/logo2.png") no-repeat;
 	float:left;
+	font-size:15px;
 }
 .tb_buyer{
 	float: right;
