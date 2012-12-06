@@ -111,7 +111,7 @@
 				
 				$('.buyz').click(function(el){
 					var productId=this.rel;
-					var buyInfo ="<strong class='buy_info'><a href='c.php?url="+encodeURIComponent($(this).attr("href"))+"'>"+$(this).attr("dec")+"</a></strong>"+"<strong class='tb_buyer'><a href='+$(this).attr("orgSearch")+'>到淘宝搜索</a></strong>";
+					var buyInfo ="<strong class='buy_info'><a href='c.php?url="+encodeURIComponent($(this).attr("href"))+"'>"+$(this).attr("dec")+"</a></strong>"+"<strong class='tb_buyer'><a href='"+$(this).attr("orgSearch")+"'>到淘宝搜索</a></strong>";
 					$.post("{spUrl c=tagit a=saveTag action=buy}","productId="+productId,function(data){
 						data = jQuery.parseJSON(data);
 						artDialog({
