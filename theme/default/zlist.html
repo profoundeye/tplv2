@@ -49,9 +49,9 @@
         	<div class="thisProduct box">        		
         		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$_p.product_id}">{$_p.style}</a></h1><p class="brand">{$_p.company}<span class="year">{$_p.year}年款</span></p>
         		{if $_p.buy_url!=null}
-        		<a class="toBuy buyz" href="{$_p.buy_url}"  rel={$_p.product_id} dec="{$_p.buy_dec}" orgSearch="c.php?key={$_p.style}+{$_p.company}"><img src="tplv2/image/z/buyz.png" alt="去买{$_p.style}  {$_p.company}" /></a>
+        		<a class="toBuy buyz" href="{$_p.buy_url}"  rel="{$_p.product_id}" dec="{$_p.buy_dec}" orgSearch="c.php?key={$_p.style}+{$_p.company}"><img src="tplv2/image/z/buyz.png" alt="去买{$_p.style}  {$_p.company}" /></a>
         		{else}
-        		<a class="toBuy" href="c.php?key={$_p.style}+{$_p.company}"  rel="{$_p.product_id}"><img src="tplv2/image/z/buy.png" alt="去买{$_p.style}  {$_p.company} {$_p.buy.dec}" /></a>
+        		<a class="toBuy buyo" href="c.php?key={$_p.style}+{$_p.company}"  rel="{$_p.product_id}"><img src="tplv2/image/z/buy.png" alt="去买{$_p.style}  {$_p.company} {$_p.buy.dec}" /></a>
         		{/if}
         		
         		<p class="info">{$_p.info}</p>
@@ -108,6 +108,16 @@
 					loadCommend('comment',{$bid});
 				});
 				
+				$('.buyo').click(function(el){
+					var productId=this.rel;
+					$.post("{spUrl c=tagit a=saveTag action=jump}","productId="+productId,function(data){
+						data = jQuery.parseJSON(data);						
+						}
+					);
+
+					//请求标签表单内容；
+					
+				});
 				
 				$('.buyz').click(function(el){
 					var productId=this.rel;
