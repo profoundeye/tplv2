@@ -48,11 +48,16 @@
         	
         	<div class="thisProduct box">        		
         		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$_p.product_id}">{$_p.style}</a></h1><p class="brand">{$_p.company}<span class="year">{$_p.year}年款</span></p>
-        		<a class="toBuy" href="c.php?key={$_p.style}+{$_p.company}"><img src="tplv2/image/z/buy.png" alt="去买{$_p.style}  {$_p.company}" /></a>
+        		{if $_p.buy_url!=null}
+        		<a class="toBuy buyz" href="{$_p.buy_url}"  rel={$_p.product_id} dec="{$_p.buy_dec}" orgSearch="c.php?key={$_p.style}+{$_p.company}"><img src="tplv2/image/z/buyz.png" alt="去买{$_p.style}  {$_p.company}" /></a>
+        		{else}
+        		<a class="toBuy" href="c.php?key={$_p.style}+{$_p.company}"  rel="{$_p.product_id}"><img src="tplv2/image/z/buy.png" alt="去买{$_p.style}  {$_p.company} {$_p.buy.dec}" /></a>
+        		{/if}
+        		
         		<p class="info">{$_p.info}</p>
         		 {if $_p.url!=null}<div class="buy"><a href="{$_p.url}">买之</a></div>{/if}
         		 {if $_p.tags.playing == "在玩" or $_p.tags.playing == "想玩"}<img class="IamFans" src="{avatar uid=$meId size=small}">{/if}
-        		 <div class="tagIt" productId={$_p.id}>
+        		 <div class="tagIt">
         		 	{if $_p.tags.playing=="在玩"}
         		 		<span ><a href="#" rel="{$_p.product_id}" title="{$_p.style}" class="playing" >在玩 </a></span>
         		 	{else if $_p.tags.playing=="想玩"}
@@ -64,16 +69,15 @@
         		 <div class="thisTag">{$_p.tags.tags}</div>
         		 {if $_p.fans.playing.0.user_id}
         		 <dl>
-        		 	<dt>玩</dt>
+        		 	<dt>在玩</dt>
         		{foreach item=user from=$_p.fans.playing}
         			<dd><a href="{goUserHome  uid=$user.user_id}" ><img src="{avatar uid=$user.user_id size=small}" title="{$user.username} 积分：{$user.source}z"></a></dd>
         		{/foreach}
         		</dl>
         		{/if}
         		{if $_p.fans.want.0.user_id}
-        		<dl>
-        			
-        		 	<dt>想</dt>
+        		<dl>        			
+        		 	<dt>想玩</dt>
         		{foreach item=user from=$_p.fans.want}
         			<dd><a href="{goUserHome  uid=$user.user_id}" ><img src="{avatar uid=$user.user_id size=small}" title="{$user.username} 积分：{$user.source}z"></a></dd>
         		{/foreach}
@@ -105,6 +109,27 @@
 				});
 				
 				
+				$('.buyz').click(function(el){
+					var productId=this.rel;
+					var buyInfo ="<strong class='buy_info'><a href='c.php?url="+encodeURIComponent($(this).attr("href"))+"'>"+$(this).attr("dec")+"</a></strong>"+"<strong class='tb_buyer'><a href="+$(this).attr("orgSearch")+">到淘宝搜索</a></strong>";
+					$.post("{spUrl c=tagit a=saveTag action=buy}","productId="+productId,function(data){
+						data = jQuery.parseJSON(data);
+						artDialog({
+							title:'我要！我要！我要！',
+							id: 'tagIt',
+							fixed: true,
+							lock: true,
+							width:'600px',
+							content: data.msg?data.msg:buyInfo,
+							ok: function () {}
+						});
+						}
+					);
+
+					//请求标签表单内容；
+										return false;
+				});
+				
 				$('.playing').click(function(el){
 					var productId=this.rel;
 					var wanted = this.text;
@@ -126,7 +151,7 @@
 							
 							if(data.body){							
 								$.post("{spUrl c=tagit a=saveTag}","tags="+$("#tags").val()+" "+$("input[name='interest']:checked").val()+"&productId="+productId,function(){
-									
+								
 								if(isShare!=undefined){									
 									var url = "http://www.jiathis.com/send/?webid="+shareTo+"&pic=&title=我在@zplaying正玩 发现了：{$rs['title']}"+document.location+"  "+productTitle+"正！好玩！&ralateuid=zplaying正玩&url="+document.location;
 									document.location.href= url;
