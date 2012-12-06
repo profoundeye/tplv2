@@ -110,11 +110,13 @@
 				
 				$('.buyo').click(function(el){
 					var productId=this.rel;
+					var url= this.href;
 					$.post("{spUrl c=tagit a=saveTag action=jump}","productId="+productId,function(data){
-						data = jQuery.parseJSON(data);						
+						data = jQuery.parseJSON(data);	
+							document.location.href= url;				
 						}
 					);
-
+					return false;
 					//请求标签表单内容；
 					
 				});
