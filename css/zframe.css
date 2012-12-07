@@ -48,9 +48,18 @@ a:hover {color:666;text-decoration: none;}
 	background:url(../image/z/logo.png) no-repeat 0 6px;
 	margin-left:50px;
 	}
+#tsina{
+	display:block;
+	width:22px;
+	height:22px;
+	background:url(../image/z/tsina.png) no-repeat;
+	position: absolute;
+	top: 5px;
+	left: 175px;
+}
 #nav ul{
 	float:left;
-	margin-left:170px;
+	margin-left:210px;
 	margin-top:-36px;
 }
 #nav li{
