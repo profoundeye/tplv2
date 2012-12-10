@@ -1,0 +1,46 @@
+{include file="theme/default/zheader.html" titles=$p.0.style|cat: " "|cat: $p.0.company  description=$p.0.style|cat: " "|cat: $p.0.company|cat: " "|cat: $p.0.info}
+<script type="text/javascript" src="{$syskin}/js/jquery.isotope.min.js"></script>
+<div id="wrap">	
+{include file="header_code.html"}
+   	
+	<div id="tag">
+       <!-- <h2 class="company">{$company}@zplaying的其他产品：</h2>-->
+       <ul class="tagList">
+       {foreach item=_p from=$p}
+       		<li>
+       		<div class="img"><a href="{spUrl c=zshow a=product pid=$_p.id}"><img src="{$_p.img}" alt="{$_p.style} {$_p.company} {$_p.year}年款" /></a></div>
+        	<div class="thisProduct box">        		
+        		<h3 class="style"><a href="{spUrl c=zshow a=product pid=$_p.id}">{$_p.style}</a></h3><p class="brand">{$_p.company}<span class="year">{$_p.year}年款</span></p>
+        		<p class="info">{$_p.info}</p>
+        	</div>
+        	</li>
+    	{/foreach}
+ 		</ul>
+	</div>
+
+
+<script type="text/javascript" >
+
+//<!-- JiaThis Button BEGIN -->
+var jiathis_config={
+	summary:"",
+	marginTop:450,
+	ralateuid:{
+		"tsina":"zplaying正玩 "
+	},
+	showClose:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?btn=r3.gif&move=0" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+{if islogin()}
+	<script type="text/javascript">
+	$(document).ready(function(){
+		now_notice();
+		setInterval("now_notice()", 30000);
+	})
+	</script> 
+	{/if}
+
+{include file="theme/default/footer.html"}

@@ -45,7 +45,7 @@
         
         	{if $p.0.company!=null}
         	  {foreach item=_p from=$p}
-        	
+        	<input type="hidden" name="pid[]" value="{$_p.product_id}" rel="{$_p.style}" />
         	<div class="thisProduct box">        		
         		<h1 class="style"><a href="{spUrl c=zshow a=product pid=$_p.product_id}">{$_p.style}</a></h1><p class="brand">{$_p.company}<span class="year">{$_p.year}年款</span></p>
         		{if $_p.buy_url!=null}
@@ -102,6 +102,7 @@
     
           
 		<div id="comment"></div>
+		
 		
 			<script>
 				$(document).ready(function(){  
