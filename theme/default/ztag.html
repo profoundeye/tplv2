@@ -9,7 +9,7 @@
        <ul class="tagList">
        {foreach item=_p from=$p}
        		<li>
-       		<div class="img"><a href="{spUrl c=zshow a=product pid=$_p.id}"><img src="{$_p.img}" alt="{$_p.style} {$_p.company} {$_p.year}年款" /></a></div>
+       		<div class="img"><a href="{spUrl c=zshow a=product pid=$_p.id}"><img src="{$_p.img}-w270" alt="{$_p.style} {$_p.company} {$_p.year}年款" /></a></div>
         	<div class="thisProduct box">        		
         		<h3 class="style"><a href="{spUrl c=zshow a=product pid=$_p.id}">{$_p.style}</a></h3><p class="brand">{$_p.company}<span class="year">{$_p.year}年款</span></p>
         		<p class="info">{$_p.info}</p>
