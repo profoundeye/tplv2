@@ -3,7 +3,16 @@
 
 <div id="wrap">	
 {include file="header_code.html"}
-   	
+   	{if $userinfo != null}
+   		<div class="box userInfo"><img src="{avatar uid=$userinfo.uid size=middle}" title="{$userinfo.username} 积分：{$userinfo.srouce}z"><span>{$userinfo.username}  {$userinfo.sign}  积分：{$userinfo.source}z</span></div>
+   		<ul class="userTags">
+   			{foreach item=t key=k from=$tags} 
+   			<li>
+   				<a href="{spUrl c=zshow a=explorer tag={$t.tag} uname={$userinfo.username}}">{$t.tag}</a>
+   			</li>
+   			{/foreach}
+   		</ul>
+   	{/if}
 	<div id="tag">
        <!-- <h2 class="company">{$company}@zplaying的其他产品：</h2>-->
       {foreach item=lp key=k from=$p name=list} 
