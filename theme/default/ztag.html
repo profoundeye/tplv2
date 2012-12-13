@@ -27,7 +27,10 @@
 	        	</div>
 	        	</li>
 	    	{/foreach}
-	 		</ul> 		
+	 		</ul> 	
+	 		{if $tagMore == 1}
+	 			<span class="tagMore"><a href="{spUrl c=zshow a=explorer tag={$t.tag} uname={$userinfo.username}}">查看更多...</a></span>
+	 		{/if}	
  		{/foreach}
  		
  		<div id="paging" class="ybpage"><div class="pag_info">{$pager}</div></div>

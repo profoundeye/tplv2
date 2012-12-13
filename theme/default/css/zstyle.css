@@ -470,7 +470,7 @@ width:7px; height:14px; background:url(../../../image/comm/icons.png) no-repeat 
 }
 .userInfo{width:700px;margin:10px auto;overflow:hidden;}
 .userInfo img{float:left}
-.userInfo span{font-size:25px;line-height:55px;}
+.userInfo span{font-size:25px;line-height:55px;margin-left:10px;}
 .userTags{overflow:hidden;padding:10px;margin:0 auto;width:720px;}
 .userTags li{
 	display: block;
@@ -483,6 +483,15 @@ width:7px; height:14px; background:url(../../../image/comm/icons.png) no-repeat 
 	font-weight: bolder;
 	line-height: 30px;
 	float:left;
+}
+.tagMore{
+	display: block;
+	margin: -20px auto 30px;
+	width: 100px;
+	height:20px;
+	text-align:center;
+	font-size:12px;
+	line-height:20px;
 }
 
 /*css page common style*/
