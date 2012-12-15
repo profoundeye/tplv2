@@ -71,7 +71,7 @@
         		 <dl>
         		 	<dt>在玩</dt>
         		{foreach item=user from=$_p.fans.playing}
-        			<dd><a href="{spUrl c=zshow a=me  uname=$user.username}" ><img src="{avatar uid=$user.user_id size=small}" title="{$user.username} 积分：{$user.source}z"></a></dd>
+        			<dd><a href="{spUrl c=zshow a=me uname=$user.username}" ><img src="{avatar uid=$user.user_id size=small}" title="{$user.username} 积分：{$user.source}z"></a></dd>
         		{/foreach}
         		</dl>
         		{/if}
@@ -79,7 +79,7 @@
         		<dl>        			
         		 	<dt>想玩</dt>
         		{foreach item=user from=$_p.fans.want}
-        			<dd><a href="{spUrl c=zshow a=me  uname=$user.username}" ><img src="{avatar uid=$user.user_id size=small}" title="{$user.username} 积分：{$user.source}z"></a></dd>
+        			<dd><a href="{spUrl c=zshow a=me uname=$user.username}" ><img src="{avatar uid=$user.user_id size=small}" title="{$user.username} 积分：{$user.source}z"></a></dd>
         		{/foreach}
         		</dl>
         		{/if}
