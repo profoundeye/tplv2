@@ -475,7 +475,6 @@ width:7px; height:14px; background:url(../../../image/comm/icons.png) no-repeat 
 .userTags li{
 	display: block;
 	margin: 10px;
-	width: 100px;
 	background: white;
 	height: 30px;
 	text-align: center;
@@ -483,6 +482,7 @@ width:7px; height:14px; background:url(../../../image/comm/icons.png) no-repeat 
 	font-weight: bolder;
 	line-height: 30px;
 	float:left;
+	padding:0 10px;
 }
 .tagMore{
 	display: block;
