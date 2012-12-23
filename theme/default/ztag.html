@@ -19,6 +19,7 @@
       {if $k !=null}
        <h3 class="tagTitle">{$k}</h3>
        {/if}
+      {if $lp !=null}
 	       <ul class="tagList">
 	       {foreach item=_p from=$lp}
 	       		<li>
@@ -29,7 +30,8 @@
 	        	</div>
 	        	</li>
 	    	{/foreach}
-	 		</ul> 	
+	 		</ul> 
+	 	{/if}	
 	 		{if $tagMore == 1}
 	 			<span class="tagMore"><a href="{spUrl c=zshow a=explorer tag={$t.tag} uname={$userinfo.username}}">查看更多...</a></span>
 	 		{/if}	
