@@ -37,9 +37,10 @@ a:hover {color:666;text-decoration: none;}
 
 /**header*/
 #header{
-	height:41px;
-	background:url(../image/z/nav.png) repeat-x 0 0;
+	height:30px;
+	background:#545652;
 	display:block;
+	clear:both;
 	}
 
 #logo{
@@ -68,10 +69,12 @@ a:hover {color:666;text-decoration: none;}
 	padding-left:10px;
 	}	
 #nav li	a {
-	font-size:15px;
-	color:#fff;
+	font-size:12px;
+	font-family:simsun;
+	color:#d5d5d5;
 	text-decoration:none
 	}
+#nav li	a:hover{color:#fff}
 
 #tool { float:right; top:5px; position:absolute;right:35px; z-index:1; }
 #tool a, #tool a:hover, #tool a:active { outline:none; }

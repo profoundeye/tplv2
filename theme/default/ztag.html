@@ -16,8 +16,10 @@
 	<div id="tag">
        <!-- <h2 class="company">{$company}@zplaying的其他产品：</h2>-->
       {foreach item=lp key=k from=$p name=list} 
-      {if $lp !=null && $k !=null}
+      {if $lp !=null}
+       {if $k !=null}
        <h3 class="tagTitle">{$k}</h3>
+       {/if}
       
 	       <ul class="tagList">
 	       {foreach item=_p from=$lp}
@@ -30,10 +32,10 @@
 	        	</li>
 	    	{/foreach}
 	 		</ul> 
-	 
+	 		
 	 		{if $tagMore == 1}
 	 			<span class="tagMore"><a href="{spUrl c=zshow a=explorer tag={$t.tag} uname={$userinfo.username}}">查看更多...</a></span>
-	 		{/if}	
+	 		{/if}
 	 	{/if}	
  		{/foreach}
  		
