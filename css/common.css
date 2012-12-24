@@ -1089,7 +1089,7 @@ margin-top:0}
 	margin-left:70px;
 }
 #productSearch input{
-	width: 350px;
+	width: 280px;
 	position: absolute;
 	top: 20px;
 	left: 210px;
@@ -1101,10 +1101,17 @@ margin-top:0}
 	width:123px;
 	height:32px;
 	position: absolute;
-	right: 28px;
+	right: 88px;
 	top: 17px;
 	display:block;
 }
-
+#sh{
+	width:62px;
+	height:32px;
+	position: absolute;
+	right: 23px;
+	top: 17px;
+	display:block;
+}
 
 

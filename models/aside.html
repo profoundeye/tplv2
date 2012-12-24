@@ -14,6 +14,9 @@
 				    <div id="post-tag">
 					    <ul class="clearfix" id="post-tag-list">
 						<!--动态插入标签-->
+						{if $sh == 1}
+							<li tag="败家过头要转让">败家过头要转让<a href="javascript:void(0)" onClick="remTags(this)">x</a></li>
+						{/if}
 						{foreach from=$myTag item=d}
 						    <li tag="{$d}">{$d}<a href="javascript:void(0)" onClick="remTags(this)">x</a></li>
 						{/foreach}
