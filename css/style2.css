@@ -1,0 +1,125 @@
+/*公用页头页尾*/
+ul#nav{
+	height:30px;
+	width:100%;
+	display:block;
+	background:#333;
+	position:relative;
+}
+#wan{
+	position:absolute;
+	top:0px;
+	left:100px;
+}
+
+/*底部版权信息*/
+#footer { width:900px; text-align:center; bottom:10px; margin:0 auto 10px; clear:both; padding:20px 0 0; }
+#copy { width:100%; font-size:12px; text-align:center; color:#999; text-shadow:0px 1px 0px #fff; }
+#copy a{ color:#999; text-decoration:none; margin-right:5px; }
+#copy a:hover { color:#666; }
+#copy a.powered { margin-left:100px; margin-right:5px; }
+
+/*个人页面*/
+.tagList{
+	overflow:hidden;
+	width:1000px;
+	margin:0 auto;
+	padding-top:30px;
+}
+.tagList li{
+	margin: 0 60px 30px 0;
+	width: 270px;
+	display:inline-block;
+	vertical-align:top;
+}
+.tagList li .img{
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+	margin: 0 0 30px ;
+	width:270px;
+}
+.tagList li img{
+	vertical-align:top;
+	max-width:270px;
+}
+#paging{display:block;margin:0 auto;float:none}
+.tagTitle{
+	display: block;
+	margin: 10px auto;
+	width: 100px;
+	background:#fff;
+	height:30px;
+	text-align:center;
+	font-size:15px;
+	font-weight:bolder;
+	line-height:30px;
+}
+.tagClass{
+	float:left;
+	margin-top:90px;
+	width:230px;
+}
+.tagClass li span{
+	font-size:15px;
+	text-align:right;
+	background:#f9f9fb;
+	line-height: 32px;
+	width: auto;
+	display: inline-block;
+	float: right;
+	padding:0 10px
+}
+#tag{
+	margin-left:230px;
+	margin-top:50px;
+}
+
+
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+    margin: 0;
+    padding: 0;
+}
+
+/** 设置默认字体 **/
+body,
+button, input, select, textarea /* for ie */ {
+    font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+
+/** 重置文本格式元素 **/
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+sup { vertical-align: text-top; } /* 重置，减少对行高的影响 */
+sub { vertical-align: text-bottom; }
+
+/** 重置表单元素 **/
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+/* 注：optgroup 无法扶正 */
+
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* 重置 HTML5 元素 */
+article, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, section,
+summary, time, mark, audio, video {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+mark { background: #ff0; }

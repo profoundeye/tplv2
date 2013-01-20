@@ -1,0 +1,56 @@
+{include file="style2/header.html" titles=$p.0.style|cat: " "|cat: $p.0.company  description=$p.0.style|cat: " "|cat: $p.0.company|cat: " "|cat: $p.0.info}
+
+<div id="wrap">	
+	<ul class="tagClass">
+		<li><span>"{$n}"的正玩记录</span> </li>
+	
+	</ul>
+
+	<div id="tag">
+       <!-- <h2 class="company">{$company}@zplaying的其他产品：</h2>-->
+      {foreach item=_m key=k from=$m name=list} 
+
+       <h3 class="tagTitle">{$k}</h3>     
+	       <ul class="tagList">
+	       {foreach item=_p from=$_m}
+	       		<li>
+	       		<div class="img"><!--<a href="{spUrl c=zshow a=product pid=$_p.id}"><img src="{$_p.pic}" alt="" /></a>-->
+	       			<img src="{$_p.pic}" alt="" />
+	       		</div>
+	        	<div class="thisProduct box">        		
+	        		<p class="info">{$_p.text}</p>
+	        	</div>
+	        	</li>
+	    	{/foreach}
+	 		</ul> 	
+ 		{/foreach}
+ 		
+ 		<div id="paging" class="ybpage"><div class="pag_info">{$pager}</div></div>
+	</div>
+
+
+<script type="text/javascript" >
+
+//<!-- JiaThis Button BEGIN -->
+var jiathis_config={
+	summary:"",
+	marginTop:450,
+	ralateuid:{
+		"tsina":"zplaying正玩 "
+	},
+	showClose:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?btn=r3.gif&move=0" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+{if islogin()}
+	<script type="text/javascript">
+	$(document).ready(function(){
+		now_notice();
+		setInterval("now_notice()", 30000);
+	})
+	</script> 
+	{/if}
+
+{include file="style2/footer.html"}
