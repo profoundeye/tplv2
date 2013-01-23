@@ -1,6 +1,6 @@
 /*公用页头页尾*/
 ul#nav{
-	position:relative;
+	position:absolute;
 	top:40px;
 	left:220px;
 }
