@@ -1,10 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>{$yb.site_title} - 连接{$app}</title>
-<link rel="shortcut icon" href="{$syskin}/image/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" media="screen" href="{$syskin}/css/login.css" />
+{include file="style2/header.html"}
 {literal} 
 <script>
 function dosubmit()
@@ -35,43 +29,62 @@ $(document).ready(function(){
 })
 
 </script>
+<style type="text/css">
+	.login{
+		margin:150px auto;
+		width:480px;
+		font-size:14px;
+	}
+	.oauth_box { width:470px; padding:15px; margin:15px auto 0; background-color:#F2F2F2; border:1px #ccc solid; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px; -moz-box-shadow:0px 1px 3px ddd; -webkit-box-shadow:0px 1px 3px #ddd; box-shadow:0px 1px 3px #ddd; }
+.oauth_con { margin:0; width:100%; padding:0; }
+.oauth_con .in_put { width:100%; margin:0 0 10px; height:41px; }
+.oauth_con span { margin-left:5px; line-height:40px; color:#999999; }
+.oauth_con .input { width:162px; height:31px; line-height:30px; border:none; padding:5px 5px 5px 33px; font-family:'Microsoft Yahei','Arail'; font-size:14px; outline:none; text-shadow:0px 1px 0px #fff; }
+.oauth_con .login_email .input { background:url(../image/login/input_email.png) no-repeat 0 0; color:#666; margin-right:15px; z-index:999; }
+.oauth_con .login_email .curr { background:url(../image/login/input_email.png) no-repeat 0 -41px; color:#333; }
+.oauth_con .login_name .input { background:url(../image/login/input_uname.png) no-repeat 0 0; color:#666; margin-right:15px; }
+.oauth_con .login_name .curr { background:url(../image/login/input_uname.png) no-repeat 0 -41px; color:#333; }
+.oauth_con .login_pw .input { background:url(../image/login/input_pw.png) no-repeat 0 0; color:#666; margin-right:15px; }
+.oauth_con .login_pw .curr { background:url(../image/login/input_pw.png) no-repeat 0 -41px; color:#333; }
+.oauth_con .login_info { width:100%; line-height:25px; height:25px; margin:0; }
+.oauth_btn { width:500px; margin:15px auto; height:40px; padding:0; }
+.oauth_btn .submit_tip { width:100%; float:left; line-height:40px; margin:0; color:#999; background:url(../image/comm/small_loading.gif) no-repeat 0 12px; padding-left:20px; }
+.oauth_btn input { width:90px; height:40px; float:right; margin:0; line-height:40px; font-family:'Microsoft Yahei','Arail'; font-size:18px; font-weight:700;  text-shadow:0px -1px 0px #31759D; border:none; cursor:pointer;  }
+span.err{color:red}
+
+</style>
 {/literal} 
 </head>
 
 <body>
-
-<div id="wrap">
-
-    <div id="main">
 	
-	    <div class="logo"><a href="{spUrl c=main}"><img src="{$syskin}/image/logo_big.png" width="420" height="103" alt="{$yb.site_title}" title="{$yb.site_title}" /></a></div>
-		
 		<div class="login">
-		    <form action="" method="post">
-			{if $type != 'login'}
+		    <form action="{if $type != 'blinding'}{spUrl c=openconnect a=newMember}{else}{spUrl c=openconnect a=bindingMember}{/if}" method="post">
+		    	<input type="hidden" value={$app} name="app"/>
 			<div id="userpost">
 			    <div class="post_bg">
-				    <a href="{spUrl c=openconnect a=$app login=yes}"><span class="current">立即注册</span></a>
-					<a href="{spUrl c=openconnect a=$app login=yes type=login}" ><span>账号绑定</span></a>
+				    <a href="{spUrl c=openconnect a=displayLoginHtml type=create app=$app}"><span>立即注册</span></a>
+					<a href="{spUrl c=openconnect a=displayLoginHtml type=blinding app=$app}" ><span>&nbsp;&nbsp;&nbsp;账号绑定</span></a>
 					<div class="clear"></div>
 				</div>
 			</div>
 			<div class="clear"></div>
-			
+			{if $type != 'blinding'}
 			<div class="oauth_box">
 			    <div class="oauth_con">
+			    	欢迎新用户：
 			        <div class="login_email in_put">
-					    <input name="email" type="text" id="email" size="25" maxlength="50" value="{if $smarty.post.email}{$smarty.post.email}{else}{$email}{/if}" class="ipt" tabindex="1" /><span>{verifierMsg set=$errmsg_arr in=email msg='最多30字符'}</span>
+					 输入邮箱： <input name="email" type="text" id="email" size="25" maxlength="50" value="{if $smarty.post.email}{$smarty.post.email}{else}{$email}{/if}" class="ipt" tabindex="1" /><span>{verifierMsg set=$errmsg_arr in=email msg='最多30字符'}</span>
 					</div>
 					<div class="login_name in_put">
-					    <input type="text"  name="username" id="username"  size="25"  class="ipt" tabindex="4" value="{$user.nickname}" title="请输入昵称"><span>{verifierMsg set=$errmsg_arr in=username msg='请输入昵称'}</span>
+					   　　昵称： <input type="text"  name="username" id="username"  size="25"  class="ipt" tabindex="4" value="{$user.nickname}" title="请输入昵称"><span>{verifierMsg set=$errmsg_arr in=username msg='请输入昵称'}</span>
 					</div>
 					<div class="login_pw in_put">
-					    <input name="password" type="password" id="password" size="25" value="{$smarty.post.password}" class="ipt"  tabindex="2"/><span>{verifierMsg set=$errmsg_arr in=password msg='输入您的密码'}</span>
+					   　　密码： <input name="password" type="password" id="password" size="25" value="{$smarty.post.password}" class="ipt"  tabindex="2"/><span>{verifierMsg set=$errmsg_arr in=password msg='输入您的密码'}</span>
 					</div>
 					
 					<div class="login_pw in_put">
-					    <input name="password2" type="password" id="password2" size="25" value="{$smarty.post.password}" class="ipt"  tabindex="3"/><span>{verifierMsg set=$errmsg_arr in=password2 msg='请重复密码'}</span>
+					  重复密码： <input name="password2" type="password" id="password2" size="25" value="{$smarty.post.password}" class="ipt"  tabindex="3"/><span>{verifierMsg set=$errmsg_arr in=password2 msg='请重复密码'}</span>
 					</div>
 
 					<div class="login_info">
@@ -81,23 +94,14 @@ $(document).ready(function(){
 				</div>
 			</div>
 			{else}
-
-			<div id="userpost">
-			    <div class="post_bg">
-				    <a href="{spUrl c=openconnect a=$app login=yes}"><span>立即注册</span></a>
-					<a href="{spUrl c=openconnect a=$app login=yes type=login}" ><span class="current">账号绑定</span></a>
-					<div class="clear"></div>
-				</div>
-			</div>
-			<div class="clear"></div>
-			
 			<div class="oauth_box">
 			    <div class="oauth_con">
+			    	欢迎老朋友：
 			        <div class="login_email in_put">
-					    <input name="email" type="text" id="email" size="25" maxlength="50" value="{if $smarty.post.email}{$smarty.post.email}{else}{$email}{/if}" class="ipt" tabindex="1" /><span>{verifierMsg set=$errmsg_arr in=email msg='最多30字符'}</span>
+					  邮箱：  <input name="email" type="text" id="email" size="25" maxlength="50" value="{if $smarty.post.email}{$smarty.post.email}{else}{$email}{/if}" class="ipt" tabindex="1" /><span>{verifierMsg set=$errmsg_arr in=email msg='最多30字符'}</span>
 					</div>
 					<div class="login_pw in_put">
-					    <input name="password" type="password" id="password" size="25" value="{$smarty.post.password}" class="ipt"  tabindex="2"/><span>{verifierMsg set=$errmsg_arr in=password msg='输入您的密码'}</span>
+					 密码：   <input name="password" type="password" id="password" size="25" value="{$smarty.post.password}" class="ipt"  tabindex="2"/><span>{verifierMsg set=$errmsg_arr in=password msg='输入您的密码'}</span>
 					</div>
 					<div class="login_info">
 					    <label><input name="face" type="checkbox" value="1" checked="checked" />使用{$app}头像作为我的默认头像</label>
@@ -117,9 +121,9 @@ $(document).ready(function(){
 			</form>
 		</div>
 	
-	</div>
 
-</div>
+
+
 
 </body>
 </html>

@@ -46,7 +46,7 @@ ul#nav{
 	position: relative;
 	text-align: center;
 	overflow: hidden;
-	margin: 0 0 30px ;
+	margin: 0 0 15px ;
 	width:270px;
 }
 .tagList li img{
@@ -98,7 +98,17 @@ ul#nav{
 	
 	color:#333
 }
-
+.info {
+	background:#f6f6f6;
+	padding:10px;
+	font-size:12px;
+}
+.doSomething{
+	margin-bottom:5px;
+}
+.class{
+	float:right;
+}
 /** 清除内外边距 **/
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
 dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
