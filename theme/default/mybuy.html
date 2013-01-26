@@ -18,7 +18,7 @@
 	       		</div>
 	       		<div class="doSomething">
 	       			<span class="fav">喜欢</span>
-	       			<span class="class">分类</span>
+	       			<span class="class" rel="-{$_p.id}">分类</span>
 	       		</div>
 	        	<div class="thisProduct box">        		
 	        		<p class="info">{$_p.text}</p>
@@ -33,6 +33,41 @@
 
 
 <script type="text/javascript" >
+$(".class").click(
+	function(){
+		productId = $(this).attr("rel");
+		$.post("{spUrl c=tagit a=thingsTag}","productId="+productId,function(data){
+			data = jQuery.parseJSON(data);
+			artDialog({
+				title:'好东西，要分类',
+				id: 'tagIt',
+				fixed: true,
+				lock: true,
+				width:'600px',
+				content: data.msg?data.msg:data.body,
+				ok: function () {							
+							if(data.body){							
+								$.post("{spUrl c=tagit a=saveTag}","tags="+$("#tags").val()+"&productId="+productId,function(){
+								document.location.reload();	
+									
+						  		});	
+							}
+						}});
+		
+		$("#tagIt").click(function(el){
+						if(el.target.nodeName=="SPAN"){
+							$("#tags").val($("#tags").val()+" "+el.target.innerText);
+							return false;
+						}
+		});	
+		
+		})
+		
+	}
+);
+
+
+
 
 //<!-- JiaThis Button BEGIN -->
 var jiathis_config={
@@ -50,8 +85,8 @@ var jiathis_config={
 {if islogin()}
 	<script type="text/javascript">
 	$(document).ready(function(){
-		now_notice();
-		setInterval("now_notice()", 30000);
+		//now_notice();
+		//setInterval("now_notice()", 30000);
 	})
 	</script> 
 	{/if}
