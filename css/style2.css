@@ -70,6 +70,11 @@ ul#nav{
 	margin-top:90px;
 	width:230px;
 }
+.tagClass li{
+	clear:both;
+	margin-bottom:10px;
+	float:right
+}
 .tagClass li span{
 	font-size:15px;
 	text-align:right;

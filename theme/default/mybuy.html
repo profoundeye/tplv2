@@ -2,7 +2,10 @@
 
 <div id="wrap">	
 	<ul class="tagClass">
-		<li><span>"{$n}"的正玩记录</span> </li>
+		<li><span><a href="{spUrl c=mybuy a=show n=$n}">"{$n}"的正玩记录</a></span> </li>
+		{foreach item=t from=$tagList}
+		<li><span><a href="{spUrl c=mybuy a=show tagId=$t.tagId n=$n}">{$t.tag}</a></span> </li>
+		{/foreach}
 	
 	</ul>
 
