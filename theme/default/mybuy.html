@@ -39,7 +39,7 @@
 
 function tagIt(str){
 		
-		$.get("{spUrl c=tagit a=thingsTag}","productId="+productId,function(data){
+		$.post("{spUrl c=tagit a=thingsTag}","productId="+productId,function(data){
 			data = jQuery.parseJSON(data);
 			artDialog({
 				title:'好东西，要分类',
