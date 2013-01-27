@@ -116,6 +116,9 @@ ul#nav{
 	float:right;
 	cursor:pointer;
 }
+.fav{
+	cursor:pointer;
+}
 /*产品分类*/
 #tags{width:300px;}
 #mytags{
