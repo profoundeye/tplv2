@@ -131,6 +131,31 @@ ul#nav{
 	background-color:#f2fbf2;
 	cursor:pointer;
 	}
+/*detail页*/
+.d_img{
+	float:left;
+	margin:100px 80px 50px 120px;
+}
+.d_info{
+	overflow:hidden;
+	font-size:15px;
+	padding-right:20px;
+	padding-top:100px;
+}
+.d_doSomething{
+	overflow:hidden;
+	padding-top:20px;
+}
+.d_img img{max-width:600px;_width:600px;}
+.d_doSomething .class{float:left;margin-right:50px}
+.requestBuy{
+	height:28px;
+	padding:3px 10px;
+	line-height:28px;
+	margin:5px;
+	background-color:#fff224;
+	display:inline-block;
+}
 /** 清除内外边距 **/
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
 dl, dt, dd, ul, ol, li, /* list elements 列表元素 */

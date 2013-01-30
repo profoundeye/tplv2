@@ -1,7 +1,10 @@
 <div id="navbar">
 	<ul id="nav">
 		<li><a href="{spUrl c=mybuy a=show}">大家在玩</a></li>
-	<!--<li><a href="{spUrl c=mybuy a=show n=$n}">我玩过的</a></li>-->
+		{if $nav}
+		<li><a href="{spUrl c=mybuy a=show n=$nav}">{$nav}在玩</a></li>
+		{/if}
+	<!--<li><a href="{spUrl c=mybuy a=show n=$nav}">我玩过的</a></li>-->
 	</ul>
 </div>
 <div id="wan"><img src="/tplv2/image/z/wan.png" title="正玩" /></div>

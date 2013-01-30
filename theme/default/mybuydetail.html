@@ -1,0 +1,153 @@
+{include file="style2/header.html" titles=" "   description=" " nav=$d.weibonick}
+
+<div id="wrap">	
+	
+	     
+	       		<div class="d_img"><!--<a href="{spUrl c=zshow a=product pid=$d.id}"><img src="{$d.pic}" alt="" /></a>-->
+	       			<a href="{spUrl c=mybuy a=detail id=$d.id}"><img src="{$d.pic}" alt="" /></a>
+	       		</div>
+	       		<p class="d_info">{$d.text}</p>
+	       		{if $d.url}
+	       			<a href="{$d.url}" class="buy"></a>
+	       		{else}
+	       			<a href="#" class="requestBuy" rel='{$d.weiboid}'>想购买，求分享</a>{$d.weibonick}暂时没有分享购买地址
+	       		{/if}
+	       		{if $smarty.session.openconnect.weibo.name == $d.weibonick}
+	       			<a href="#" class="postUrl" rel='{$d.id}'>提供购买地址</a>
+	       		{/if}
+	       		<div class="d_doSomething">
+	       			<span class="fav" rel="-{$d.id}">想玩</span>
+		       			
+	       			<span class="class" rel="-{$d.id}">分类</span>
+	       		</div>
+	
+ 		
+ 		
+</div>
+
+
+<script type="text/javascript" >
+function tagIt(str){
+		
+		$.post("{spUrl c=tagit a=thingsTag}","productId="+productId,function(data){
+			data = jQuery.parseJSON(data);
+			artDialog({
+				title:'好东西，要分类',
+				id: 'tagIt',
+				fixed: true,
+				lock: true,
+				width:'600px',
+				content: data.msg?data.msg:data.body,
+				ok: function () {							
+							if(data.body){							
+								$.post("{spUrl c=tagit a=saveTag}","tags="+$("#tags").val()+"&productId="+productId,function(){
+								document.location.reload();	
+									
+						  		});	
+							}
+						}});
+		
+		if(str){
+			$("#tags").val($("#tags").val()+" "+"想玩");
+		}
+		$("#tagIt").click(function(el){
+						if(el.target.nodeName=="SPAN"){
+							$("#tags").val($("#tags").val()+" "+el.target.innerText);
+							return false;
+						}
+		});	
+		
+		})		
+	}
+	
+	
+$(".class").click(function(){
+	productId = $(this).attr("rel");
+	tagIt(0);
+}	
+)
+
+$(".fav").click(function(el){
+	productId = $(this).attr("rel");
+	tagIt(1);
+}
+	
+)
+
+$('.requestBuy').click(function(){
+	$.get("{spUrl c=mybuy a=requestBuy weiboId=$d.weiboid detailId=$d.id}",function(data){
+		data = jQuery.parseJSON(data);
+		artDialog({
+				title:'购买地址征求中',
+				id: 'tagIt',
+				fixed: true,
+				lock: true,
+				width:'600px',
+				content: data.msg?data.msg:data.body,
+				ok: ""
+		});
+	})
+})
+
+
+
+function postMyUrl(){
+		$.get("{spUrl c=mybuy a=postBuy weiboId=$d.weiboid detailId=$d.id}",function(data){
+		data = jQuery.parseJSON(data);
+		artDialog({
+				title:'添加购买地址',
+				id: 'tagIt',
+				fixed: true,
+				lock: true,
+				width:'600px',
+				content: data.msg?data.msg:data.body,
+				ok: function () {
+					url = $("#url").val();
+					$.post("{spUrl c=mybuy a=postBuy}","url="+url+"&detailId={$d.id}&weiboId={$d.weiboid}",function($data){
+						//document.location.reload();
+						}
+					);
+					//	
+				}
+		})
+	})
+	}
+
+$(".postUrl").click(
+	function(){
+		postMyUrl();
+	}
+)
+
+
+{if $post}
+$(document).ready(
+	postMyUrl();
+)
+{/if}
+
+
+
+//<!-- JiaThis Button BEGIN -->
+var jiathis_config={
+	summary:"",
+	marginTop:450,
+	ralateuid:{
+		"tsina":"zplaying正玩 "
+	},
+	showClose:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?btn=r3.gif&move=0" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+{if islogin()}
+	<script type="text/javascript">
+	$(document).ready(function(){
+		//now_notice();
+		//setInterval("now_notice()", 30000);
+	})
+	</script> 
+	{/if}
+
+{include file="style2/footer.html"}
