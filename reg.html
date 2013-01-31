@@ -63,10 +63,10 @@
 					    <h3>使用已有账号</h3>
 					    <div id="area">
 					    {if $yb.openlogin_qq_open == 1}
-					        <li><a href="javascript:void(0)" onClick="openconnect('{spUrl c=openconnect a=qq}')"><span class="qq_login"></span></a></li>
+					        <li><a href="{spUrl c=openconnect a=qq}"><span class="qq_login"></span></a></li>
 						{/if}
 						{if $yb.openlogin_weib_open == 1}
-						    <li><a href="javascript:void(0)" onClick="openconnect('{spUrl c=openconnect a=weibo}')"><span class="sina_login"></span></a></li>
+						    <li><a href="{spUrl c=openconnect a=weibo}"><span class="sina_login"></span></a></li>
 						{/if}
 						</div>
 					</div>
