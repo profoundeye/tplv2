@@ -1,5 +1,10 @@
 {include file="style2/header.html" titles=$p.0.style|cat: " "|cat: $p.0.company  description=$p.0.style|cat: " "|cat: $p.0.company|cat: " "|cat: $p.0.info}
-
+	<p id="gate">
+		<span><a href="{spUrl c=mybuy a=show}">大家在玩</a></li>
+		{if $nav}
+		<span><a href="{spUrl c=mybuy a=show n=$nav}">{$nav}在玩</a></li>
+		{/if}
+	</p>
 <div id="wrap">	
 	<ul class="tagClass">
 		<li><span><a href="{spUrl c=mybuy a=show n=$n}">"{$n}"的正玩记录</a></span> </li>

@@ -58,23 +58,6 @@ a:hover {color:666;text-decoration: none;}
 	top: 5px;
 	left: 175px;
 }
-#nav ul{
-	float:left;
-	margin-left:210px;
-	margin-top:-36px;
-}
-#nav li{
-	float:left;
-	list-style: none;
-	padding-left:20px;
-	}	
-#nav li	a {
-	font-size:12px;
-	font-family:simsun;
-	color:#d5d5d5;
-	text-decoration:none
-	}
-#nav li	a:hover{color:#fff}
 
 #tool { float:right; top:5px; position:absolute;right:35px; z-index:1; }
 #tool a, #tool a:hover, #tool a:active { outline:none; }

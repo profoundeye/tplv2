@@ -11,6 +11,13 @@
 <div id="analytics">
 <script type="text/javascript">
 
+{if islogin()}
+//检查最新通知30秒一次
+now_notice();
+setInterval("now_notice()", 30000);
+
+{/if}
+
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-34936591-1']);
   _gaq.push(['_setDomainName', 'zplaying.com']);

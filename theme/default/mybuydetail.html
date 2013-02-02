@@ -1,5 +1,10 @@
 {include file="style2/header.html" titles=" "   description=" " nav=$d.weibonick}
-
+	<p id="gate">
+		<span><a href="{spUrl c=mybuy a=show}">大家在玩</a></li>
+		{if $nav}
+		<span><a href="{spUrl c=mybuy a=show n=$nav}">{$nav}在玩</a></li>
+		{/if}
+	</p>
 <div id="wrap">	
 	
 	     
@@ -143,13 +148,5 @@ var jiathis_config={
 </script>
 <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?btn=r3.gif&move=0" charset="utf-8"></script>
 <!-- JiaThis Button END -->
-{if islogin()}
-	<script type="text/javascript">
-	$(document).ready(function(){
-		//now_notice();
-		//setInterval("now_notice()", 30000);
-	})
-	</script> 
-	{/if}
 
 {include file="style2/footer.html"}

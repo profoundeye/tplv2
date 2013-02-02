@@ -1,10 +1,40 @@
 <div id="navbar">
 	<ul id="nav">
-		<li><a href="{spUrl c=mybuy a=show}">大家在玩</a></li>
-		{if $nav}
-		<li><a href="{spUrl c=mybuy a=show n=$nav}">{$nav}在玩</a></li>
-		{/if}
+		<li><a href="{spUrl c=mybuy a=index}">正玩精选</a></li>
+		<li><a href="{spUrl c=main a=kaixiang}">开箱</a></li>
 	<!--<li><a href="{spUrl c=mybuy a=show n=$nav}">我玩过的</a></li>-->
+	</ul>
+
+	<ul id="plane">
+		{if !islogin()}
+			<li><a href="{spUrl c=main a=login}">登录</a></li>
+		{else}
+			<li class="ava"><img src="{avatar uid={$smarty.session.uid} size=small}" /></li>
+			 <li class="notice"><a href="javascript:void(0);" title="通知"><span id="notice"></span></a><span id="now_notice"></span>
+					<div id="f_notice" class="notice_bg" style="display:none;">
+				        <div class="f_corner"></div>
+					    <div class="notice_title">
+						    <div class="notice_right"><a href="javascript:;" onClick="clear_notice_all()">全部清除</a></div>
+						    <div class="notice_left">通知<span>0</span></div>
+						</div>
+						<div class="notice_con">
+						    <div class="loading">加载通知中</div>
+							<!--系统通知-->
+							<div class="notice_system"></div>
+							<!--回复通知-->
+							<div class="notice_replyarea"></div>
+							<!--关注通知-->
+							<div class="notice_followarea"></div>
+							<div class="nonotice">暂无通知</div>
+
+							
+						</div>
+					</div>
+			</li>
+			<li class="setting"><a href="{spUrl c=user a=setting}" title="设置"><span></span></a></li>
+			{if $smarty.session.admin ==1}<li class="admin"><a href="{spUrl c=admin}" target="_blank" title="后台"><span></span></a></li>{/if}
+					<li class="quit"><a href="#nogo" id="logOut" title="退出"><span></span></a></li>
+		{/if}
 	</ul>
 </div>
 <div id="wan"><img src="/tplv2/image/z/wan.png" title="正玩" /></div>

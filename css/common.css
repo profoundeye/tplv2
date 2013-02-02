@@ -21,7 +21,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 /*框架结构布局*/
 #wrap { width:100%; margin:0; }
 #index { width:730px; margin:0 auto; }
-#user_index { width:800px; margin:0 auto; }
+#user_index { width:800px; margin:30px auto; }
 .fl { float:left; }
 .fr { float:right; }
 
@@ -56,18 +56,6 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 	margin-top:-36px;
 	padding-left:0px;
 }
-#nav li{
-	float:left;
-	list-style: none;
-	padding-left:20px;
-	}	
-#nav li	a {
-	font-size:12px;
-	font-family:simsun;
-	color:#d5d5d5;
-	text-decoration:none
-	}
-#nav li	a:hover{color:#fff}
 
 #tool { float:right; top:6px; position:absolute;right:25px; z-index:1; }
 #tool a, #tool a:hover, #tool a:active { outline:none; }
@@ -267,7 +255,7 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 #feedArea .fun_menu li a { width:65px; line-height:24px; height:24px; border-bottom:1px #666 solid; display:block; background:url(../image/comm/btn_bg.png) repeat-x 0 -210px; text-align:center; color:#fff; }
 #feedArea .fun_menu li a:hover { background-image:none; background-color:#666; }
 
-#feedArea .title h1 { width:100%; margin:0 0 5px; line-height:35px; font-size:24px; text-align:left; float:left; }
+#feedArea .title h1 { width:100%; margin:0 0 5px; line-height:35px; font-size:24px; text-align:left; float:left; font-family: 'Microsoft Yahei','Arail' }
 #feedArea .title h1 a { color:#333; font-weight:normal; }
 #feedArea .title h1 a:hover { color:#666; }
 
@@ -1049,9 +1037,9 @@ a:hover { color: #666; text-decoration:none; cursor:pointer; }
 #index{width:1263px;}
 .type2 #article{
 	width: 750px;
-	float: left;
+	margin: 10px auto;
 	position: relative;
-	margin: 10px 0 0 15px;
+	
 }
 .type2 #aside{
 	float:right;

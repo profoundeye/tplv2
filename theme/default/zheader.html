@@ -21,6 +21,7 @@ var cus_tplhdefine = {}
 
 <link rel="shortcut icon" href="{$syskin}/image/favicon.ico" type="image/x-icon">
 <link href="{$themes_path}css/zstyle.css?t=20121223" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" media="screen" href="{$syskin}/css/style2.css?t=20121225" />
 <style>{$custom_css}</style>
 </head>
 
@@ -31,22 +32,4 @@ var cus_tplhdefine = {}
 <script type="text/javascript" src="{$syskin}/js/theme_template.js"></script>
 <script type="text/javascript" src="{$syskin}/js/jquery.rotate.js"></script>
 <script type="text/javascript" src="{$syskin}/js/js.src/model.js"></script>
-
-
-
-<!--<div id="header_bg">
-<div id="footer_bg">
-
-<div id="header">
- 
-{if islogin()}
-    <a href="{spUrl c=main a=index}" target="_top" class="return"><span>返回首页</span></a>
-    <a href="{spUrl c=customize}" target="_top" class="custom"><span>个性设置</span></a>
-{else}
-    <a href="{spUrl c=main a=index}" class="return"><span>返回首页</span></a>
-    <a href="{spUrl c=main a=login}" class="login"><span>登陆</span></a>
-    <a href="{spUrl c=main a=reg}" class="register"><span>注册</span></a>
-{/if}
-
-</div>
-<div class="clear"></div>-->
+{include file="style2/header_code.html"}
