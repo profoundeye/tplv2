@@ -8,7 +8,7 @@ a:hover {color:#333;text-decoration: none;}
 #header_bg { margin:0 auto; width:100%; padding:0; } 
 
 #wrap { width:1263px; margin:0 auto; padding:0; }
-#main { width:750px; float:left; position:relative; margin:10px 0 0 15px; }
+#main { width:750px; float:left; position:relative; margin:80px 0 0 15px; }
 .none { display:none; }
 
 #feed_loading { width:100px; height:26px; margin:20px 0 0; background:url(../image/feeds_loading.gif) no-repeat 0 0; margin-left:265px; }
@@ -230,7 +230,7 @@ a:hover {color:#333;text-decoration: none;}
 .s_loading { widows:100px; height:10px; display:block; background:url(../image/comm/feeds_loading.gif) no-repeat 0 0; margin:10px 190px 0; }
 
 /*右侧部分*/
-#aside{ width:230px; float:right; margin:25px 0 0; padding:0; }
+#aside{ width:230px; float:right; margin:85px 0 0; padding:0; }
 
 /*博客数据*/
 #aside .my_data { width:228px; height:68px; border:1px #ccc solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0px 1px 0px #fff; -webkit-box-shadow:0px 1px 0px #fff; box-shadow:0px 1px 0px #fff; background:url(../image/blog_btn_bg.png) repeat-x 0 -50px #eee; }
