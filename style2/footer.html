@@ -11,11 +11,29 @@
 <div id="analytics">
 <script type="text/javascript">
 
+
+
 {if islogin()}
 //检查最新通知30秒一次
 now_notice();
 setInterval("now_notice()", 30000);
-
+{else}
+$("#login").click(function(el){
+	$.get("{spUrl c=main a=login s=ajax}",function(data){
+		artDialog({
+				title:'欢迎登录',
+				id: 'tagIt',
+				fixed: true,
+				lock: true,
+				width:'600px',
+				content: data,
+				ok: function () {							
+							
+							}});
+		});
+		return false;
+	}
+)
 {/if}
 
   var _gaq = _gaq || [];

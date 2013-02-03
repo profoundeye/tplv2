@@ -7,7 +7,7 @@
 
 	<ul id="plane">
 		{if !islogin()}
-			<li><a href="{spUrl c=main a=login}">登录</a></li>
+			<li id="login"><a href="{spUrl c=main a=login}">登录</a></li>
 		{else}
 			<li class="ava"><img src="{avatar uid={$smarty.session.uid} size=small}" /></li>
 			 <li class="notice"><a href="javascript:void(0);" title="通知"><span id="notice"></span></a><span id="now_notice"></span>

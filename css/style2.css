@@ -229,6 +229,14 @@ ul#nav{
 	background-color:#f2fbf2;
 	cursor:pointer;
 	}
+#introduce{
+	width: 90%;
+	padding: 30px;
+	background-color: #f6f6f6;
+	font-size: 14px;
+	line-height: 170%;
+	margin: 0 auto;
+}
 /*detail页*/
 .d_img{
 	float:left;

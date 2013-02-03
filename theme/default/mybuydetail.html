@@ -1,8 +1,8 @@
-{include file="style2/header.html" titles=" "   description=" " nav=$d.weibonick}
+{include file="style2/header.html" titles=" "   description=" "}
 	<p id="gate">
 		<span><a href="{spUrl c=mybuy a=show}">大家在玩</a></li>
-		{if $nav}
-		<span><a href="{spUrl c=mybuy a=show n=$nav}">{$nav}在玩</a></li>
+		{if $d.weibonick}
+		<span><a href="{spUrl c=mybuy a=show n=$d.weibonick}">{$d.weibonick}在玩</a></li>
 		{/if}
 	</p>
 <div id="wrap">	

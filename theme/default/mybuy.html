@@ -1,4 +1,4 @@
-{include file="style2/header.html" titles=$p.0.style|cat: " "|cat: $p.0.company  description=$p.0.style|cat: " "|cat: $p.0.company|cat: " "|cat: $p.0.info}
+{include file="style2/header.html" titles="你正玩什么？什么玩的正"  description=$p.0.style|cat: " "|cat: $p.0.company|cat: " "|cat: $p.0.info}
 	<p id="gate">
 		<span><a href="{spUrl c=mybuy a=show}">大家在玩</a></li>
 		{if $nav}
@@ -15,6 +15,14 @@
 	</ul>
 
 	<div id="tag">
+		{if !islogin()}
+		<p id="introduce">
+			这是一个简单的网站，用于记录大家正在玩的各类玩物。<br/>
+			只需要在微博上<a href="http://weibo.com/zplaying">@zplaying正玩</a>，就会自动记录。<br/>
+			一群有趣的人，在玩各种有趣的东西。<br/>
+			看看大家<a href=""><b>正玩</b></a>什么吧~<br/>
+		</p>
+		{/if}
        <!-- <h2 class="company">{$company}@zplaying的其他产品：</h2>-->
       {foreach item=_m key=k from=$m name=list}
        <h3 class="tagTitle">{$k}</h3>     
@@ -92,7 +100,6 @@ $(".fav").click(function(el){
 }
 	
 )
-
 
 
 
