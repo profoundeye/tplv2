@@ -17,7 +17,7 @@
 	       		{else}
 	       			<a href="#" class="requestBuy" rel='{$d.weiboid}'>想购买，求分享</a>{$d.weibonick}暂时没有分享购买地址
 	       		{/if}
-	       		{if $smarty.session.openconnect.weibo.name == $d.weibonick}
+	       		{if $smarty.session.openconnect.weibo.name == $d.weibonick||$smarty.session.admin ==1}
 	       			<a href="#" class="postUrl" rel='{$d.id}'>提供购买地址</a>
 	       		{/if}
 	       		<div class="d_doSomething">

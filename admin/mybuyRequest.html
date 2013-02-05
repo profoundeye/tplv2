@@ -1,9 +1,7 @@
 {include file='admin/header.html'}
 <div id="content">
-<a href="{spUrl c=mybuy a=showRequestPostList}">购买链接请求</a>
+	<a href="{spUrl c=mybuy a=showRequestPostList}">购买链接请求</a>
 <a href="{spUrl c=mybuy a=show_adminList}">败家审核</a>
-   
-	
 	<div class="con_index" style="margin-bottom:10px;">
 		<div class="sec"><h2>列表</h2></div>
 		<div class="navpage">{$pager}<div class="clear"></div></div>
@@ -14,22 +12,19 @@
 					  <th width="30" class="m_title">操作</th>
 				      <th width="30">ID</th>
 					  <th width="40">weiboid</th>
-					  <th width="80">pic</th>
 					  <th width="50">text</th>
 					  <th width="80">操作</th>					  
 				   </tr>
-				   {foreach from=$mybuy item=d}
+				   {foreach from=$t item=d}
 				   <tr class="table_hover" id="blog_{$d.id}">
 				     <td class="m_title" style="padding-top:13px"><input id="checkbox" class="ckeckbox" type="checkbox" name="delid" delid="{$d.id}"></td>
 				      <td>{$d.id}</td>
-				      <td>{$d.weibonick}</td>
-					  <td class="tt_title"><img src={$d.pic} width="100px" /></a></td>
-					  <td class="to_title">{$d.text}</td>
-				
-				
-					  <td class="fun_con mfun">
-					      <a class="f_edit mtop" href="{spUrl c=mybuy a=agree id=$d.id}" target="_self">通过</a> 
-						  <a class="f_delete mtop" href="{spUrl c=mybuy a=del id=$d.id}">删除</a></td>
+				      <td>{$d.weiboId}</td>
+					  <td class="to_title">匿名请求链接次数：{$d.aTimes}。会员请求链接次数：{$d.uTimes}</td>				
+					  <td class="">
+					      <a class="" href="{spUrl c=mybuy a=postAdmin weiboId=$d.weiboId detailId=$d.detailId times=$d.times}" target="_self">发购买链接消息</a> 
+					      <a class="" href="{spUrl c=mybuy a=detail id=$d.detailId}" target="_self">访问detail</a>
+						</td>
 				   </tr>
 				   {/foreach}
 			  </table>
