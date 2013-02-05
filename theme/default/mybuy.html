@@ -4,6 +4,9 @@
 		{if $nav}
 		<span><a href="{spUrl c=mybuy a=show n=$nav}">{$nav}在玩</a></li>
 		{/if}
+		{if islogin() && $smarty.session.openconnect.weibo.name}
+		<span><a href="{spUrl c=mybuy a=show n=$smarty.session.openconnect.weibo.name}">我的玩儿记录</a></li>
+		{/if}
 	</p>
 <div id="wrap">	
 	<ul class="tagClass">
