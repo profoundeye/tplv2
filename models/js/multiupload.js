@@ -20,7 +20,7 @@ function delAttachIMAGE(id)
         $('#uploadArea div').each(function(){ umus  += 1}) //获取音乐字串
         if(umus ==''){ waring('请上传至少一张图片');return false;}
         setTags();
-        $('#submit,#draft,#preview,#cancel,#pb-submiting-tip').toggle();
+        $('#draft,#preview,#cancel,#pb-submiting-tip').toggle();
         $('#form1').submit();
     });	
     
@@ -116,7 +116,7 @@ function setFileState(fileid,txt)
 }
 function fileQueued(file)//队列添加成功
 {
-	$('#submit,#draft,#preview,#cancel').hide();
+	$('#draft,#preview,#cancel').hide();
 	$('#pb-submiting-tip').show();
 	for(var i in selQueue)if(selQueue[i].name==file.name){swfu.cancelUpload(file.id);return false;}//防止同名文件重复添加
 	$('#listBody').append('<tr id="'+file.id+'"><td>'+file.name+'</td><td>'+formatBytes(file.size)+'</td><td id="'+file.id+'_state">就绪</td></tr>');
@@ -205,7 +205,7 @@ function uploadComplete(file)//文件上传周期结束
 function uploadAllComplete()//全部文件上传成功
 {
 	$('#progressArea').hide(); //全部完毕关闭进度条
-	$('#submit,#draft,#preview,#cancel,#pb-submiting-tip').toggle();
+	$('#draft,#preview,#cancel,#pb-submiting-tip').toggle();
 	//alert(arrMsg);
 }
 function formatBytes(bytes) {
