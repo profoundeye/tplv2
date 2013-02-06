@@ -37,7 +37,7 @@ ul#nav{
 	margin-right:90px;
 }
 #plane a{
-	color:#333;
+	color:#fff;
 }
 #plane li{
 	color:#fff;
@@ -84,7 +84,7 @@ ul#nav{
 .notice_bg .notice_system .notice_sys:hover .ntime { filter:alpha(opacity=100); -moz-opacity:1; opacity: 1; }
 
 .notice_bg .sysyem_con { width:210px; line-height:20px; min-height:20px; margin:0; color:#666; padding:5px 0 5px 30px; background:url(../image/comm/tool_icon.png) no-repeat 0 -300px; }
-
+#plane .sysyem_con a,#plane .reply_con a{color:#333}
 .notice_bg .sysyem_fun { width:60px; float:right; margin:0; padding:0; height:30px; }
 .notice_bg .sysyem_fun a { float:right; margin:5px 5px 0 0 }
 .notice_bg .sysyem_fun a .fun_delete { width:20px; height:20px; background:url(../image/comm/icons_none.png) no-repeat -70px 0; display:block; }
