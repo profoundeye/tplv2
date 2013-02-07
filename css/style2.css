@@ -135,8 +135,8 @@ ul#nav{
 	padding-top:30px;
 }
 .tagList li{
-	margin: 0 60px 30px 0;
-	width: 270px;
+	margin: 0 50px 30px 0;
+	width: 280px;
 	display:inline-block;
 	vertical-align:top;
 }
@@ -145,11 +145,12 @@ ul#nav{
 	text-align: center;
 	overflow: hidden;
 	margin: 0 0 15px ;
-	width:270px;
+	width:280px;
+	max-height:430px;
 }
 .tagList li img{
 	vertical-align:top;
-	max-width:270px;
+	max-width:280px;
 }
 #paging{display:block;margin:0 auto;float:none}
 .tagTitle{
