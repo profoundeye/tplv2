@@ -241,7 +241,7 @@ ul#nav{
 /*detail页*/
 .d_img{
 	float:left;
-	margin:100px 80px 50px 120px;
+	margin:100px 40px 50px 120px;
 }
 .d_info{
 	overflow:hidden;
@@ -304,10 +304,10 @@ ul#nav{
  .reply_fun li { list-style:none; display:block; float:right; margin:2px 5px 0; }
  .reply_fun li span { width:20px; height:20px; display:block; }
  .reply_fun .fun_rpy_0,  .reply_fun .fun_del_0 { display:none; }
- .reply_fun .fun_rpy_1 a span  { background:url(../image/icons_none.png) no-repeat -50px 0; outline:none; }
- .reply_fun .fun_rpy_1 a:hover span { background:url(../image/icons_none.png) no-repeat -50px -20px; }
- .reply_fun .fun_del_1 a span { background:url(../image/icons_none.png) no-repeat -70px 0; outline:none; }
- .reply_fun .fun_del_1 a:hover span { background:url(../image/icons_none.png) no-repeat -70px -20px; }
+ .reply_fun .fun_rpy_1 a span  { background:url(../image/comm/icons_none.png) no-repeat -50px 0; outline:none; }
+ .reply_fun .fun_rpy_1 a:hover span { background:url(../image/comm/icons_none.png) no-repeat -50px -20px; }
+ .reply_fun .fun_del_1 a span { background:url(../image/comm/icons_none.png) no-repeat -70px 0; outline:none; }
+ .reply_fun .fun_del_1 a:hover span { background:url(../image/comm/icons_none.png) no-repeat -70px -20px; }
 
  .reply_fun .fun_reply { width:25px; height:25px; display:block; background:url(../image/icons.png) no-repeat 0 -440px; float:right; }
  .reply_fun .fun_reblog { width:25px; height:25px; display:block; background:url(../image/icons.png) no-repeat -25px -440px; float:right; }
