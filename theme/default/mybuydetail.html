@@ -27,8 +27,30 @@
 	       			<span class="fav" rel="-{$d.id}">想玩</span>
 		       			
 	       			<span class="class" rel="-{$d.id}">分类</span>
+	       		</div>	<script type="text/javascript"> 
+var urlpath = '{$url}';
+var skinpath = '{$syskin}';
+var uid = '{$smarty.session.uid}';
+var cus_tplhdefine = {}
+</script>
+	       			<script type="text/javascript" src="{$syskin}/js/js.src/global.js"></script>
+	       		<script type="text/javascript" src="{$syskin}/js/model.js"></script>
+	       		<script type="text/javascript" src="{$syskin}/js/template.js"></script>
+	       		<script type="text/javascript" src="{$syskin}/js/template_models.js"></script>
+	       		<script type="text/javascript" src="http://zplaying.com/testyunbian/tplv2/js/theme_template.js"></script>
+
+	       		<div id="comment" class="mbComment">
+	       		
 	       		</div>
-	
+	<script>
+	       		
+	       			
+	       			
+				$(document).ready(function(){  
+					loadCommend('comment',-27);
+				});
+				
+			</script>
  		
  		
 </div>

@@ -819,6 +819,9 @@ function waring(msg){
 };
 
 function tips(msg){
+	if(!$.dialog){
+		$.dialog =artDialog;
+	}
 	$.dialog({
 		id: 'tips',
 		content: msg,
