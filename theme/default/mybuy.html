@@ -1,11 +1,12 @@
 {include file="style2/header.html" titles="你正玩什么？什么玩的正"  description=$p.0.style|cat: " "|cat: $p.0.company|cat: " "|cat: $p.0.info}
 	<p id="gate">
-		<span><a href="{spUrl c=mybuy a=show}">大家在玩</a></li>
+		<span><a href="{spUrl c=mybuy a=show}">大家正在玩</a></span>
+		<span><a href="{spUrl c=mybuy a=showHot}">最热讨论</a></span>
 		{if $nav}
-		<span><a href="{spUrl c=mybuy a=show n=$nav}">{$nav}在玩</a></li>
+		<span><a href="{spUrl c=mybuy a=show n=$nav}">{$nav}在玩</a></span>
 		{/if}
 		{if islogin() && $smarty.session.openconnect.weibo.name}
-		<span><a href="{spUrl c=mybuy a=show n=$smarty.session.openconnect.weibo.name}">我的正玩记录</a></li>
+		<span><a href="{spUrl c=mybuy a=show n=$smarty.session.openconnect.weibo.name}">我的正玩记录</a></span>
 		{/if}
 	</p>
 <div id="wrap">	
@@ -51,7 +52,7 @@
 	 		</ul> 	
  		{/foreach}
  		
- 		<div id="paging"><div class="pag_info"><a href="{spUrl c=mybuy a=show n=$n page=$pager.next_page}">载入更多</a></div></div>
+ 		<div id="paging"><div class="pag_info"><a href="{spUrl c=mybuy a=$show n=$n page=$pager.next_page}">载入更多</a></div></div>
 	</div>
 
 
