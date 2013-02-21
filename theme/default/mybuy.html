@@ -1,7 +1,8 @@
 {include file="style2/header.html" titles="你正玩什么？什么玩的正"  description=$p.0.style|cat: " "|cat: $p.0.company|cat: " "|cat: $p.0.info}
 	<p id="gate">
 		<span><a href="{spUrl c=mybuy a=show}">大家正在玩</a></span>
-		<span><a href="{spUrl c=mybuy a=showHot}">最热讨论</a></span>
+		<span><a href="{spUrl c=mybuy a=showHot}">热门讨论</a></span>
+		<span><a href="{spUrl c=mybuy a=showBuy}">败家线索</a></span>
 		{if $nav}
 		<span><a href="{spUrl c=mybuy a=show n=$nav}">{$nav}在玩</a></span>
 		{/if}
