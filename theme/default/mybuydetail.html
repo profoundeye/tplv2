@@ -16,6 +16,9 @@
 		{if $nav}
 		<span><a href="{spUrl c=mybuy a=show n=$nav}">{$nav}在玩</a></span>
 		{/if}
+		{if $d.weibonick}
+-		<span><a href="{spUrl c=mybuy a=show n=$d.weibonick}">{$d.weibonick}在玩</a></li>
+		{/if}
 		{if islogin() && $smarty.session.openconnect.weibo.name}
 		<span><a href="{spUrl c=mybuy a=show n=$smarty.session.openconnect.weibo.name}">我的正玩记录</a></span>
 		{/if}
