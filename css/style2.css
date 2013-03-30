@@ -232,13 +232,13 @@ ul#nav{
 	cursor:pointer;
 	}
 #introduce{
-	width: 90%;
+	width: 70%;
 	padding: 30px;
 	background-color: #f6f6f6;
 	font-size: 14px;
 	line-height: 170%;
-	margin: 0 auto;
-}
+	overflow:hidden;
+	}
 /*detail页*/
 .d_img{
 	float:left;
@@ -272,6 +272,16 @@ ul#nav{
 	background-color:#c5020b;
 	display:inline-block;
 	color:#fff
+}
+#wx{float:left;}
+#wx img{
+	width:150px;
+	height:150px;
+}
+#wx span{
+	display:block;
+	text-align:center;
+	clear:both;
 }
 /*评论开始*/
 #comment{
