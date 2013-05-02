@@ -1,6 +1,9 @@
  /*删除附件 图片模块*/
 function delAttachIMAGE(id)
 {
+	if(!$.dialog){
+		$.dialog =artDialog;
+	}
 	var dialog = $.dialog({id:'del',content:'确认删除附件？',ok:function(){
 			$.ybAPI('user','delattach',{'id':id},function(data){
 					if(data.status == 1){
