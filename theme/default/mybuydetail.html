@@ -27,7 +27,12 @@
 	
 	     
 	       		<div class="d_img"><!--<a href="{spUrl c=zshow a=product pid=$d.id}"><img src="{$d.pic}" alt="" /></a>-->
-	       			<a href="{spUrl c=mybuy a=detail id=$d.id}"><img src="{$d.pic}" alt="" /></a>
+	       			<a href="{spUrl c=mybuy a=detail id=$d.id}">
+	       				{foreach item=t from=$d.pics}
+	       				<img src="{$t.url}" alt="" />
+	       				{/foreach}
+	       				
+	       			</a>
 	       		</div>
 	       		<p class="d_info">{$d.text}</p>
 	       		{if $d.product.buy_url}

@@ -254,7 +254,7 @@ ul#nav{
 	overflow:hidden;
 	padding-top:20px;
 }
-.d_img img{max-width:600px;_width:600px;}
+.d_img img{max-width:600px;_width:600px;display:block}
 .d_doSomething .class{float:left;margin-right:50px}
 .requestBuy{
 	height:28px;
